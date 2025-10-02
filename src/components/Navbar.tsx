@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useState } from "react";
 import {
   NavigationMenu,
@@ -17,7 +18,7 @@ import { buttonVariants } from "./ui/button";
 import { Menu } from "lucide-react";
 import { ModeToggle } from "./mode-toggle";
 import logo from "../assets/logo.png";
-{/*import { useNavigate } from "react-router-dom"; */}
+{/*import { useNavigate } from "react-router-dom"; */ }
 
 interface RouteProps {
   href: string;
@@ -25,64 +26,64 @@ interface RouteProps {
 }
 
 const routeList: RouteProps[] = [
- /*
+  /*
+   {
+     href: "#missionandvision",
+     label: "Vision And Mission",
+   },
+   {
+     href: "#history",
+     label: "History",
+   },
+   {
+     href: "#target",
+     label: "Target Markets",
+   },
+   {
+     href: "#services",
+     label: "Services",
+   },
+   {
+     href: "/another", // Update the href to point to the AnotherPage route
+     label: "Another",
+   }, 
+   {
+   href: "/missionvision-another",
+   label: "Mission and Vision",
+   }, 
+   {
+     href: "/history-another",
+     label: "History",
+     },*/
   {
-    href: "#missionandvision",
-    label: "Vision And Mission",
+    href: "/about-another",
+    label: "About",
   },
   {
-    href: "#history",
-    label: "History",
-  },
-  {
-    href: "#target",
-    label: "Target Markets",
-  },
-  {
-    href: "#services",
-    label: "Services",
-  },
-  {
-    href: "/another", // Update the href to point to the AnotherPage route
-    label: "Another",
-  }, 
-  {
-  href: "/missionvision-another",
-  label: "Mission and Vision",
-  }, 
-  {
-    href: "/history-another",
-    label: "History",
-    },*/
-    {
-      href: "/about-another",
-      label: "About",
-  },
-  {
-      href: "/missionvision-another",
-      label: "Mission and Vision",
+    href: "/missionvision-another",
+    label: "Mission and Vision",
   },
 
   {
-      href: "/history-another",
-      label: "History",
+    href: "/history-another",
+    label: "History",
   },
   {
     href: "/targetmarkets-another",
     label: "Target Markets",
-},
-{
-  href: "/services-another",
-  label: "Services",
-},
-{
-  href: "/contact",
-  label: "Contact",
-},
-{
-  href: "/workplace",
-  label: "Workplace",
-},
+  },
+  {
+    href: "/services-another",
+    label: "Services",
+  },
+  {
+    href: "/contact",
+    label: "Contact",
+  },
+  {
+    href: "/workplace",
+    label: "Workplace",
+  },
 ];
 
 export const Navbar = () => {
@@ -93,9 +94,9 @@ export const Navbar = () => {
       <NavigationMenu className="mx-auto">
         <NavigationMenuList className="container h-14 px-4 w-screen flex justify-between ">
           <NavigationMenuItem className="font-bold flex">
-            <a
+            <Link
               rel="noreferrer noopener"
-              href="/"
+              to="/"
               className="ml-2 font-bold text-xl flex"
             >
               <img
@@ -104,7 +105,7 @@ export const Navbar = () => {
                 className="w-8 h-8 md:w-10 md:h-10 object-contain"
               />
               JPSC Group Holdings Inc.
-            </a>
+            </Link>
           </NavigationMenuItem>
 
           {/* mobile */}
@@ -129,15 +130,15 @@ export const Navbar = () => {
                 </SheetHeader>
                 <nav className="flex flex-col justify-center items-center gap-2 mt-4">
                   {routeList.map(({ href, label }: RouteProps) => (
-                    <a
+                    <Link
                       rel="noreferrer noopener"
                       key={label}
-                      href={href}
+                      to={href}
                       onClick={() => setIsOpen(false)}
                       className={buttonVariants({ variant: "ghost" })}
                     >
                       {label}
-                    </a>
+                    </Link>
                   ))}
                   <a
                     rel="noreferrer noopener"
@@ -158,16 +159,16 @@ export const Navbar = () => {
           {/* desktop */}
           <nav className="hidden md:flex gap-2">
             {routeList.map((route: RouteProps, i) => (
-              <a
+              <Link
                 rel="noreferrer noopener"
-                href={route.href}
+                to={route.href}
                 key={i}
                 className={`text-[17px] ${buttonVariants({
                   variant: "ghost",
                 })}`}
               >
                 {route.label}
-              </a>
+              </Link>
             ))}
           </nav>
 

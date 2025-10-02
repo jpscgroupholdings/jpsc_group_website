@@ -34,7 +34,7 @@ function App() {
   }, []);
 
   return (
-    <Router>
+    <Router basename="/">
       {/* Main layout wrapper */}
       <div className="flex flex-col min-h-screen">
         {/* Navbar is always displayed */}
@@ -51,13 +51,9 @@ function App() {
                   <Hero />
                   <Statistics />
                   <Herotwo />
-                  
-                 
-                
                   <FAQ /> 
                   <Sponsors />  
                   <ScrollToTop />
-                  
                 </>
               }
             />
