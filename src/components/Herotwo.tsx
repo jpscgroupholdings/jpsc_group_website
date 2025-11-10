@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Button } from "./ui/button";
+import { Link } from "react-router-dom";
 
 // Import images
 import tech from "/src/assets/itservices.jpg";
@@ -113,12 +114,20 @@ export const Herotwo = () => {
         <p className="text-base md:text-lg text-gray-300">
          
         </p>
-        <Button
-          className="text-black px-6 py-2 rounded-md"
-          
-        > <a href="/services-another" className="px-6 py-3 bg-primary text-white ">
-          Learn More </a>
+     
+        <Button className="text-black px-6 py-2 rounded-md">
+          <Link
+            className="px-6 py-3 bg-primary text-white "
+            rel="noreferrer noopener"
+            to="/services-another">
+              Learn More
+          </Link>
         </Button>
+
+
+        
+         
+            
       </div>
 
       {/* Navigation Arrows */}
