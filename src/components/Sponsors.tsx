@@ -3,7 +3,7 @@ import { About } from "./About";
 
 export const Sponsors = () => {
   return (
-      <div className="mt-16">
+      <div className="mt-16" data-aos="fade-up">
         <h2 className="text-center text-md lg:text-6xl font-bold mb-8 text-primary">
         Our Subsidiaries
       </h2>
@@ -15,7 +15,6 @@ export const Sponsors = () => {
             className="rounded-lg border shadow-md max-w-full md:max-w-4xl"
           />
         </div>
-
         <About />
       </div>
   );
