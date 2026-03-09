@@ -7,7 +7,6 @@ import image6 from "../assets/six.jpg";
 import image7 from "../assets/seven.jpg";
 import image8 from "../assets/eight.jpg";
 import image9 from "../assets/nine.jpg";
-import image10 from "../assets/ten.jpg";
 import analytics from "../assets/analytics.png"
 import { useRef, useState } from "react";
 
