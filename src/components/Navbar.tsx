@@ -18,7 +18,9 @@ import { buttonVariants } from "./ui/button";
 import { Menu } from "lucide-react";
 import { ModeToggle } from "./mode-toggle";
 import logo from "../assets/logo.png";
-{/*import { useNavigate } from "react-router-dom"; */ }
+{
+  /*import { useNavigate } from "react-router-dom"; */
+}
 
 interface RouteProps {
   href: string;
@@ -56,6 +58,10 @@ const routeList: RouteProps[] = [
      label: "History",
      },*/
   {
+    href: "/",
+    label: "Home",
+  },
+  {
     href: "/about-another",
     label: "About",
   },
@@ -83,6 +89,10 @@ const routeList: RouteProps[] = [
   {
     href: "/workplace",
     label: "Workplace",
+  },
+  {
+    href: "/FAQ",
+    label: "FAQ",
   },
 ];
 

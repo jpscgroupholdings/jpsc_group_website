@@ -37,13 +37,6 @@ const FAQList: FAQProps[] = [
     value: "item-4",
   },
   {
-    question: "Private Equity",
-    answer:
-      "Organizations that acquire and manage businesses, improving operations and strategy to strengthen their long-term value and growth.",
-    value: "item-5",
-  },
-
-  {
     question: "E-commerce Companies",
     answer:
       "Businesses that sell products or services online, managing customer orders, inquiries, and support through digital platforms.",

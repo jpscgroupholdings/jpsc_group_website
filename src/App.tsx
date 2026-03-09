@@ -51,7 +51,6 @@ function App() {
                   <Hero />
                   <Statistics />
                   <Herotwo />
-                  <FAQ /> 
                   <Sponsors />  
                   <ScrollToTop />
                 </>
@@ -73,6 +72,7 @@ function App() {
           
             <Route path="/contact" element={<Contact />} />
             <Route path="/workplace" element={<Workplace />} />
+            <Route path="/FAQ" element={<FAQ />} />
           </Routes>
         </div>
       

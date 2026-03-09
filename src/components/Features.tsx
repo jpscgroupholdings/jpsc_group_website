@@ -44,14 +44,6 @@ const features: FeatureProps[] = [
       "Government agencies and public institutions providing services to citizens, often managing requests through official channels",
     image: image9,
   },
-
-  {
-  title: "Private Equity",
-  description:
-    "Organizations that acquire and manage companies, improving operations and strategy to increase their overall value before transitioning ownership or expanding further.",
-  image: image10,
-},
-
   {
     title: "E-commerce Companies",
     description:
