@@ -46,11 +46,11 @@ const features: FeatureProps[] = [
   },
 
   {
-    title: "Private Equity",
-    description:
-      "Investment firms that acquire and manage companies to increase their value before selling or taking them in public.",
-    image: image10,
-  },
+  title: "Private Equity",
+  description:
+    "Organizations that acquire and manage companies, improving operations and strategy to increase their overall value before transitioning ownership or expanding further.",
+  image: image10,
+},
 
   {
     title: "E-commerce Companies",

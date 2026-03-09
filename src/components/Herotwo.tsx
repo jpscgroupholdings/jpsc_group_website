@@ -27,8 +27,8 @@ const Herotwos = [
   {
     title: "Task Automation Testing",
     description:
-      "Ensuring regulatory compliance, managing legal affairs, protecting intellectual property, and overseeing real estate investments and facilities.",
-    image:  taskauto,
+      "Designing and validating automated workflows to ensure tasks run accurately, efficiently, and consistently across systems.",
+    image: taskauto,
     buttonText: "Task Automation",
   },
   {
@@ -39,11 +39,11 @@ const Herotwos = [
     buttonText: "Operational Support Services",
   },
   {
-    title: "Legal,Compliance, and Property Management",
+    title: "Legal, Compliance, and Property Management",
     description:
-      "Managing investments, optimizing portfolios, and ensuring effective profit distribution for maximum returns.",
+      "Overseeing legal requirements, maintaining regulatory compliance, and managing properties to ensure smooth operations and proper governance.",
     image: legal,
-    buttonText: "Legal,Compliance, and Property Management",
+    buttonText: "Legal, Compliance, and Property Management",
   },
 ];
 
@@ -54,13 +54,13 @@ export const Herotwo = () => {
 
   const handleNext = () => {
     setCurrentTopicIndex((prevIndex) =>
-      prevIndex === Herotwos.length - 1 ? 0 : prevIndex + 1
+      prevIndex === Herotwos.length - 1 ? 0 : prevIndex + 1,
     );
   };
 
   const handlePrevious = () => {
     setCurrentTopicIndex((prevIndex) =>
-      prevIndex === 0 ? Herotwos.length - 1 : prevIndex - 1
+      prevIndex === 0 ? Herotwos.length - 1 : prevIndex - 1,
     );
   };
 
@@ -71,8 +71,6 @@ export const Herotwo = () => {
   const handleClosePreview = () => {
     setIsPreviewOpen(false); // Close the preview modal
   };
-
-
 
   const handleCloseLearnMore = () => {
     setIsLearnMoreOpen(false); // Close the Learn More modal
@@ -111,23 +109,17 @@ export const Herotwo = () => {
       {/* Content */}
       <div className="relative z-30 container mx-auto h-full flex flex-col justify-center items-start space-y-4 px-6">
         <h1 className="text-3xl md:text-4xl font-bold">{currentTopic.title}</h1>
-        <p className="text-base md:text-lg text-gray-300">
-         
-        </p>
-     
+        <p className="text-base md:text-lg text-gray-300"></p>
+
         <Button className="text-black px-6 py-2 rounded-md">
           <Link
             className="px-6 py-3 bg-primary text-white "
             rel="noreferrer noopener"
-            to="/services-another">
-              Learn More
+            to="/services-another"
+          >
+            Learn More
           </Link>
         </Button>
-
-
-        
-         
-            
       </div>
 
       {/* Navigation Arrows */}

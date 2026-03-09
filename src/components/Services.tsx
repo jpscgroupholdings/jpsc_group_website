@@ -1,9 +1,8 @@
-
 import managementservice from "../assets/consi/management-consulting.gif";
 import operational from "../assets/consi/operational-services.gif";
 import technology from "../assets/consi/technological.gif";
 import legal from "../assets/consi/legal.gif";
-import auto  from "../assets/consi/marketing-automation.gif";
+import auto from "../assets/consi/marketing-automation.gif";
 interface ServiceProps {
   title: string;
   description: string;
@@ -16,7 +15,6 @@ const serviceList: ServiceProps[] = [
     gif: managementservice,
     title: "Strategic Management Services",
     description:
-    
       "Providing corporate governance, financial oversight, and strategic direction to ensure long-term business success.",
   },
   {
@@ -35,13 +33,13 @@ const serviceList: ServiceProps[] = [
     gif: legal,
     title: "Legal, Compliance, and Property Management",
     description:
-      "Managing investments, optimizing portfolios, and ensuring effective profit distribution for maximum returns.",
+      "Overseeing legal processes, maintaining regulatory compliance, and managing properties to support secure and efficient operations.",
   },
   {
     gif: auto,
     title: "Task Automation",
     description:
-      "Ensuring regulatory compliance, managing legal affairs, protecting intellectual property, and overseeing real estate investments and facilities.",
+      "Implementing automated workflows that help teams handle routine tasks faster, minimize errors, and increase overall productivity.",
   },
 ];
 
@@ -56,7 +54,8 @@ export const Services = () => {
             </span>
           </h2>
           <p className="text-muted-foreground text-xl mt-4">
-            Explore the wide range of services we offer to help your business thrive.
+            Explore the wide range of services we offer to help your business
+            thrive.
           </p>
         </div>
 
@@ -70,7 +69,11 @@ export const Services = () => {
               {/* Icon Placeholder */}
               <div className="flex justify-center items-center mb-4">
                 <div className="w-16 h-16 bg-primary/20 rounded-full flex justify-center items-center">
-                <img src={gif} alt={title} className="w-full h-full object-cover" />
+                  <img
+                    src={gif}
+                    alt={title}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </div>
 
@@ -78,7 +81,9 @@ export const Services = () => {
               <h3 className="text-lg font-bold text-primary mb-2">{title}</h3>
 
               {/* Description */}
-              <p className="text-sm text-gray-600 dark:text-gray-300">{description}</p>
+              <p className="text-sm text-gray-600 dark:text-gray-300">
+                {description}
+              </p>
             </div>
           ))}
         </div>
