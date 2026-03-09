@@ -25,7 +25,7 @@ const Herotwos = [
     buttonText: "Technology and Brand Management Services",
   },
   {
-    title: "Task Automation",
+    title: "Task Automation Testing",
     description:
       "Ensuring regulatory compliance, managing legal affairs, protecting intellectual property, and overseeing real estate investments and facilities.",
     image:  taskauto,
