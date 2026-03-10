@@ -66,7 +66,7 @@ const DesktopDropdown = ({ item }: { item: DropdownRoute }) => {
     <div ref={ref} className="relative">
       <button
         onClick={() => setOpen((v) => !v)}
-        className="flex items-center gap-1 px-3 py-2 text-sm font-medium rounded-md hover:bg-accent transition-colors"
+        className="flex items-center gap-1 px-3 py-2 text-sm font-medium rounded-md hover:bg-accent hover:text-white transition-colors"
       >
         {item.label}
         <ChevronDown className={`h-4 w-4 text-muted-foreground transition-transform duration-150 ${open ? "rotate-180" : ""}`} />
@@ -78,7 +78,7 @@ const DesktopDropdown = ({ item }: { item: DropdownRoute }) => {
               key={child.href}
               to={child.href}
               onClick={() => setOpen(false)}
-              className="block px-4 py-2 text-sm hover:bg-accent transition-colors"
+              className="block px-4 py-2 text-sm hover:bg-accent hover:text-white transition-colors"
             >
               {child.label}
             </Link>
@@ -134,14 +134,14 @@ export const Navbar = () => {
 
   return (
     <>
-      <header className="sticky border-b top-0 z-50 w-full bg-white dark:bg-background dark:border-b-slate-700">
+      <header className="sticky border-b top-0 z-50 w-full bg-white dark:bg-background dark:border-b-slate-700 p-2 md:p-4">
         <div className="container h-14 px-4 mx-auto flex items-center justify-between">
 
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 font-bold text-xl">
             <img src={logo} alt="JPSC Logo" className="w-8 h-8 md:w-10 md:h-10 object-contain" />
-            <span className="hidden sm:inline">JPSC Group Holdings Inc.</span>
-            <span className="sm:hidden">JPSC</span>
+            <span className="hidden lg:inline">JPSC Group Holdings Inc.</span>
+            <span className="lg:hidden">JPSC</span>
           </Link>
 
           {/* ── Desktop Nav ── */}
@@ -151,7 +151,7 @@ export const Navbar = () => {
                 <Link
                   key={item.href}
                   to={item.href}
-                  className="px-3 py-2 text-sm font-medium rounded-md hover:bg-accent transition-colors"
+                  className="px-3 py-2 text-sm font-medium rounded-md hover:bg-accent hover:text-white transition-colors"
                 >
                   {item.label}
                 </Link>
