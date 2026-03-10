@@ -1,5 +1,5 @@
 import "./App.css";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css"; // Import AOS styles
 import { useEffect } from "react";
@@ -7,22 +7,20 @@ import { Footer } from "./components/Footer";
 import { Hero } from "./components/Hero";
 import { Navbar } from "./components/Navbar";
 import { Sponsors } from "./components/Sponsors";
-import { ScrollToTop } from "./components/ScrollToTop";
-import AnotherPage from "./AnotherPage";
-import Missionvisionanotherpage from "./Misionvision-another-page"; // Import the new page
-import Historyanotherpage from "./History-another-page"; // Import the new page
-import Targetmarketsanotherpage from "./Targetmarkets-another-page"; // Import the new page
-import Servicesanotherpage from "./Services-another-page";
-import Contact from "./Contact"; // Import the new page
+import { ScrollToTop } from "./components/ScrollToTop"; // Import the new page
 
-import Aboutanotherpage from "./About-another-page"; // Import the new page
+import AboutPage from "./pages/AboutPage"; // Import the new page
 import { Herotwo } from "./components/Herotwo";
 import { FAQ } from "./components/FAQ";
 
 import { Statistics } from "./components/Statistics";
 
-import { Workplace } from "./Workplace";
-
+import { Workplace } from "./pages/Workplace";
+import { ContactPage } from "./pages/ContactPage";
+import { HistoryPage } from "./pages/HistoryPage";
+import { MissionVisionPage } from "./pages/MissionVisionPage";
+import ServicesPage from "./pages/ServicesPage";
+import { FeaturesPage } from "./pages/FeaturesPage";
 
 function App() {
   useEffect(() => {
@@ -43,39 +41,36 @@ function App() {
         {/* Main content area */}
         <div className="flex-grow">
           <Routes>
+            <Route path="*" element={<Navigate to="/" replace />} />
             {/* Route for the main page */}
             <Route
               path="/"
               element={
-                <>      
+                <>
                   <Hero />
                   <Statistics />
                   <Herotwo />
-                  <Sponsors />  
+                  <Sponsors />
                   <ScrollToTop />
                 </>
               }
             />
-
-            {/* Route for AnotherPage */}
-            <Route path="/another" element={<AnotherPage />} />
-
             {/* Route for Missionvisionanotherpage */}
-            <Route path="/missionvision-another" element={<Missionvisionanotherpage />} />
+            <Route path="/missionvision" element={<MissionVisionPage />} />
 
-            <Route path="/history-another" element={<Historyanotherpage />} />
+            <Route path="/history" element={<HistoryPage />} />
 
-            <Route path="/targetmarkets-another" element={<Targetmarketsanotherpage />} />
+            <Route path="/target-markets" element={<FeaturesPage />} />
 
-            <Route path="/services-another" element={<Servicesanotherpage />} />
-            <Route path="/about-another" element={<Aboutanotherpage />} />
-          
-            <Route path="/contact" element={<Contact />} />
+            <Route path="/services" element={<ServicesPage />} />
+            <Route path="/about" element={<AboutPage />} />
+
+            <Route path="/contact" element={<ContactPage />} />
             <Route path="/workplace" element={<Workplace />} />
             <Route path="/FAQ" element={<FAQ />} />
           </Routes>
         </div>
-      
+
         {/* Footer is always displayed */}
         <Footer />
         <ScrollToTop />
@@ -85,4 +80,3 @@ function App() {
 }
 
 export default App;
-

@@ -1,34 +1,35 @@
-import front from "./assets/workplace/front_desk.jpg"
-import lobby from "./assets/workplace/lobby.jpg"
-import other_room from "./assets/workplace/other_room.jpg"
-import people1 from "./assets/workplace/people1.jpg"
-import people2 from "./assets/workplace/people2.jpg"
-import people3 from "./assets/workplace/people3.jpg"
-import people4 from "./assets/workplace/people4.jpg"
-import people5 from "./assets/workplace/people5.jpg"
-import people6 from "./assets/workplace/people6.jpg"
-import people7 from "./assets/workplace/people7.jpg"
-import people8 from "./assets/workplace/people8.jpg"
-import people9 from "./assets/workplace/people9.jpg"
+import front from "../assets/workplace/front_desk.jpg";
+import lobby from "../assets/workplace/lobby.jpg";
+import other_room from "../assets/workplace/other_room.jpg";
+import people1 from "../assets/workplace/people1.jpg";
+import people2 from "../assets/workplace/people2.jpg";
+import people3 from "../assets/workplace/people3.jpg";
+import people4 from "../assets/workplace/people4.jpg";
+import people5 from "../assets/workplace/people5.jpg";
+import people6 from "../assets/workplace/people6.jpg";
+import people7 from "../assets/workplace/people7.jpg";
+import people8 from "../assets/workplace/people8.jpg";
+import people9 from "../assets/workplace/people9.jpg";
 import "lightbox2/dist/css/lightbox.min.css";
 
-import 'lightbox2/dist/js/lightbox-plus-jquery.min.js';
-
-
-
-
-
+import "lightbox2/dist/js/lightbox-plus-jquery.min.js";
 export const Workplace = () => {
   return (
-    <section id="workplace" className="container py-24 sm:py-32"  data-aos="fade-up">
-      <h2 className="text-3xl md:text-4xl font-bold text-center"   data-aos="fade-up">
+    <section
+      id="workplace"
+      className="container py-24 sm:py-32"
+      data-aos="fade-up"
+    >
+      <h2
+        className="text-3xl md:text-4xl font-bold text-center"
+        data-aos="fade-up"
+      >
         Our
         <span className="bg-gradient-to-b from-primary/60 to-primary text-transparent bg-clip-text">
           {" "}
           Workplace{" "}
         </span>
       </h2>
-
 
       <h3 className="text-xl text-center text-muted-foreground pt-4 pb-8 ">
         Explore our workplace through these images.
@@ -61,10 +62,12 @@ export const Workplace = () => {
             />
           </div>
         </a>
-      
       </div>
 
-      <h2 className="text-3xl md:text-4xl font-bold text-center"   data-aos="fade-up">
+      <h2
+        className="text-3xl md:text-4xl font-bold text-center"
+        data-aos="fade-up"
+      >
         Our
         <span className="bg-gradient-to-b from-primary/60 to-primary text-transparent bg-clip-text">
           {" "}
@@ -74,7 +77,10 @@ export const Workplace = () => {
       <h3 className="text-xl text-center text-muted-foreground pt-4 pb-8">
         Explore our people through these images.
       </h3>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"   data-aos="fade-up">
+      <div
+        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"
+        data-aos="fade-up"
+      >
         <a href={people1} data-lightbox="events" data-title="Event 1">
           <div className="aspect-square bg-gray-200 rounded-lg overflow-hidden transform hover:scale-105 hover:shadow-lg ">
             <img
@@ -157,8 +163,6 @@ export const Workplace = () => {
           </div>
         </a>
       </div>
-
-
     </section>
   );
 };

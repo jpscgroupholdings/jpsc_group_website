@@ -43,7 +43,7 @@ const serviceList: ServiceProps[] = [
   },
 ];
 
-export const Services = () => {
+export const ServicesPage = () => {
   return (
     <section id="services" data-aos="fade-up">
       <section className="container py-24 sm:py-32">
@@ -92,4 +92,4 @@ export const Services = () => {
   );
 };
 
-export default Services;
+export default ServicesPage;

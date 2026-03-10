@@ -79,7 +79,7 @@ const features: FeatureProps[] = [
   },
 ];
 
-export const Features = () => {
+export const FeaturesPage = () => {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedFeature, setSelectedFeature] = useState<FeatureProps | null>(null);

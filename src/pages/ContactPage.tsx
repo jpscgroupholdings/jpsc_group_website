@@ -2,7 +2,7 @@ import emailjs from "emailjs-com";
 import contactpic from "../assets/contact-us.png";
 import { Phone, Mail, MapPin } from "lucide-react";
 
-export const Newsletter = () => {
+export const ContactPage = () => {
   const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 

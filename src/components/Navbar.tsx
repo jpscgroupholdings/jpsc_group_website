@@ -24,17 +24,17 @@ const navItems: NavItem[] = [
     type: "dropdown",
     label: "Company",
     children: [
-      { href: "/about-another", label: "About" },
-      { href: "/missionvision-another", label: "Mission & Vision" },
-      { href: "/history-another", label: "History" },
+      { href: "/about", label: "About" },
+      { href: "/missionvision", label: "Mission & Vision" },
+      { href: "/history", label: "History" },
     ],
   },
   {
     type: "dropdown",
     label: "What We Do",
     children: [
-      { href: "/targetmarkets-another", label: "Target Markets" },
-      { href: "/services-another", label: "Services" },
+      { href: "/target-markets", label: "Target Markets" },
+      { href: "/services", label: "Services" },
     ],
   },
   {

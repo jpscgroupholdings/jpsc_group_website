@@ -1,4 +1,4 @@
-import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "../components/ui/card";
 import { MedalIcon, MapIcon, PlaneIcon  } from "../components/Icons";
 import history from "../assets/history.png";
 
@@ -30,7 +30,7 @@ const features: FeatureProps[] = [
  
 ];
 
-export const HowItWorks = () => {
+export const HistoryPage = () => {
   return (
     <section
       id="history"

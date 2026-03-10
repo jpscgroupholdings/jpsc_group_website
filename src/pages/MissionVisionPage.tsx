@@ -1,4 +1,4 @@
-import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "../components/ui/card";
 import { MedalIcon, MapIcon } from "../components/Icons";
 import target from "../assets/target.png";
 import vis from "../assets/vision.png";
@@ -27,7 +27,7 @@ const features: FeatureProps[] = [
   },
 ];
 
-export const Mission = () => {
+export const MissionVisionPage = () => {
   return (
     <section
       id="missionandvision"
