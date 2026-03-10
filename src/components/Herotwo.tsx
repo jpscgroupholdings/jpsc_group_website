@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { Button } from "./ui/button";
-import { Link } from "react-router-dom";
 
 // Import images
 import tech from "/src/assets/itservices.jpg";
@@ -111,15 +110,15 @@ export const Herotwo = () => {
         <h1 className="text-3xl md:text-4xl font-bold">{currentTopic.title}</h1>
         <p className="text-base md:text-lg text-gray-300"></p>
 
-        <Button className="text-black px-6 py-2 rounded-md">
-          <Link
+       
+          <a
             className="px-6 py-3 bg-primary text-white "
             rel="noreferrer noopener"
-            to="/services-another"
+            href="/services-another"
           >
             Learn More
-          </Link>
-        </Button>
+          </a>
+        
       </div>
 
       {/* Navigation Arrows */}
@@ -143,9 +142,9 @@ export const Herotwo = () => {
             <button
               key={index}
               onClick={() => setCurrentTopicIndex(index)}
-              className={`px-4 py-2 text-sm font-medium rounded-md ${
+              className={`px-4 py-2 text-sm font-medium ${
                 currentTopicIndex === index
-                  ? "border-b-2 border-white text-white"
+                  ? "border-b-2 border-primary text-white"
                   : "text-gray-400"
               }`}
             >

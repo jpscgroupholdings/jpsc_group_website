@@ -45,7 +45,7 @@ export const Sponsors = () => {
 
   return (
     <div
-      className="my-24 px-4 w-full flex items-center justify-center bg-gray-50 py-16 rounded-2xl"
+      className="px-4 w-full flex items-center justify-center bg-gray-50 sm:py-24 py-32 rounded-2xl"
       data-aos="fade-up"
     >
       <div className="w-full max-w-7xl">

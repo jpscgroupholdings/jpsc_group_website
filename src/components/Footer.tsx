@@ -1,174 +1,87 @@
-{/* import { LogoIcon } from "./Icons"; */}
+{
+  /* import { LogoIcon } from "./Icons"; */
+}
 import logo from "../assets/logo.png";
-
+import { Phone, Mail, MapPin } from "lucide-react";
+import { Github, Twitter } from "lucide-react";
 
 export const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
+  const contactUs = [
+    { value: "02-5310-5608", icon: <Phone size={16} /> },
+    { value: "info@digitaloneph.com", icon: <Mail size={16} /> },
+    { value: "Kalayaan Ave, Makati, Metro Manila", icon: <MapPin size={16} /> },
+  ];
+
+  const companyList = [
+    { name: "About us", path: "/about-another" },
+    { name: "Mission / Vision", path: "/missionvision-another" },
+    { name: "History", path: "/history-another" },
+  ];
+
   return (
-    <footer id="footer" data-aos="fade-up">
-      <hr className="w-11/12 mx-auto" />
-
-      <section className="container py-20 grid grid-cols-2 md:grid-cols-4 xl:grid-cols-6 gap-x-12 gap-y-8">
-        <div className="col-span-full xl:col-span-2" data-aos="fade-right">
-          <a
-            rel="noreferrer noopener"
-            href="/"
-            className="font-bold text-xl flex items-center"
-          >
-            <img src={logo} alt="Company Logo" className="h-8 w-auto mr-2" />
-            JPSC
-          </a>
-          <p className="mt-4 opacity-60">
-            JPSC Group Holdings Inc. is a leading provider of innovative solutions
-          </p>
-          <p className="text-lg text-gray-600 dark:text-gray-300 mt-2">
-            <span role="img" aria-label="phone">📞</span> +63 927-530-0844
-          </p>
-          <p className="text-lg text-gray-600 dark:text-gray-300">
-            <span role="img" aria-label="email">📧</span> info@digitaloneph.com
-          </p>
-          <p className="text-lg text-gray-600 dark:text-gray-300">
-            <span role="img" aria-label="location">📍</span> Kalayaan Ave, Makati, 1210 Metro Manila
-          </p>
-        </div>
-       {/*
-        <div className="flex flex-col gap-2">
-          <h3 className="font-bold text-lg">Follow US</h3>
-          <div>
+    <footer
+      id="footer"
+      data-aos="fade-up"
+      className="bg-gray-50 border-t border-primary"
+    >
+      <div className="max-w-7xl mx-auto px-4 lg:px-6 py-12 lg:py-16">
+        <section className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+          <div className="lg:col-span-1 space-y-4">
             <a
               rel="noreferrer noopener"
-              href="#"
-              className="opacity-60 hover:opacity-100"
+              href="/"
+              className="flex items-center gap-3 font-bold text-2xl text-primary"
             >
-              Github
+              <img src={logo} alt="Company Logo" className="h-10 w-auto" />
+              JPSC
             </a>
+            <p className="text-gray-400 text-sm mb-6 leading-relaxed max-w-60">
+              JPSC Group Holdings Inc. is a leading provider of innovative
+              solutions
+            </p>
           </div>
 
-          <div>
-            <a
-              rel="noreferrer noopener"
-              href="#"
-              className="opacity-60 hover:opacity-100"
-            >
-              Twitter
-            </a>
+          <div className="">
+            <h4 className="font-semibold text-lg mb-4 text-primary">Contact us</h4>
+            <div className="space-y-3">
+              {contactUs.map((item, index) => (
+                <div className="flex gap-2">
+                  <div className="text-gray-500">{item.icon}</div>
+                  <p
+                    key={index}
+                    className="text-gray-500 hover:text-gray-600 transition-colors text-sm"
+                  >
+                    {item.value}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
 
-          <div>
-            <a
-              rel="noreferrer noopener"
-              href="#"
-              className="opacity-60 hover:opacity-100"
-            >
-              Dribbble
-            </a>
+          <div className="">
+            <h4 className="font-semibold text-lg mb-4 text-primary">Company</h4>
+            <div className="space-y-3 flex flex-col">
+              {companyList.map((item, index) => (
+                <a
+                  key={index}
+                  href={item.path}
+                  className="text-gray-500 hover:text-primary transition-colors text-sm"
+                >
+                  {item.name}
+                </a>
+              ))}
+            </div>
           </div>
-        </div>
+        </section>
+      </div>
 
-        <div className="flex flex-col gap-2">
-          <h3 className="font-bold text-lg">Platforms</h3>
-          <div>
-            <a
-              rel="noreferrer noopener"
-              href="#"
-              className="opacity-60 hover:opacity-100"
-            >
-              Web
-            </a>
-          </div>
-
-          <div>
-            <a
-              rel="noreferrer noopener"
-              href="#"
-              className="opacity-60 hover:opacity-100"
-            >
-              Mobile
-            </a>
-          </div>
-
-          <div>
-            <a
-              rel="noreferrer noopener"
-              href="#"
-              className="opacity-60 hover:opacity-100"
-            >
-              Desktop
-            </a>
-          </div>
-        </div>
-
-        <div className="flex flex-col gap-2">
-          <h3 className="font-bold text-lg">About</h3>
-          <div>
-            <a
-              rel="noreferrer noopener"
-              href="/about-another"
-              className="opacity-60 hover:opacity-100"
-            >
-              Company
-            </a>
-          </div>
-
-          <div>
-            <a
-              rel="noreferrer noopener"
-              href="/missionvision-another"
-              className="opacity-60 hover:opacity-100"
-            >
-              Mission & Vision
-            </a>
-          </div>
-
-          <div>
-            <a
-              rel="noreferrer noopener"
-              href="history-another"
-              className="opacity-60 hover:opacity-100"
-            >
-              History
-            </a>
-          </div>
-        </div>
-
-        <div className="flex flex-col gap-2">
-          <h3 className="font-bold text-lg">Community</h3>
-          <div>
-            <a
-              rel="noreferrer noopener"
-              href="#"
-              className="opacity-60 hover:opacity-100"
-            >
-              Youtube
-            </a>
-          </div>
-
-          <div>
-            <a
-              rel="noreferrer noopener"
-              href="#"
-              className="opacity-60 hover:opacity-100"
-            >
-              Discord
-            </a>
-          </div>
-
-          <div>
-            <a
-              rel="noreferrer noopener"
-              href={credits}
-              className="opacity-60 hover:opacity-100"
-            >
-              Credits
-            </a>
-          </div>
-        </div> */}
-      </section>
-
-      <section className="container pb-14 text-center">
-        <h3>
-          &copy; 2025 JPSC Group Holdings Inc{" "}
-        </h3> 
-      </section>
+      <div className="border-t border-gray-200 py-8">
+        <p className="text-gray-400 text-sm text-center">
+          © {currentYear} JPSC Group Holdings Inc. All rights reserved.
+        </p>
+      </div>
     </footer>
   );
 };
