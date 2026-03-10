@@ -1,5 +1,10 @@
 import "./App.css";
-import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css"; // Import AOS styles
 import { useEffect } from "react";
@@ -10,7 +15,7 @@ import { Sponsors } from "./components/Sponsors";
 import { ScrollToTop } from "./components/ScrollToTop"; // Import the new page
 
 import AboutPage from "./pages/AboutPage"; // Import the new page
-import { Herotwo } from "./components/Herotwo";
+import { HeroSlides } from "./components/HeroSlides";
 import { FAQ } from "./components/FAQ";
 
 import { Statistics } from "./components/Statistics";
@@ -49,7 +54,7 @@ function App() {
                 <>
                   <Hero />
                   <Statistics />
-                  <Herotwo />
+                  <HeroSlides />
                   <Sponsors />
                   <ScrollToTop />
                 </>

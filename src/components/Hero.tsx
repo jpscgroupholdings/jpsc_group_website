@@ -14,7 +14,7 @@ export const Hero = () => {
         src={vid} // Single video source
         autoPlay
         loop // Enable looping for the video
-        muted 
+        muted
         data-aos="fade-in"
       ></video>
 
@@ -34,30 +34,21 @@ export const Hero = () => {
         </p>
 
         <div className="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-4">
-          
-          {/* <Button asChild className="w-full md:w-auto">  
-            <a
-              href="/services-another"
-              className="px-6 py-3 bg-primary text-white rounded-lg w-full md:w-auto text-center"
-            >
-               Services
-            </a>
-          </Button> */}
+          <Link
+            className="px-6 py-3 bg-primary hover:scale-105 text-white rounded-lg w-full md:w-auto text-center"
+            rel="noreferrer noopener"
+            to="/services"
+          >
+            Services
+          </Link>
 
-            <Link
-              className="px-6 py-3 bg-primary text-white rounded-lg w-full md:w-auto text-center"
-              rel="noreferrer noopener"
-              to="/services-another">
-                Services
-            </Link>
-
-            <Link
-              className="px-6 py-3 bg-primary text-white rounded-lg w-full md:w-auto text-center"
-              rel="noreferrer noopener"
-              to="/contact">
-                Contact Us
-            </Link>
-
+          <Link
+            className="px-6 py-3 bg-primary hover:scale-105 text-white rounded-lg w-full md:w-auto text-center"
+            rel="noreferrer noopener"
+            to="/contact"
+          >
+            Contact Us
+          </Link>
         </div>
       </div>
     </section>

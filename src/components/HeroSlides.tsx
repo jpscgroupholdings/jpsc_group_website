@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Button } from "./ui/button";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 // Import images
 import tech from "/src/assets/itservices.jpg";
@@ -8,7 +9,7 @@ import taskauto from "/src/assets/taskauto.webp";
 import op from "/src/assets/operational.jpg";
 import legal from "/src/assets/legal.jpeg";
 
-const Herotwos = [
+const heroSlides = [
   {
     title: "Strategic Management Services",
     description:
@@ -46,20 +47,20 @@ const Herotwos = [
   },
 ];
 
-export const Herotwo = () => {
+export const HeroSlides = () => {
   const [currentTopicIndex, setCurrentTopicIndex] = useState(0);
   const [isPreviewOpen, setIsPreviewOpen] = useState(false);
   const [isLearnMoreOpen, setIsLearnMoreOpen] = useState(false);
 
   const handleNext = () => {
     setCurrentTopicIndex((prevIndex) =>
-      prevIndex === Herotwos.length - 1 ? 0 : prevIndex + 1,
+      prevIndex === heroSlides.length - 1 ? 0 : prevIndex + 1,
     );
   };
 
   const handlePrevious = () => {
     setCurrentTopicIndex((prevIndex) =>
-      prevIndex === 0 ? Herotwos.length - 1 : prevIndex - 1,
+      prevIndex === 0 ? heroSlides.length - 1 : prevIndex - 1,
     );
   };
 
@@ -75,7 +76,7 @@ export const Herotwo = () => {
     setIsLearnMoreOpen(false); // Close the Learn More modal
   };
 
-  const currentTopic = Herotwos[currentTopicIndex];
+  const currentTopic = heroSlides[currentTopicIndex];
 
   // Auto-switch to the next topic every 3 seconds
   useEffect(() => {
@@ -87,17 +88,17 @@ export const Herotwo = () => {
   }, [currentTopicIndex]);
 
   return (
-    <section className="relative w-full h-[500px] bg-white text-white">
+    <section className="relative w-full h-[70vh] text-white overflow-hidden">
       {/* Background Image */}
       <div
-        className={`absolute inset-0 bg-cover bg-center transition-transform duration-500`}
+        className={`absolute inset-0 bg-cover bg-center transition-all duration-700 scale-105`}
         style={{
           backgroundImage: `url(${currentTopic.image})`,
         }}
       >
         {/* Clickable Layer */}
         <div
-          className="absolute inset-0 z-20 cursor-pointer"
+          className="absolute inset-0 z-20 cursor-zoom-in"
           onClick={handleImageClick}
         ></div>
       </div>
@@ -106,57 +107,66 @@ export const Herotwo = () => {
       <div className="absolute inset-0 bg-black/50 pointer-events-none z-10"></div>
 
       {/* Content */}
-      <div className="relative z-30 container mx-auto h-full flex flex-col justify-center items-start space-y-4 px-6">
+      <div className="relative z-30 container mx-auto h-full flex flex-col justify-center items-start gap-5 px-6">
         <h1 className="text-3xl md:text-4xl font-bold">{currentTopic.title}</h1>
         <p className="text-base md:text-lg text-gray-300"></p>
 
-       
-          <a
-            className="px-6 py-3 bg-primary text-white "
-            rel="noreferrer noopener"
-            href="/services-another"
-          >
-            Learn More
-          </a>
-        
+        <a
+          href="/services"
+          rel="noreferrer noopener"
+          className="px-6 py-3 bg-primary hover:bg-primary/90 text-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300"
+        >
+          Learn More →
+        </a>
       </div>
 
       {/* Navigation Arrows */}
       <button
         onClick={handlePrevious}
-        className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-3 rounded-full z-30"
+        className="absolute left-6 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 backdrop-blur-md p-3 rounded-full transition z-30"
       >
-        &#8592;
+        <ChevronLeft size={22} />
       </button>
+
       <button
         onClick={handleNext}
-        className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-3 rounded-full z-30"
+        className="absolute right-6 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 backdrop-blur-md p-3 rounded-full transition z-30"
       >
-        &#8594;
+        <ChevronRight size={22} />
       </button>
 
       {/* Topic Selector */}
-      <div className="absolute bottom-0 left-0 right-0 bg-black/70 py-4 z-30">
-        <div className="container mx-auto flex justify-center space-x-4">
-          {Herotwos.map((topic, index) => (
-            <button
-              key={index}
-              onClick={() => setCurrentTopicIndex(index)}
-              className={`px-4 py-2 text-sm font-medium ${
-                currentTopicIndex === index
-                  ? "border-b-2 border-primary text-white"
-                  : "text-gray-400"
-              }`}
-            >
-              {topic.buttonText}
-            </button>
-          ))}
+      <div className="absolute bottom-0 left-0 right-0 bg-black/40 backdrop-blur-md py-3 z-30">
+        <div className="container mx-auto px-4">
+          <div className="md:overflow-x-hidden overflow-x-auto flex gap-3 justify-start md:justify-center">
+            {heroSlides.map((slide, index) => (
+              <button
+                key={slide.title}
+                onClick={() => setCurrentTopicIndex(index)}
+                className={`
+                        whitespace-nowrap
+                        px-4 py-2
+                        text-sm md:text-lg
+                        font-medium
+                        transition
+                        border-b-2
+            ${
+              currentTopicIndex === index
+                ? "border-primary text-white"
+                : "border-transparent text-gray-300 hover:text-white"
+            }
+          `}
+              >
+                {slide.buttonText}
+              </button>
+            ))}
+          </div>
         </div>
       </div>
 
       {/* Image Preview Modal */}
       {isPreviewOpen && (
-        <div className="fixed inset-0 bg-black/90 z-50 flex justify-center items-center">
+        <div className="fixed inset-0 bg-black/90 backdrop-blur-sm z-50 flex justify-center items-center">
           <div
             className="absolute inset-0 bg-cover bg-center"
             style={{
@@ -174,12 +184,10 @@ export const Herotwo = () => {
 
       {/* Learn More Modal */}
       {isLearnMoreOpen && (
-        <div className="fixed inset-0 bg-black/70 z-50 flex justify-center items-center">
+        <div className="fixed inset-0 bg-black/40 backdrop-blur-md z-50 flex justify-center items-center">
           <div className="bg-white text-black p-6 rounded-lg shadow-lg w-[90%] max-w-md">
             <h2 className="text-xl font-bold mb-4">{currentTopic.title}</h2>
-            <p className="text-sm text-gray-700 mb-4">
-              {currentTopic.description}
-            </p>
+            <p className="text-gray-200 max-w-lg">{currentTopic.description}</p>
             <Button
               className="bg-black text-white px-4 py-2 rounded-md"
               onClick={handleCloseLearnMore}
