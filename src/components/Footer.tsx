@@ -3,7 +3,6 @@
 }
 import logo from "../assets/logo.png";
 import { Phone, Mail, MapPin } from "lucide-react";
-import { Github, Twitter } from "lucide-react";
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
