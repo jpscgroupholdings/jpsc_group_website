@@ -8,9 +8,21 @@ export const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const contactUs = [
-    { value: "02-5310-5608", icon: <Phone size={16} /> },
-    { value: "info@digitaloneph.com", icon: <Mail size={16} /> },
-    { value: "Kalayaan Ave, Makati, Metro Manila", icon: <MapPin size={16} /> },
+    {
+      value: "02-5310-5608",
+      icon: <Phone size={16} />,
+      href: "tel:02-5310-5608",
+    },
+    {
+      value: "info@digitaloneph.com",
+      icon: <Mail size={16} />,
+      href: "mailto:info@digitaloneph.com",
+    },
+    {
+      value: "Kalayaan Ave, Makati, Metro Manila",
+      icon: <MapPin size={16} />,
+      href: "https://www.google.com/maps?q=14.566264730473002,121.02815318494143",
+    },
   ];
 
   const companyList = [
@@ -43,17 +55,22 @@ export const Footer = () => {
           </div>
 
           <div className="">
-            <h4 className="font-semibold text-lg mb-4 text-primary">Contact us</h4>
+            <h4 className="font-semibold text-lg mb-4 text-primary">
+              Contact us
+            </h4>
             <div className="space-y-3">
               {contactUs.map((item, index) => (
-                <div className="flex gap-2">
-                  <div className="text-gray-500">{item.icon}</div>
-                  <p
+                <div className="flex gap-2 group">
+                  <div className="text-gray-500 group-hover:text-primary">{item.icon}</div>
+                  <a
                     key={index}
-                    className="text-gray-500 hover:text-gray-600 transition-colors text-sm"
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-500 group-hover:text-primary transition-colors text-sm"
                   >
                     {item.value}
-                  </p>
+                  </a>
                 </div>
               ))}
             </div>
