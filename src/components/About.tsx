@@ -1,9 +1,9 @@
 import logo from "../assets/logo.png";
-
+import company_structure from "../assets/jpsc_structure.jpg";
 export const About = () => {
   return (
     <section id="about" className="container sm:py-32" data-aos="fade-up">
-      <div className="p-8 md:p-12">
+      <div className="p-8 md:p-12 space-y-24">
         {/* Top Section */}
         <div className="flex flex-col md:flex-row items-center gap-10">
           {/* Logo */}
@@ -37,6 +37,13 @@ export const About = () => {
               lasting value to stakeholders with professionalism and integrity.
             </p>
           </div>
+        </div>
+        <div className="flex justify-center">
+          <img
+            src={company_structure}
+            alt="Company Structure"
+            className="rounded-lg border shadow-md max-w-full md:max-w-4xl"
+          />
         </div>
       </div>
     </section>
