@@ -1,53 +1,66 @@
 import { Link } from "react-router-dom";
-import vid from "../assets/landscape.mp4"; // Single video
-import "react-responsive-carousel/lib/styles/carousel.min.css";
+import vid from "../assets/landscape.mp4";
 
 export const Hero = () => {
   return (
-    <section
-      className="relative w-full h-screen flex flex-col justify-center items-center text-center space-y-10 py-20 md:py-32"
-      data-aos="fade-up"
-    >
+    <section className="relative w-full h-[89vh] overflow-hidden">
       {/* Background Video */}
       <video
-        className="absolute top-0 left-0 w-full h-full object-cover -z-10" // Lowered z-index to ensure video is behind content
-        src={vid} // Single video source
+        className="absolute inset-0 w-full h-full object-cover"
+        src={vid}
         autoPlay
-        loop // Enable looping for the video
+        loop
         muted
-        data-aos="fade-in"
-      ></video>
+        playsInline
+      />
 
-      <div
-        className="relative z-10 space-y-6" // Ensures content is above the video
-        data-aos="zoom-in"
-      >
-        <main className="text-4xl md:text-5xl font-bold text-yellow-500 bg-black/50 p-4 rounded-lg">
-          <h1>
-            <span className="block">JPSC</span>
-            <span className="block">Group Holdings Inc.</span>
-          </h1>
-        </main>
-        <p className="text-lg md:text-xl text-gray-200 bg-black/50 p-4 rounded-lg">
-          Welcome to JPSC Group Holdings Inc. <br />
-          Building Success Through Expertise.
-        </p>
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-black/40" />
 
-        <div className="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-4">
+      {/* Content */}
+      <div className="relative z-10 h-full flex flex-col justify-between px-8 md:px-16 py-10">
+        {/* Main headline — bottom-left aligned like Crow Holdings */}
+        <div className="flex-1 flex items-center">
+          <div className="max-w-2xl border-l border-white/60 pl-6 space-y-4">
+            <h1
+              className="text-white font-serif leading-tight"
+              style={{ fontSize: "clamp(2.5rem, 5vw, 4rem)" }}
+            >
+              Provider of Innovative Solutions
+            </h1>
+            <p className="text-white/70 text-sm md:text-base max-w-md leading-relaxed">
+              We partner with organizations to design and deliver
+              technology-driven strategies that solve complex challenges,
+              streamline operations, and unlock sustainable growth — turning
+              vision into measurable outcomes.
+            </p>
+          </div>
+        </div>
+
+        {/* CTA Links — bottom row like Crow Holdings arrows */}
+        <div className="flex flex-col md:flex-row gap-6 md:gap-12">
           <Link
-            className="px-6 py-3 bg-primary hover:scale-105 text-white rounded-lg w-full md:w-auto text-center"
-            rel="noreferrer noopener"
             to="/services"
+            className="group flex items-center gap-3 text-white text-sm tracking-widest uppercase"
           >
-            Services
+            <span className="border-b border-white/40 pb-0.5 group-hover:border-white transition-colors duration-300">
+              Our Services
+            </span>
+            <span className="flex items-center justify-center w-8 h-8 rounded-full bg-amber-500 group-hover:border-white group-hover:bg-white/10 transition-all duration-300 text-xs">
+              →
+            </span>
           </Link>
 
           <Link
-            className="px-6 py-3 bg-primary hover:scale-105 text-white rounded-lg w-full md:w-auto text-center"
-            rel="noreferrer noopener"
             to="/contact"
+            className="group flex items-center gap-3 text-white text-sm tracking-widest uppercase"
           >
-            Contact Us
+            <span className="border-b border-white/40 pb-0.5 group-hover:border-white transition-colors duration-300">
+              Contact Us
+            </span>
+            <span className="flex items-center justify-center w-8 h-8 rounded-full bg-amber-500 group-hover:border-white group-hover:bg-white/10 transition-all duration-300 text-xs">
+              →
+            </span>
           </Link>
         </div>
       </div>
