@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import vid from "../assets/landscape.mp4";
+import vid from "../../assets/landscape.mp4"
 
 export const Hero = () => {
   return (
