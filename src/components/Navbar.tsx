@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
-import { useState, useRef, useEffect } from "react";
-import { Menu, ChevronDown, X } from "lucide-react";
-import { ModeToggle } from "./mode-toggle";
+import { useState, useEffect } from "react";
+import {  ChevronDown } from "lucide-react";
 import logo from "../assets/logo.png";
 import newLogo from "../../public/jpscgroup.png";
 
