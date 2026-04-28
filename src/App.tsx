@@ -9,16 +9,16 @@ import AOS from "aos";
 import "aos/dist/aos.css"; // Import AOS styles
 import { useEffect } from "react";
 import { Footer } from "./components/Footer";
-import { Hero } from "./components/Hero";
+import { Hero } from "./sections/homepage/Hero";
 import { Navbar } from "./components/Navbar";
 import { Sponsors } from "./components/Sponsors";
 import { ScrollToTop } from "./components/ScrollToTop"; // Import the new page
 
 import AboutPage from "./pages/AboutPage"; // Import the new page
-import { HeroSlides } from "./components/HeroSlides";
+import GroupOverview from "./sections/homepage/GroupOverview";
 import { FAQ } from "./components/FAQ";
 
-import { Statistics } from "./components/Statistics";
+import { Statistics } from "./sections/homepage/Statistics";
 
 import { Workplace } from "./pages/Workplace";
 import { ContactPage } from "./pages/ContactPage";
@@ -53,8 +53,8 @@ function App() {
               element={
                 <>
                   <Hero />
+                  <GroupOverview />
                   <Statistics />
-                  <HeroSlides />
                   <Sponsors />
                   <ScrollToTop />
                 </>
