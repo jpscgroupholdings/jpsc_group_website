@@ -21,12 +21,12 @@ export const Hero = () => {
       <div className="relative z-10 h-full flex flex-col justify-between px-8 md:px-16 py-10">
         {/* Main headline — bottom-left aligned like Crow Holdings */}
         <div className="flex-1 flex items-center">
-          <div className="max-w-2xl border-l border-white/60 pl-6 space-y-4">
+          <div className="max-w-2xl border-l border-brand-primary-50/60 pl-6 space-y-4">
             <h1
-              className="text-white font-serif leading-tight"
-              style={{ fontSize: "clamp(2.5rem, 5vw, 4rem)" }}
+              className="text-brand-accent-500 font-serif leading-tight text-nowrap"
+              style={{ fontSize: "clamp(3rem, 6vw, 5rem)" }}
             >
-              Provider of Innovative Solutions
+            JPSC Group Holdings Inc.
             </h1>
             <p className="text-white/70 text-sm md:text-base max-w-md leading-relaxed">
               We partner with organizations to design and deliver
@@ -46,7 +46,7 @@ export const Hero = () => {
             <span className="border-b border-white/40 pb-0.5 group-hover:border-white transition-colors duration-300">
               Our Services
             </span>
-            <span className="flex items-center justify-center w-8 h-8 rounded-full bg-amber-500 group-hover:border-white group-hover:bg-white/10 transition-all duration-300 text-xs">
+            <span className="flex items-center justify-center w-8 h-8 rounded-full bg-brand-accent-500 group-hover:border-white group-hover:bg-brand-accent-600 transition-all duration-300 text-xs">
               →
             </span>
           </Link>
@@ -58,7 +58,7 @@ export const Hero = () => {
             <span className="border-b border-white/40 pb-0.5 group-hover:border-white transition-colors duration-300">
               Contact Us
             </span>
-            <span className="flex items-center justify-center w-8 h-8 rounded-full bg-amber-500 group-hover:border-white group-hover:bg-white/10 transition-all duration-300 text-xs">
+            <span className="flex items-center justify-center w-8 h-8 rounded-full bg-brand-accent-500 group-hover:border-white group-hover:bg-brand-accent-600 transition-all duration-300 text-xs">
               →
             </span>
           </Link>
