@@ -1,5 +1,3 @@
-"use client";
-
 import React, { forwardRef, SelectHTMLAttributes } from "react";
 import clsx from "clsx";
 
