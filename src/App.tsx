@@ -18,7 +18,6 @@ import AboutPage from "./pages/AboutPage"; // Import the new page
 import GroupOverview from "./sections/homepage/GroupOverview";
 import { FAQ } from "./components/FAQ";
 
-import { Statistics } from "./sections/homepage/Statistics";
 
 import { Workplace } from "./pages/Workplace";
 import { ContactPage } from "./pages/ContactPage";
@@ -58,7 +57,6 @@ function App() {
                 <div className="bg-white">
                   <Hero />
                   <GroupOverview />
-                  <Statistics />
                   <Subsidaries />
                   <CSRPreview />
                   <GlobalPresencePreview />
