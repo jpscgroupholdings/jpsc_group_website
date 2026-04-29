@@ -115,7 +115,7 @@ export const Navbar = () => {
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${menuOpen ? "bg-transparent" : scrolled ? "bg-white backdrop-blur-sm shadow-sm" : "bg-transparent"}`}
       >
-        <div className="px-6 md:px-12 mx-auto flex items-center justify-between h-16 md:h-20 max-w-7xl">
+        <div className="px-6 md:px-12 mx-auto flex items-center justify-between h-16 md:h-20 max-w-[90rem]">
           {/* Logo */}
           <Link to="/" onClick={() => setMenuOpen(false)}>
             <img
