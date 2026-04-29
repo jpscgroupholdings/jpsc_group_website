@@ -29,3 +29,5 @@ dist (3).zip
 dist.zip
 
 .vscode
+
+.env
