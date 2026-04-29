@@ -11,7 +11,7 @@ import { useEffect } from "react";
 import { Footer } from "./components/Footer";
 import { Hero } from "./sections/homepage/Hero";
 import { Navbar } from "./components/Navbar";
-import { Sponsors } from "./components/Sponsors";
+import { Subsidaries } from "./sections/homepage/Subsidaries";
 import { ScrollToTop } from "./components/ScrollToTop"; // Import the new page
 
 import AboutPage from "./pages/AboutPage"; // Import the new page
@@ -26,6 +26,10 @@ import { HistoryPage } from "./pages/HistoryPage";
 import { MissionVisionPage } from "./pages/MissionVisionPage";
 import ServicesPage from "./pages/ServicesPage";
 import { FeaturesPage } from "./pages/FeaturesPage";
+import CSRPreview from "./sections/homepage/CSRPreview";
+import GlobalPresencePreview from "./sections/homepage/GlobalPresencePreview";
+import CTAButton from "./sections/homepage/CTAButton";
+import ContactUsPage from "./sections/homepage/ContactUs";
 
 function App() {
   useEffect(() => {
@@ -51,13 +55,17 @@ function App() {
             <Route
               path="/"
               element={
-                <>
+                <div className="bg-white">
                   <Hero />
                   <GroupOverview />
                   <Statistics />
-                  <Sponsors />
+                  <Subsidaries />
+                  <CSRPreview />
+                  <GlobalPresencePreview />
+                  <CTAButton />
+                  <ContactUsPage />
                   <ScrollToTop />
-                </>
+                </div>
               }
             />
             {/* Route for Missionvisionanotherpage */}
