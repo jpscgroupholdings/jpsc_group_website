@@ -125,7 +125,7 @@ const ContactUs = () => {
                         const Icon = link.icon;
                         return (
                           <div className="flex items-center gap-2 px-4">
-                            <Icon size={16}/>
+                            <Icon size={16} />
                             <a
                               key={link.label}
                               href={link.href}
@@ -146,6 +146,7 @@ const ContactUs = () => {
               <p className="text-sm font-medium text-brand-primary-500">
                 Ready to streamline your transactions and expand your reach?
               </p>
+              <a href="/contact" className="underline text-sm">Learn More</a>
             </div>
           </div>
         </div>
