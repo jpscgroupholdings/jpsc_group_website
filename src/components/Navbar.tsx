@@ -1,7 +1,8 @@
-import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
-import {  ChevronDown } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
+import { useState, useEffect, useRef } from "react";
+import { ChevronDown } from "lucide-react";
 import logo from "../assets/logo.png";
+import logowhite from "../assets/logo-white.png";
 
 interface SimpleRoute {
   type: "link";
@@ -47,7 +48,74 @@ const navItems: NavItem[] = [
   },
 ];
 
-// Menu Accordion
+// ─── Desktop Dropdown Item ────────────────────────────────────────────────────
+
+const DesktopDropdown = ({
+  item,
+  scrolled,
+  isHero
+}: {
+  item: DropdownRoute;
+  scrolled: boolean;
+  isHero: boolean
+}) => {
+  const [open, setOpen] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const handleMouseEnter = () => {
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    setOpen(true);
+  };
+
+  const handleMouseLeave = () => {
+    timeoutRef.current = setTimeout(() => setOpen(false), 120);
+  };
+
+  return (
+    <div
+      ref={ref}
+      className="relative"
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
+      <button
+        className={`flex items-center gap-1 text-xs tracking-[0.15em] uppercase font-medium transition-colors duration-300 group ${
+          scrolled || !isHero ? "text-gray-700 hover:text-gray-900" : "text-white/80 hover:text-white"
+        }`}
+      >
+        {item.label}
+        <ChevronDown
+          className={`h-3 w-3 transition-transform duration-200 ${open ? "rotate-180" : ""}`}
+        />
+      </button>
+
+      {/* Dropdown panel */}
+      <div
+        className={`absolute top-full left-1/2 -translate-x-1/2 mt-4 w-44 transition-all duration-200 origin-top ${
+          open ? "opacity-100 scale-y-100 pointer-events-auto" : "opacity-0 scale-y-95 pointer-events-none"
+        }`}
+      >
+        {/* Arrow */}
+        <div className="absolute -top-1.5 left-1/2 -translate-x-1/2 w-3 h-3 rotate-45 bg-white border-l border-t border-gray-100" />
+
+        <div className="relative bg-white rounded-xl shadow-xl border border-gray-100 overflow-hidden py-1.5">
+          {item.children.map((child) => (
+            <Link
+              key={child.href}
+              to={child.href}
+              className="block px-4 py-2.5 text-xs tracking-[0.1em] uppercase font-medium text-gray-500 hover:text-gray-900 hover:bg-gray-50 transition-colors"
+            >
+              {child.label}
+            </Link>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// ─── Mobile Menu Accordion ────────────────────────────────────────────────────
 
 const MenuAccordion = ({
   item,
@@ -94,6 +162,10 @@ const MenuAccordion = ({
 // ─── Navbar ───────────────────────────────────────────────────────────────────
 
 export const Navbar = () => {
+
+  const {pathname} = useLocation();
+  const isHero = pathname === "/";
+
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -113,48 +185,86 @@ export const Navbar = () => {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${menuOpen ? "bg-transparent" : scrolled ? "bg-white backdrop-blur-sm shadow-sm" : "bg-transparent"}`}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+          menuOpen && isHero
+            ? "bg-transparent"
+            : scrolled
+            ? "bg-white backdrop-blur-sm shadow-sm"
+            : !isHero ?
+            "bg-white"
+            : "bg-transparent"
+        }`}
       >
-        <div className="px-6 md:px-12 mx-auto flex items-center justify-between h-16 md:h-20 max-w-[90rem]">
+        <div className="px-6 md:px-12 mx-auto flex items-center justify-between h-16 md:h-24 max-w-[90rem]">
           {/* Logo */}
           <Link to="/" onClick={() => setMenuOpen(false)}>
             <img
-              src={logo}
+              src={scrolled && !menuOpen ? logo : !isHero ? logo : logowhite}
               alt="JPSC Logo"
-              className="w-36 md:w-44 transition-all duration-300"
+              className="w-36 md:w-52 transition-all duration-300"
             />
           </Link>
 
-          {/** Right side */}
-          <div className="flex items-center gap-4">
-            {/** Menu button */}
-            <button
-              onClick={() => setMenuOpen((prev) => !prev)}
-              className={`flex items-center gap-2 text-xs tracking-[0.2rem] uppercase font-medium transition-colors duration-300 ${scrolled && !menuOpen ? "text-gray-800" : "text-amber-400"}`}
-            >
-              <span>Menu</span>
-              <div className="flex flex-col w-5 gap-[5px]">
-                <span
-                  className={`h-px block bg-current transition-all duration-300 origin-center ${menuOpen ? "rotate-45 translate-y-[6px]" : ""}`}
-                />
-                <span
-                  className={`h-px block bg-current transition-all duration-300 ${menuOpen ? "opacity-0 scale-x-0" : ""}`}
-                />
-                <span
-                  className={`h-px block bg-current transition-all duration-300 origin-center ${menuOpen ? "-rotate-45 -translate-y-[6px]" : ""}`}
-                />
-              </div>
-            </button>
-          </div>
+          {/* Desktop nav — hidden on mobile */}
+          <nav className="hidden lg:flex items-center gap-8">
+            {navItems.map((item) => {
+              if (item.type === "link") {
+                return (
+                  <Link
+                    key={item.href}
+                    to={item.href}
+                    className={`text-xs tracking-[0.15em] uppercase font-medium transition-colors duration-300 ${
+                      scrolled || !isHero
+                        ? "text-gray-700 hover:text-gray-900"
+                        : "text-white/80 hover:text-white"
+                    }`}
+                  >
+                    {item.label}
+                  </Link>
+                );
+              }
+              return (
+                <DesktopDropdown key={item.label} item={item} scrolled={scrolled} isHero={isHero} />
+              );
+            })}
+          </nav>
+
+          {/* Right side — menu button (mobile only) */}
+          <button
+            onClick={() => setMenuOpen((prev) => !prev)}
+            className={`lg:hidden flex items-center gap-2 text-xs tracking-[0.2rem] uppercase font-medium transition-colors duration-300 ${
+              scrolled && !menuOpen ? "text-gray-800" : "text-amber-400"
+            }`}
+          >
+            <span>Menu</span>
+            <div className="flex flex-col w-5 gap-[5px]">
+              <span
+                className={`h-px block bg-current transition-all duration-300 origin-center ${
+                  menuOpen ? "rotate-45 translate-y-[6px]" : ""
+                }`}
+              />
+              <span
+                className={`h-px block bg-current transition-all duration-300 ${
+                  menuOpen ? "opacity-0 scale-x-0" : ""
+                }`}
+              />
+              <span
+                className={`h-px block bg-current transition-all duration-300 origin-center ${
+                  menuOpen ? "-rotate-45 -translate-y-[6px]" : ""
+                }`}
+              />
+            </div>
+          </button>
         </div>
       </header>
 
-      {/** Full screen menu overlay */}
+      {/* Full screen menu overlay — mobile only */}
       <div
-        className={`fixed inset-0 z-40 bg-[#0d1a2d] transition-all duration-500 ${menuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}
+        className={`lg:hidden fixed inset-0 z-40 bg-[#0d1a2d] transition-all duration-500 ${
+          menuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+        }`}
       >
         <div className="h-full flex flex-col px-6 md:px-24 pt-28 pb-10 max-w-7xl mx-auto">
-          {/** Nav items */}
           <nav className="flex-1">
             {navItems.map((item) => {
               if (item.type === "link") {
