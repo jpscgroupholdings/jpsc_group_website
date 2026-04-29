@@ -2,16 +2,10 @@ import globalpresence from "../../assets/globalpresence-light.png";
 
 const locations = ["Philippines", "Taiwan", "Hong Kong", "China"];
 
-const stats = [
-  { value: "5+", label: "Markets" },
-  { value: "20+", label: "Partners" },
-  { value: "3+", label: "Years" },
-];
-
 const GlobalPresencePreview = () => {
   return (
     <section className="relative overflow-hidden bg-brand-primary-50 px-6 py-20 sm:px-8 lg:px-16">
-      <div className="relative z-10 mx-auto grid max-w-7xl gap-12 lg:grid-cols-2 lg:items-center">
+      <div className="relative z-10 mx-auto grid max-w-[90rem] gap-12 lg:grid-cols-2 lg:items-center">
         <div>
           <span className="mb-4 inline-flex rounded-full bg-white px-4 py-2 text-sm font-medium text-brand-primary-500 shadow-sm">
             Global Presence
@@ -26,20 +20,6 @@ const GlobalPresencePreview = () => {
             reliable services, strong partnerships, and a growing operational
             network.
           </p>
-
-          <div className="mt-8 grid max-w-md grid-cols-3 gap-4">
-            {stats.map((stat) => (
-              <div
-                key={stat.label}
-                className="rounded-2xl border border-brand-primary-100 bg-white p-4 shadow-sm"
-              >
-                <p className="text-3xl font-bold text-brand-primary-500">
-                  {stat.value}
-                </p>
-                <p className="mt-1 text-sm text-slate-600">{stat.label}</p>
-              </div>
-            ))}
-          </div>
         </div>
 
         <div className="relative rounded-[2rem] shadow-2xl">
@@ -47,7 +27,7 @@ const GlobalPresencePreview = () => {
             <img
               src={globalpresence}
               alt="Global presence map"
-              className="h-[360px] w-full object-cover lg:h-[460px]"
+              className="h-[360px] w-full object-cover lg:h-[520px]"
             />
 
             <div className="absolute left-5 top-5 rounded-full border border-brand-accent-500/40 bg-brand-primary-900/70 px-4 py-2 text-sm font-medium text-brand-accent-500 backdrop-blur">

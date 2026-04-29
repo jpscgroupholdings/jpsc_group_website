@@ -1,4 +1,3 @@
-import React from "react";
 // ─── Types ────────────────────────────────────────────────────────────────────
 
 interface Subsidiary {
@@ -11,14 +10,6 @@ interface Subsidiary {
   accentColor: string;
   href: string;
 }
-
-// ─── Data ─────────────────────────────────────────────────────────────────────
-
-const groupStats = [
-  { value: "8",      label: "subsidiaries" },
-  { value: "3+",    label: "years in business" },
-  { value: "1,200+", label: "employees" },
-];
 
 const subsidiaries: Subsidiary[] = [
   {
@@ -88,7 +79,7 @@ export default function GroupOverview() {
             </span>
           </div>
 
-          <div className="grid gap-10 lg:grid-cols-2 lg:items-end">
+          <div className="space-y-8">
             {/* Heading */}
             <h2 className="font-playfair text-4xl font-bold leading-[1.15] text-[#0d2d4a] lg:text-5xl">
               One group,{" "}
@@ -104,25 +95,6 @@ export default function GroupOverview() {
                 years of trust, service, and innovation — operating across
                 four industries that touch everyday Filipino life.
               </p>
-
-              {/* Stats strip */}
-              <div className="flex gap-8 rounded-2xl bg-[#f0f5fb] px-6 py-4">
-                {groupStats.map((s, i) => (
-                  <React.Fragment key={s.label}>
-                    {i > 0 && (
-                      <div className="w-px self-stretch bg-slate-200" />
-                    )}
-                    <div>
-                      <p className="font-playfair text-[1.7rem] font-bold leading-none text-[#174674]">
-                        {s.value}
-                      </p>
-                      <p className="mt-1 text-[11px] text-slate-500">
-                        {s.label}
-                      </p>
-                    </div>
-                  </React.Fragment>
-                ))}
-              </div>
             </div>
           </div>
         </div>
