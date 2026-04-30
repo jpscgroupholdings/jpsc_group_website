@@ -35,7 +35,7 @@ export const Footer = () => {
   return (
     <footer
       id="footer"
-      data-aos="fade-up"
+      // data-aos="fade-up"
       className="bg-brand-primary-900 border-t border-brand-primary-500"
     >
       <div className="py-12 lg:py-16">
