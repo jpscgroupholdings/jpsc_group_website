@@ -3,6 +3,7 @@ import Ourhistory from "@/pages/AboutPage/components/Ourhistory";
 import StrategicDirection from "@/pages/AboutPage/components/StrategicDirection";
 import CompanyStructure from "@/pages/AboutPage/components/CompanyStructure";
 import BusinessModel from "@/pages/AboutPage/components/BusinessModel";
+import MissionVision from "./components/MissionVision";
 
 export const About = () => {
   return (
@@ -15,6 +16,10 @@ export const About = () => {
 
         {/** Strategic Direction */}
         <StrategicDirection />
+
+        {/** Mission vision */}
+        <MissionVision />
+
         {/** company structure */}
         <CompanyStructure />
 
