@@ -53,11 +53,11 @@ const navItems: NavItem[] = [
 const DesktopDropdown = ({
   item,
   scrolled,
-  isHero
+  isHero,
 }: {
   item: DropdownRoute;
   scrolled: boolean;
-  isHero: boolean
+  isHero: boolean;
 }) => {
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
@@ -81,7 +81,9 @@ const DesktopDropdown = ({
     >
       <button
         className={`flex items-center gap-1 text-xs tracking-[0.15em] uppercase font-medium transition-colors duration-300 group ${
-          scrolled || !isHero ? "text-gray-700 hover:text-gray-900" : "text-white/80 hover:text-white"
+          scrolled || !isHero
+            ? "text-gray-700 hover:text-gray-900"
+            : "text-white/80 hover:text-white"
         }`}
       >
         {item.label}
@@ -93,7 +95,9 @@ const DesktopDropdown = ({
       {/* Dropdown panel */}
       <div
         className={`absolute top-full left-1/2 -translate-x-1/2 mt-4 w-44 transition-all duration-200 origin-top ${
-          open ? "opacity-100 scale-y-100 pointer-events-auto" : "opacity-0 scale-y-95 pointer-events-none"
+          open
+            ? "opacity-100 scale-y-100 pointer-events-auto"
+            : "opacity-0 scale-y-95 pointer-events-none"
         }`}
       >
         {/* Arrow */}
@@ -162,12 +166,13 @@ const MenuAccordion = ({
 // ─── Navbar ───────────────────────────────────────────────────────────────────
 
 export const Navbar = () => {
-
-  const {pathname} = useLocation();
-  const isHero = pathname === "/";
+  const { pathname } = useLocation();
+  const isMainPage = pathname === "/";
 
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+
+  const isTransparentHeader = isMainPage && !scrolled && !menuOpen;
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 60);
@@ -185,21 +190,17 @@ export const Navbar = () => {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          menuOpen && isHero
+        className={`${isMainPage ? "fixed" : "sticky"} top-0 left-0 right-0 z-50 transition-all duration-500 ${
+          isTransparentHeader
             ? "bg-transparent"
-            : scrolled
-            ? "bg-white backdrop-blur-sm shadow-sm"
-            : !isHero ?
-            "bg-white"
-            : "bg-transparent"
+            : "bg-white backdrop-blur-sm shadow-sm"
         }`}
       >
         <div className="px-6 md:px-12 mx-auto flex items-center justify-between h-16 md:h-24 max-w-[90rem]">
           {/* Logo */}
           <Link to="/" onClick={() => setMenuOpen(false)}>
             <img
-              src={scrolled && !menuOpen ? logo : !isHero ? logo : logowhite}
+              src={isTransparentHeader ? logowhite : logo}
               alt="JPSC Logo"
               className="w-36 md:w-52 transition-all duration-300"
             />
@@ -214,7 +215,7 @@ export const Navbar = () => {
                     key={item.href}
                     to={item.href}
                     className={`text-xs tracking-[0.15em] uppercase font-medium transition-colors duration-300 ${
-                      scrolled || !isHero
+                      !isTransparentHeader
                         ? "text-gray-700 hover:text-gray-900"
                         : "text-white/80 hover:text-white"
                     }`}
@@ -224,7 +225,12 @@ export const Navbar = () => {
                 );
               }
               return (
-                <DesktopDropdown key={item.label} item={item} scrolled={scrolled} isHero={isHero} />
+                <DesktopDropdown
+                  key={item.label}
+                  item={item}
+                  scrolled={scrolled}
+                  isHero={isMainPage}
+                />
               );
             })}
           </nav>
@@ -261,7 +267,9 @@ export const Navbar = () => {
       {/* Full screen menu overlay — mobile only */}
       <div
         className={`lg:hidden fixed inset-0 z-40 bg-[#0d1a2d] transition-all duration-500 ${
-          menuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+          menuOpen
+            ? "opacity-100 pointer-events-auto"
+            : "opacity-0 pointer-events-none"
         }`}
       >
         <div className="h-full flex flex-col px-6 md:px-24 pt-28 pb-10 max-w-7xl mx-auto">
