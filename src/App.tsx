@@ -17,7 +17,6 @@ import { ScrollToTop } from "./components/ScrollToTop"; // Import the new page
 import GroupOverview from "./sections/homepage/GroupOverview";
 import { FAQ } from "./components/FAQ";
 
-
 import { Workplace } from "./pages/Workplace";
 import { ContactPage } from "./pages/ContactPage";
 import { HistoryPage } from "./pages/HistoryPage";
@@ -28,6 +27,10 @@ import GlobalPresencePreview from "./sections/homepage/GlobalPresencePreview";
 import CTAButton from "./sections/homepage/CTAButton";
 import ContactUsPage from "./sections/homepage/ContactUs";
 import { About } from "./pages/AboutPage/About";
+import JPSCSubsidiaries from "./pages/Subsidaries";
+import ScrollToHash from "./components/ScrollToHash";
+
+
 
 function App() {
   useEffect(() => {
@@ -39,7 +42,8 @@ function App() {
   }, []);
 
   return (
-    <Router basename="/">
+    <Router basename="/"> 
+      <ScrollToHash />
       {/* Main layout wrapper */}
       <div className="flex flex-col min-h-screen">
         {/* Navbar is always displayed */}
@@ -65,7 +69,7 @@ function App() {
                 </div>
               }
             />
-
+            <Route path="/subsidaries" element={<JPSCSubsidiaries />} />
             <Route path="/history" element={<HistoryPage />} />
 
             <Route path="/target-markets" element={<FeaturesPage />} />
