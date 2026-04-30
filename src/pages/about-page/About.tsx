@@ -1,8 +1,8 @@
-import Whoarewe from "@/pages/AboutPage/components/Whoarewe";
-import Ourhistory from "@/pages/AboutPage/components/Ourhistory";
-import StrategicDirection from "@/pages/AboutPage/components/StrategicDirection";
-import CompanyStructure from "@/pages/AboutPage/components/CompanyStructure";
-import BusinessModel from "@/pages/AboutPage/components/BusinessModel";
+import Whoarewe from "@/pages/about-page/components/Whoarewe";
+import Ourhistory from "@/pages/about-page/components/Ourhistory";
+import StrategicDirection from "@/pages/about-page/components/StrategicDirection";
+import CompanyStructure from "@/pages/about-page/components/CompanyStructure";
+import BusinessModel from "@/pages/about-page/components/BusinessModel";
 import MissionVision from "./components/MissionVision";
 
 export const About = () => {

@@ -26,7 +26,7 @@ import CSRPreview from "./sections/homepage/CSRPreview";
 import GlobalPresencePreview from "./sections/homepage/GlobalPresencePreview";
 import CTAButton from "./sections/homepage/CTAButton";
 import ContactUsPage from "./sections/homepage/ContactUs";
-import { About } from "./pages/AboutPage/About";
+import { About } from "./pages/about-page/About";
 import JPSCSubsidiaries from "./pages/Subsidaries";
 import ScrollToHash from "./components/ScrollToHash";
 
