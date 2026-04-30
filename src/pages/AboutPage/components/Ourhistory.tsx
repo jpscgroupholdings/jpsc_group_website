@@ -22,7 +22,7 @@ const Ourhistory = () => {
     },
   ];
   return (
-    <div className="mt-20 space-y-20">
+    <div id="company-history" className="mt-20 space-y-20 scroll-mt-32">
       <div className="space-y-3">
         <p className="text-sm font-bold uppercase tracking-[0.25em] text-brand-primary-600">
           Corporate History
