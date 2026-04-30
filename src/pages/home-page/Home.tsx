@@ -1,4 +1,3 @@
-import React from "react";
 import { Hero } from "./components/Hero";
 import GroupOverview from "./components/GroupOverview";
 import { Subsidaries } from "./components/Subsidaries";
