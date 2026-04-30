@@ -1,4 +1,4 @@
-import globalpresence from "../../assets/globalpresence-light.png";
+import globalpresence from "../../../assets/globalpresence-light.png"
 
 const locations = ["Philippines", "Taiwan", "Hong Kong", "China"];
 

@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import JPSC from "../../assets/company_logo/JPSC.jpg";
-import JPPRO from "../../assets/company_logo/JPPRO.jpg";
-import Harrison from "../../assets/company_logo/Harrison.jpg";
-import DigitalOne from "../../assets/company_logo/DigitalOne.jpg";
-import MainLogo from "../../assets/logo.png";
+import JPSC from "../../../assets/company_logo/JPSC.jpg";
+import JPPRO from "../../../assets/company_logo/JPPRO.jpg";
+import Harrison from "../../../assets/company_logo/Harrison.jpg";
+import DigitalOne from "../../../assets/company_logo/DigitalOne.jpg";
+import MainLogo from "../../../assets/logo.png";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 export const Subsidaries = () => {
