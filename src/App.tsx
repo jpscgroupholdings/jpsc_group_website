@@ -14,7 +14,6 @@ import { Navbar } from "./components/Navbar";
 import { Subsidaries } from "./sections/homepage/Subsidaries";
 import { ScrollToTop } from "./components/ScrollToTop"; // Import the new page
 
-import AboutPage from "./pages/AboutPage"; // Import the new page
 import GroupOverview from "./sections/homepage/GroupOverview";
 import { FAQ } from "./components/FAQ";
 
@@ -22,13 +21,13 @@ import { FAQ } from "./components/FAQ";
 import { Workplace } from "./pages/Workplace";
 import { ContactPage } from "./pages/ContactPage";
 import { HistoryPage } from "./pages/HistoryPage";
-import { MissionVisionPage } from "./pages/MissionVisionPage";
 import ServicesPage from "./pages/ServicesPage";
 import { FeaturesPage } from "./pages/FeaturesPage";
 import CSRPreview from "./sections/homepage/CSRPreview";
 import GlobalPresencePreview from "./sections/homepage/GlobalPresencePreview";
 import CTAButton from "./sections/homepage/CTAButton";
 import ContactUsPage from "./sections/homepage/ContactUs";
+import { About } from "./pages/AboutPage/About";
 
 function App() {
   useEffect(() => {
@@ -66,15 +65,13 @@ function App() {
                 </div>
               }
             />
-            {/* Route for Missionvisionanotherpage */}
-            <Route path="/missionvision" element={<MissionVisionPage />} />
 
             <Route path="/history" element={<HistoryPage />} />
 
             <Route path="/target-markets" element={<FeaturesPage />} />
 
             <Route path="/services" element={<ServicesPage />} />
-            <Route path="/about" element={<AboutPage />} />
+            <Route path="/about" element={<About />} />
 
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/workplace" element={<Workplace />} />
