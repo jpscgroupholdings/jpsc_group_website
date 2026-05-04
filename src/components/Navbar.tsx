@@ -220,7 +220,7 @@ export const Navbar = () => {
           </Link>
 
           {/* Desktop nav — hidden on mobile */}
-          <nav className="hidden lg:flex items-center gap-8">
+          <nav className="hidden xl:flex items-center gap-8">
             {navItems.map((item) => {
               if (item.type === "link") {
                 return (
@@ -251,7 +251,7 @@ export const Navbar = () => {
           {/* Right side — menu button (mobile only) */}
           <button
             onClick={() => setMenuOpen((prev) => !prev)}
-            className={`lg:hidden flex items-center gap-2 text-xs tracking-[0.2rem] uppercase font-medium transition-colors duration-300 ${
+            className={`xl:hidden flex items-center gap-2 text-xs tracking-[0.2rem] uppercase font-medium transition-colors duration-300 ${
               scrolled && !menuOpen ? "text-gray-800" : "text-amber-400"
             }`}
           >
@@ -279,7 +279,7 @@ export const Navbar = () => {
 
       {/* Full screen menu overlay — mobile only */}
       <div
-        className={`lg:hidden fixed inset-0 z-40 bg-[#0d1a2d] transition-all duration-500 ${
+        className={`xl:hidden fixed inset-0 z-40 bg-[#0d1a2d] transition-all duration-500 ${
           menuOpen
             ? "opacity-100 pointer-events-auto"
             : "opacity-0 pointer-events-none"
