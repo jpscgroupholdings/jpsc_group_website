@@ -22,7 +22,7 @@ const subsidiaries: Subsidiary[] = [
       "https://images.unsplash.com/photo-1541354329998-f4d9a9f9297f?w=800&q=80&fit=crop",
     alt: "Banking services",
     accentColor: "#174674",
-    href: "/subsidiaries/banking",
+    href: "/subsidiaries",
   },
   {
     tag: "Technology",
@@ -34,7 +34,7 @@ const subsidiaries: Subsidiary[] = [
       "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&q=80&fit=crop",
     alt: "IT solutions team",
     accentColor: "#0f6e56",
-    href: "/subsidiaries/technology",
+    href: "/subsidiaries",
   },
   {
     tag: "Consulting",
@@ -46,7 +46,7 @@ const subsidiaries: Subsidiary[] = [
       "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80&fit=crop",
     alt: "Consulting team",
     accentColor: "#854f0b",
-    href: "/subsidiaries/consulting",
+    href: "/subsidiaries",
   },
   {
     tag: "Restaurant",
@@ -58,7 +58,7 @@ const subsidiaries: Subsidiary[] = [
       "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80&fit=crop",
     alt: "Restaurant dining",
     accentColor: "#993c1d",
-    href: "/subsidiaries/restaurant",
+    href: "/subsidiaries",
   },
 ];
 

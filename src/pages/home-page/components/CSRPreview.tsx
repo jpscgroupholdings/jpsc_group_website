@@ -240,7 +240,7 @@ export default function CSRPreview() {
 
               {/* CTA */}
               <a 
-              href="/csr-initiatives"
+              href="/csr-initiatives#main"
               className="group mt-6 inline-flex items-center gap-3 text-xs tracking-[0.2em] uppercase text-gray-200 transition border px-4 py-2 border-gray-200 hover:text-brand-accent-500 hover:border-brand-accent-500 rounded-full">
                 Learn More
               </a>
