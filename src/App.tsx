@@ -24,6 +24,7 @@ import { About } from "./pages/about-page/About";
 import JPSCSubsidiaries from "./pages/Subsidaries";
 import ScrollToHash from "./components/ScrollToHash";
 import Home from "./pages/home-page/Home";
+import BusinessPortfolio from "./pages/BusinessPortfolio";
 
 function App() {
   useEffect(() => {
@@ -56,6 +57,7 @@ function App() {
 
             <Route path="/services" element={<ServicesPage />} />
             <Route path="/about" element={<About />} />
+            <Route path="/business-portfolio" element={<BusinessPortfolio />}/>
 
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/workplace" element={<Workplace />} />
