@@ -17,9 +17,6 @@ import { FAQ } from "./components/FAQ";
 
 import { Workplace } from "./pages/Workplace";
 import { ContactPage } from "./pages/ContactPage";
-import { HistoryPage } from "./pages/HistoryPage";
-import ServicesPage from "./pages/ServicesPage";
-import { FeaturesPage } from "./pages/FeaturesPage";
 import { About } from "./pages/about-page/About";
 import JPSCSubsidiaries from "./pages/Subsidaries";
 import ScrollToHash from "./components/ScrollToHash";
@@ -51,13 +48,8 @@ function App() {
             {/* Route for the main page */}
             <Route path="/" element={<Home />} />
             <Route path="/subsidaries" element={<JPSCSubsidiaries />} />
-            <Route path="/history" element={<HistoryPage />} />
-
-            <Route path="/target-markets" element={<FeaturesPage />} />
-
-            <Route path="/services" element={<ServicesPage />} />
             <Route path="/about" element={<About />} />
-            <Route path="/business-portfolio" element={<BusinessPortfolio />}/>
+            <Route path="/business-portfolio" element={<BusinessPortfolio />} />
 
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/workplace" element={<Workplace />} />
