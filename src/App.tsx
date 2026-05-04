@@ -15,7 +15,7 @@ import { ScrollToTop } from "./components/ScrollToTop"; // Import the new page
 
 import { ContactPage } from "./pages/ContactPage";
 import { About } from "./pages/about-page/About";
-import JPSCSubsidiaries from "./pages/Subsidaries";
+import JPSCSubsidiaries from "./pages/Subsidiaries";
 import ScrollToHash from "./components/ScrollToHash";
 import Home from "./pages/home-page/Home";
 import BusinessPortfolio from "./pages/BusinessPortfolio";

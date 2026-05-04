@@ -1,3 +1,4 @@
+import SectionHero from "@/components/SectionHero";
 import { useState } from "react";
 
 interface Subsidiary {
@@ -107,31 +108,13 @@ export default function SubsidiariesPage() {
         .font-body { font-family: 'DM Sans', sans-serif; }
       `}</style>
 
-      {/* Hero */}
-      <div className="bg-brand-primary-500 px-10 py-20 relative overflow-hidden">
-        {/* Decorative rings */}
-        <div className="absolute -right-20 -top-20 w-96 h-96 rounded-full border border-brand-primary-300 opacity-20 pointer-events-none" />
-        <div className="absolute right-10 top-10 w-52 h-52 rounded-full border border-brand-primary-300 opacity-10 pointer-events-none" />
-
-        <p
-          className="text-brand-accent-500 text-xs font-medium tracking-widest uppercase mb-4"
-          style={{ letterSpacing: "0.18em" }}
-        >
-          Corporate Structure
-        </p>
-        <div className="w-10 h-0.5 bg-brand-accent-500 mb-6" />
-        <h1
-          className="font-display text-white text-5xl font-semibold leading-tight max-w-lg mb-4"
-          style={{ fontFamily: "'Playfair Display', serif" }}
-        >
-          Our Subsidiaries
-        </h1>
-        <p className="text-brand-primary-200 text-sm font-light max-w-md leading-relaxed">
-          A diversified portfolio of companies spanning technology, food
+      <SectionHero
+        label="Corporate Structure"
+        title="Our Subsidiaries"
+        description="A diversified portfolio of companies spanning technology, food
           innovation, consulting, media, and international investment — united
-          under the JPSC Group umbrella.
-        </p>
-      </div>
+          under the JPSC Group umbrella."
+      />
 
       {/* Cards */}
       <div className="max-w-[90rem] mx-auto px-6 py-16 flex flex-col">
