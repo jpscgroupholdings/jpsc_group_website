@@ -252,7 +252,7 @@ function ClosingCTA() {
 
 export default function BusinessPortfolio() {
   return (
-    <div className="min-h-screen font-sans text-brand-primary-500">
+    <div className="min-h-screen font-sans text-brand-primary-500 scroll-mt-32">
       <HeroSection />
 
       {subsidiaries.map((item, i) => (
