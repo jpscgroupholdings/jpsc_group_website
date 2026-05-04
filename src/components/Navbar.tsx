@@ -33,7 +33,7 @@ const navItems: NavItem[] = [
   {
     type: "link",
     label: "Subsidiaries",
-    href: "/subsidaries"
+    href: "/subsidiaries"
   }, {
     type: "link",
     label: "Business Portfolio",
