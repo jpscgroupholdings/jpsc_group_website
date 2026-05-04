@@ -1,3 +1,4 @@
+import SectionHero from "@/components/SectionHero";
 import { useState, useEffect, useRef } from "react";
 
 interface SubsidariesType {
@@ -88,41 +89,6 @@ function useScrollReveal() {
   }, []);
 
   return { ref, visible };
-}
-
-function HeroSection() {
-  return (
-    <div className="bg-brand-primary-500 px-10 py-20 relative overflow-hidden">
-      {/* Decorative rings */}
-      <div className="absolute -right-20 -top-20 w-96 h-96 rounded-full border border-brand-primary-300 opacity-20 pointer-events-none" />
-      <div className="absolute right-10 top-10 w-52 h-52 rounded-full border border-brand-primary-300 opacity-10 pointer-events-none" />
-
-      {/* Label */}
-      <p
-        className="text-brand-accent-500 text-xs font-medium tracking-widest uppercase mb-4"
-        style={{ letterSpacing: "0.18em" }}
-      >
-        Business Portfolio
-      </p>
-
-      <div className="w-10 h-0.5 bg-brand-accent-500 mb-6" />
-
-      {/* Main Title */}
-      <h1
-        className="text-white text-5xl font-semibold leading-tight max-w-xl mb-4"
-        style={{ fontFamily: "'Playfair Display', serif" }}
-      >
-        Our Strategic Business Divisions
-      </h1>
-
-      {/* Description */}
-      <p className="text-brand-primary-200 text-sm font-light max-w-md leading-relaxed">
-        A diversified portfolio across consulting, technology, media, food
-        operations, and international expansion—structured to build scalable
-        businesses and long-term market value.
-      </p>
-    </div>
-  );
 }
 
 function SubsidiaryCard({
@@ -253,7 +219,13 @@ function ClosingCTA() {
 export default function BusinessPortfolio() {
   return (
     <div className="min-h-screen font-sans text-brand-primary-500 scroll-mt-32">
-      <HeroSection />
+      <SectionHero
+        label="Business Portfolio"
+        title="Our Strategic Business Divisions"
+        description="A diversified portfolio across consulting, technology, media, food
+        operations, and international expansion—structured to build scalable
+        businesses and long-term market value."
+      />
 
       {subsidiaries.map((item, i) => (
         <div key={item.id}>
