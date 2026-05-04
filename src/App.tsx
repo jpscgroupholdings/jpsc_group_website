@@ -23,6 +23,7 @@ import ScrollToHash from "./components/ScrollToHash";
 import Home from "./pages/home-page/Home";
 import BusinessPortfolio from "./pages/BusinessPortfolio";
 import Notfound from "./pages/Notfound";
+import CSRPage from "./pages/CSRInitiatives";
 
 function App() {
   useEffect(() => {
@@ -56,6 +57,7 @@ function App() {
             <Route path="/workplace" element={<Workplace />} />
             <Route path="/FAQ" element={<FAQ />} />
             <Route path="/not-found" element={<Notfound />} />
+            <Route path="/csr-initiatives" element={<CSRPage />}/>
           </Routes>
         </div>
 
