@@ -13,9 +13,6 @@ import { Navbar } from "./components/Navbar";
 
 import { ScrollToTop } from "./components/ScrollToTop"; // Import the new page
 
-import { FAQ } from "./components/FAQ";
-
-import { Workplace } from "./pages/Workplace";
 import { ContactPage } from "./pages/ContactPage";
 import { About } from "./pages/about-page/About";
 import JPSCSubsidiaries from "./pages/Subsidaries";
@@ -54,8 +51,6 @@ function App() {
             <Route path="/business-portfolio" element={<BusinessPortfolio />} />
 
             <Route path="/contact" element={<ContactPage />} />
-            <Route path="/workplace" element={<Workplace />} />
-            <Route path="/FAQ" element={<FAQ />} />
             <Route path="/not-found" element={<Notfound />} />
             <Route path="/csr-initiatives" element={<CSRPage />}/>
           </Routes>

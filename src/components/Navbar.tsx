@@ -43,7 +43,7 @@ const navItems: NavItem[] = [
     type: "dropdown",
     label: "CSR & Initiatives",
     children: [
-      {href: "/csr-initiatives#main", label: "CSR Initiatives"},
+      {href: "/csr-initiatives#main", label: "CSR Overview"},
       {href: "/csr-initiatives#outreach", label: "Community Outreach"},
       {href: "/csr-initiatives#employee", label: "Employee Engagement"},
       {href: "/csr-initiatives#gallery", label: "Corporate Events Gallery"},
