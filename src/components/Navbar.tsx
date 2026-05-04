@@ -40,13 +40,24 @@ const navItems: NavItem[] = [
     href: "/business-portfolio"
   },
   {
-    type: "dropdown",
-    label: "Connect",
-    children: [
-      { href: "/contact", label: "Contact" },
-      { href: "/workplace", label: "Workplace" },
-      { href: "/FAQ", label: "FAQ" },
-    ],
+    type: "link",
+    label: "CSR & Initiatives",
+    href: "/csr-initiatives"
+  },
+  {
+    type: "link",
+    label: "Brands",
+    href: "/brands"
+  },
+  {
+    type: "link",
+    label: "Global Presence",
+    href: "/global-presence"
+  },
+  {
+    type: "link",
+    label: "Contact",
+    href: "/contact"
   },
 ];
 
@@ -198,7 +209,7 @@ export const Navbar = () => {
             : "bg-white backdrop-blur-sm shadow-sm"
         }`}
       >
-        <div className="px-6 md:px-12 mx-auto flex items-center justify-between h-16 md:h-24 max-w-[90rem]">
+        <div className="px-6 md:px-12 mx-auto flex items-center justify-between h-16 md:h-24 max-w-[110rem]">
           {/* Logo */}
           <Link to="/" onClick={() => setMenuOpen(false)}>
             <img

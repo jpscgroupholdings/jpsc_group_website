@@ -22,6 +22,7 @@ import JPSCSubsidiaries from "./pages/Subsidaries";
 import ScrollToHash from "./components/ScrollToHash";
 import Home from "./pages/home-page/Home";
 import BusinessPortfolio from "./pages/BusinessPortfolio";
+import Notfound from "./pages/Notfound";
 
 function App() {
   useEffect(() => {
@@ -44,7 +45,7 @@ function App() {
         {/* Main content area */}
         <div className="flex-grow">
           <Routes>
-            <Route path="*" element={<Navigate to="/" replace />} />
+            <Route path="*" element={<Navigate to="/not-found" replace />} />
             {/* Route for the main page */}
             <Route path="/" element={<Home />} />
             <Route path="/subsidaries" element={<JPSCSubsidiaries />} />
@@ -54,6 +55,7 @@ function App() {
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/workplace" element={<Workplace />} />
             <Route path="/FAQ" element={<FAQ />} />
+            <Route path="/not-found" element={<Notfound />} />
           </Routes>
         </div>
 
