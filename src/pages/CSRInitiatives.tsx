@@ -436,7 +436,7 @@ function SectionHeader({
 
 function OutreachSection() {
   return (
-    <section id="outreach" className="py-20 bg-white">
+    <section id="outreach" className="py-20 bg-white scroll-mt-32">
       <div className="mx-auto max-w-6xl px-6 lg:px-10">
         <SectionHeader
           tag="Community Outreach"
@@ -578,7 +578,7 @@ function EmployeeCard({ p, i }: { p: EmployeeProgramsType; i: number }) {
 
 function EmployeeSection() {
   return (
-    <section id="employee" className="py-20 bg-[#f6f9fd]">
+    <section id="employee" className="py-20 bg-[#f6f9fd] scroll-mt-32">
       <div className="mx-auto max-w-6xl px-6 lg:px-10">
         <SectionHeader
           tag="Employee Engagement"
@@ -613,7 +613,7 @@ function GallerySection() {
   );
 
   return (
-    <section id="gallery" className="py-20 bg-[#0d2d4a]">
+    <section id="gallery" className="py-20 bg-[#0d2d4a] scroll-mt-32">
       <div className="mx-auto max-w-6xl px-6 lg:px-10">
         {/* Header */}
         <div className="mb-10">
@@ -730,7 +730,7 @@ function StickyNav({ active }: { active: string }) {
 
 function PageHero() {
   return (
-    <div className="relative h-[420px] lg:h-[500px] overflow-hidden">
+    <div id="main" className="relative h-[420px] lg:h-[500px] overflow-hidden scroll-mt-32">
       <img
         src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1800&q=80&fit=crop"
         alt="CSR Hero"
@@ -761,8 +761,25 @@ function PageHero() {
 // ─── MAIN ─────────────────────────────────────────────────────────────────────
 
 export default function CSRPage() {
-  const [activeSection, setActiveSection] = useState("outreach");
+   // 1. Initialize from URL hash, fallback to first section
+  const getInitialSection = () => {
+    const hash = window.location.hash.replace("#", "");
+    return sections.some((s) => s.id === hash) ? hash : sections[0].id;
+  };
 
+  const [activeSection, setActiveSection] = useState(getInitialSection);
+
+  // 2. On mount, scroll to the hashed section if present
+  useEffect(() => {
+    const hash = window.location.hash.replace("#", "");
+    if (hash) {
+      setTimeout(() => {
+        document.getElementById(hash)?.scrollIntoView({ behavior: "smooth" });
+      }, 100); // small delay ensures DOM is ready
+    }
+  }, []);
+
+  // 3. Observer updates both state AND the URL hash
   useEffect(() => {
     const ids = sections.map((s) => s.id);
     const observers = ids.map((id) => {
@@ -770,9 +787,15 @@ export default function CSRPage() {
       if (!el) return null;
       const obs = new IntersectionObserver(
         ([entry]) => {
-          if (entry.isIntersecting) setActiveSection(id);
+          if (entry.isIntersecting) {
+            setActiveSection(id);
+            history.replaceState(null, "", `#${id}`); // ← updates URL silently
+          }
         },
-        { threshold: 0.3 },
+        {
+          threshold: 0,
+          rootMargin: "-30% 0px -60% 0px",
+        },
       );
       obs.observe(el);
       return obs;
@@ -781,7 +804,7 @@ export default function CSRPage() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white font-sans">
+    <div className="min-h-screen bg-white font-sans scroll-mt-32">
       <PageHero />
       <StickyNav active={activeSection} />
       <OutreachSection />

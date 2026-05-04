@@ -40,9 +40,14 @@ const navItems: NavItem[] = [
     href: "/business-portfolio"
   },
   {
-    type: "link",
+    type: "dropdown",
     label: "CSR & Initiatives",
-    href: "/csr-initiatives"
+    children: [
+      {href: "/csr-initiatives#main", label: "CSR Initiatives"},
+      {href: "/csr-initiatives#outreach", label: "Community Outreach"},
+      {href: "/csr-initiatives#employee", label: "Employee Engagement"},
+      {href: "/csr-initiatives#gallery", label: "Corporate Events Gallery"},
+    ]
   },
   {
     type: "link",
@@ -107,7 +112,7 @@ const DesktopDropdown = ({
 
       {/* Dropdown panel */}
       <div
-        className={`absolute top-full left-1/2 -translate-x-1/2 mt-4 w-44 transition-all duration-200 origin-top ${
+        className={`absolute top-full left-1/2 -translate-x-1/2 mt-4 w-auto transition-all duration-200 origin-top ${
           open
             ? "opacity-100 scale-y-100 pointer-events-auto"
             : "opacity-0 scale-y-95 pointer-events-none"
@@ -121,7 +126,7 @@ const DesktopDropdown = ({
             <Link
               key={child.href}
               to={child.href}
-              className="block px-4 py-2.5 text-xs tracking-[0.1em] uppercase font-medium text-gray-500 hover:text-gray-900 hover:bg-gray-50 transition-colors"
+              className="block px-4 py-2.5 text-xs tracking-[0.1em] text-nowrap uppercase font-medium text-gray-500 hover:text-gray-900 hover:bg-gray-50 transition-colors"
             >
               {child.label}
             </Link>
