@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useRef } from "react";
 import { ArrowRight, X, Download } from "lucide-react";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
@@ -11,7 +11,6 @@ interface ModalData {
   tag: string;
   title: string;
   desc: string;
-  stats: { num: string; label: string }[];
 }
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
@@ -57,20 +56,14 @@ const floatingImages = [
   },
 ];
 
-const heroStats = [
-  { num: "5,000+", label: "beneficiaries served" },
-  { num: "30+",    label: "communities reached" },
-  { num: "12",     label: "active programs" },
-];
-
 const programs = [
   {
-    id: "livelihood",
-    tag: "Livelihood",
-    title: "Skills & Livelihood Training",
-    desc: "Equipping community members with practical skills — from food preparation to basic finance — so they can build sustainable income.",
+    id: "employee-engagement",
+    tag: "Employee Engagement",
+    title: "Opportunity for Growth",
+    desc: "Creating pathways for community members to access sustainable income opportunities and improve their quality of life.",
     img: "https://images.unsplash.com/photo-1509099836639-18ba1795216d?w=400&q=80&fit=crop",
-    alt: "Skills training",
+    alt: "Livelihood opportunities",
   },
   {
     id: "outreach",
@@ -89,23 +82,13 @@ const modalContent: Record<string, ModalData> = {
     tag: "CSR Overview",
     title: "Our Commitment to Community",
     desc: "Across all our subsidiaries — banking, consulting, technology, and dining — we share one belief: business growth must translate to community growth. Our CSR programs focus on livelihood, outreach, and empowerment of the most vulnerable Filipinos near our communities.",
-    stats: [
-      { num: "5,000+", label: "total beneficiaries" },
-      { num: "12",     label: "active programs" },
-      { num: "₱8M+",  label: "invested in communities" },
-    ],
   },
-  livelihood: {
+  "employee-engagement": {
     img: "https://images.unsplash.com/photo-1509099836639-18ba1795216d?w=900&q=80&fit=crop",
     alt: "Skills training",
     tag: "Livelihood Program",
     title: "Skills & Livelihood Training",
     desc: "Our livelihood program provides hands-on training in food preparation, basic business management, and financial literacy to community members who lack access to formal employment. Participants graduate with a starter kit and ongoing mentorship from our employee volunteers.",
-    stats: [
-      { num: "2,400+", label: "graduates trained" },
-      { num: "78%",    label: "found stable income" },
-      { num: "15",     label: "partner barangays" },
-    ],
   },
   outreach: {
     img: "https://images.unsplash.com/photo-1593113598332-cd288d649433?w=900&q=80&fit=crop",
@@ -113,11 +96,6 @@ const modalContent: Record<string, ModalData> = {
     tag: "Community Outreach",
     title: "Community Care & Outreach",
     desc: "Every quarter, our employee volunteers mobilize to bring relief goods, free medical consultations, and livelihood starter packs to underserved communities near our offices. This program is driven entirely by our people — a reflection of a company culture rooted in service.",
-    stats: [
-      { num: "30+",    label: "communities served" },
-      { num: "5,000+", label: "beneficiaries reached" },
-      { num: "4×",     label: "missions per year" },
-    ],
   },
 };
 
@@ -131,17 +109,6 @@ function CSRModal({
   onClose: () => void;
 }) {
   const overlayRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (!data) return;
-    const onKey = (e: KeyboardEvent) => e.key === "Escape" && onClose();
-    window.addEventListener("keydown", onKey);
-    document.body.style.overflow = "hidden";
-    return () => {
-      window.removeEventListener("keydown", onKey);
-      document.body.style.overflow = "";
-    };
-  }, [data, onClose]);
 
   if (!data) return null;
 
@@ -182,23 +149,6 @@ function CSRModal({
             {data.desc}
           </p>
 
-          {/* Stats */}
-          <div className="mb-6 flex gap-6 rounded-xl bg-[#f0f5fb] px-5 py-4">
-            {data.stats.map((s, i) => (
-              <React.Fragment key={s.label}>
-                {i > 0 && (
-                  <div className="w-px self-stretch bg-slate-200" />
-                )}
-                <div>
-                  <p className="font-playfair text-2xl font-bold text-[#174674]">
-                    {s.num}
-                  </p>
-                  <p className="mt-0.5 text-[11px] text-slate-500">{s.label}</p>
-                </div>
-              </React.Fragment>
-            ))}
-          </div>
-
           {/* CTA */}
           <button className="flex w-full items-center justify-center gap-2 rounded-full bg-[#174674] px-6 py-3 text-sm font-medium text-white transition hover:bg-[#0d2d4a]">
             <Download className="h-4 w-4" />
@@ -222,7 +172,6 @@ export default function CSRPreview() {
     <>
       <section className="bg-white px-6 py-20 sm:px-8 lg:px-16">
         <div className="mx-auto max-w-[90rem] space-y-12">
-
           {/* ── Header ── */}
           <div className="grid gap-10 lg:grid-cols-2 lg:items-end">
             <div>
@@ -279,14 +228,22 @@ export default function CSRPreview() {
             </div>
 
             {/* Quote overlay */}
-            <div className="absolute left-7 top-1/2 z-20 max-w-[260px] -translate-y-1/2">
-              <p className="font-playfair text-xl italic leading-snug text-white">
+            <div className="absolute left-7 top-1/2 z-20 max-w-lg -translate-y-1/2">
+              <p className="font-playfair text-3xl italic leading-snug text-white">
                 "When people have the tools to stand on their own, communities
                 transform."
               </p>
-              <p className="mt-2 text-[11px] tracking-wide text-white/60">
+
+              <p className="mt-2 text-sm tracking-wide text-white/60">
                 — Our CSR Mission Statement
               </p>
+
+              {/* CTA */}
+              <a 
+              href="/csr-initiatives"
+              className="group mt-6 inline-flex items-center gap-3 text-xs tracking-[0.2em] uppercase text-gray-200 transition border px-4 py-2 border-gray-200 hover:text-brand-accent-500 hover:border-brand-accent-500 rounded-full">
+                Learn More
+              </a>
             </div>
 
             {/* Dashed arc SVG — traces the spiral path */}
@@ -327,23 +284,6 @@ export default function CSRPreview() {
                 </div>
               </div>
             ))}
-
-            {/* Stats bar */}
-            <div className="absolute bottom-5 left-6 z-20 flex gap-7">
-              {heroStats.map((s, i) => (
-                <React.Fragment key={s.label}>
-                  {i > 0 && (
-                    <div className="w-px self-stretch bg-white/25" />
-                  )}
-                  <div>
-                    <p className="font-playfair text-[1.6rem] font-bold leading-none text-white">
-                      {s.num}
-                    </p>
-                    <p className="mt-1 text-[10.5px] text-white/65">{s.label}</p>
-                  </div>
-                </React.Fragment>
-              ))}
-            </div>
           </div>
 
           {/* ── Program cards ── */}
@@ -384,7 +324,6 @@ export default function CSRPreview() {
               </button>
             ))}
           </div>
-
         </div>
       </section>
 
