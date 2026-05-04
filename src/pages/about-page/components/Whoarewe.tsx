@@ -48,7 +48,7 @@ function DotPattern() {
 
 const Whoarewe = () => {
   return (
-    <div className="grid items-center gap-12 md:grid-cols-2">
+    <div id="company-overview" className="grid items-center gap-12 md:grid-cols-2 scroll-mt-32">
       {/* --- Left: Text --- */}
       <div className="space-y-6">
         <div className="space-y-3">

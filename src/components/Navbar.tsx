@@ -22,21 +22,22 @@ const navItems: NavItem[] = [
   { type: "link", href: "/", label: "Home" },
   {
     type: "dropdown",
-    label: "Company",
+    label: "About",
     children: [
-      { href: "/about", label: "About" },
-      { href: "/subsidaries", label: "Subsidaries" },
+      { href: "/about#company-overview", label: "Company Overview" },
       { href: "/about#missionvision", label: "Mission & Vision" },
-      { href: "/about#company-history", label: "History" },
+      { href: "/about#group-structure", label: "Group Structure" },
+      { href: "/about#business-model", label: "Business Model" },
     ],
   },
   {
-    type: "dropdown",
-    label: "What We Do",
-    children: [
-      { href: "/target-markets", label: "Target Markets" },
-      { href: "/services", label: "Services" },
-    ],
+    type: "link",
+    label: "Subsidiaries",
+    href: "/subsidaries"
+  }, {
+    type: "link",
+    label: "Business Portfolio",
+    href: "/business-portfolio"
   },
   {
     type: "dropdown",

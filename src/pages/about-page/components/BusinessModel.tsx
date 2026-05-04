@@ -1,6 +1,6 @@
 const BusinessModel = () => {
   return (
-    <section className="mt-24 space-y-10">
+    <section id="business-model" className="scroll-mt-32 space-y-10">
       {/* Header */}
       <div className="max-w-3xl space-y-3">
         <p className="text-sm font-bold uppercase tracking-[0.25em] text-brand-primary-600">

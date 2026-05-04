@@ -48,7 +48,7 @@ const CompanyStructure = () => {
   };
 
   return (
-    <section className="mt-24 space-y-10">
+    <section id="group-structure" className="scroll-mt-32 space-y-10 mb-24">
       {/* Header */}
       <div className="space-y-3 max-w-2xl">
         <p className="text-sm font-bold uppercase tracking-[0.25em] text-brand-primary-600">

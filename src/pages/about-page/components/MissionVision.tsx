@@ -2,7 +2,7 @@ import missionvisionimage from "../../../assets/home-hero.png.webp"
 
 const MissionVision = () => {
   return (
-    <section id="missionvision" className="scroll-mt-32">
+    <section id="missionvision" className="scroll-mt-32 mb-24">
       <div className="grid grid-cols-1 lg:grid-cols-2">
         <div className="flex flex-col md:flex-row lg:flex-col">
           {/** Mission */}

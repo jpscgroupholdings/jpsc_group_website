@@ -66,7 +66,7 @@ const subsidiaries: Subsidiary[] = [
 
 export default function GroupOverview() {
   return (
-    <section className="px-6 py-20 sm:px-8 lg:px-16">
+    <section id="company-overview" className="px-6 py-20 sm:px-8 lg:px-16">
       <div className="mx-auto max-w-[90rem] space-y-12">
 
         {/* ── Header ── */}
