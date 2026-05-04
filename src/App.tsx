@@ -21,6 +21,7 @@ import Home from "./pages/home-page/Home";
 import BusinessPortfolio from "./pages/BusinessPortfolio";
 import Notfound from "./pages/Notfound";
 import CSRPage from "./pages/CSRInitiatives";
+import BrandPage from "./pages/Brand";
 
 function App() {
   useEffect(() => {
@@ -46,13 +47,14 @@ function App() {
             <Route path="*" element={<Navigate to="/not-found" replace />} />
             {/* Route for the main page */}
             <Route path="/" element={<Home />} />
-            <Route path="/subsidaries" element={<JPSCSubsidiaries />} />
+            <Route path="/subsidiaries" element={<JPSCSubsidiaries />} />
             <Route path="/about" element={<About />} />
             <Route path="/business-portfolio" element={<BusinessPortfolio />} />
 
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/not-found" element={<Notfound />} />
             <Route path="/csr-initiatives" element={<CSRPage />}/>
+            <Route path="/brands" element={<BrandPage />}/>
           </Routes>
         </div>
 
