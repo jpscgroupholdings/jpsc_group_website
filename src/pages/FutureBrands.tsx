@@ -1,7 +1,7 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, MutableRefObject, CSSProperties } from "react";
 
 // ── HOOK ─────────────────────────────────────────────────────────
-function useInView(options = {}) {
+function useInView(options: IntersectionObserverInit = {}) : [MutableRefObject<HTMLDivElement | null>, boolean] {
   const ref = useRef(null);
   const [inView, setInView] = useState(false);
   useEffect(() => {
@@ -17,7 +17,7 @@ function useInView(options = {}) {
   return [ref, inView];
 }
 
-function FadeUp({ children, delay = 0, className = "", style = {} }) {
+function FadeUp({ children, delay = 0, className = "", style = {} } : {children : React.ReactNode, delay?: number, className?: string, style?: CSSProperties}) {
   const [ref, inView] = useInView();
   return (
     <div
@@ -35,8 +35,20 @@ function FadeUp({ children, delay = 0, className = "", style = {} }) {
   );
 }
 
+interface VentureBrand {
+  index: string;
+  codename: string;
+  category: string;
+  concept: string;
+  stage: string;
+  target: string;
+  accent: string;
+  bg: string;
+  dark?: boolean;
+}
+
 // ── DATA ──────────────────────────────────────────────────────────
-const UPCOMING = [
+const UPCOMING : VentureBrand[] = [
   {
     index: "01",
     codename: "PROJECT EMBER",
@@ -151,7 +163,13 @@ function Hero() {
 }
 
 // ── VENTURE CARD (full-width alternating) ─────────────────────────
-function VentureCard({ brand, i }) {
+function VentureCard({
+  brand,
+  i,
+}: {
+  brand: VentureBrand;
+  i: number;
+}) {
   const isEven = i % 2 === 0;
 
   return (

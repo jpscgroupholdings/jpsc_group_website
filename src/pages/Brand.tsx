@@ -1,9 +1,9 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, MutableRefObject } from "react";
 import FutureBrandsPage from "./FutureBrands";
 import harrison from "../assets/harrison.jpg";
 import dining from "../assets/dining.png";
 
-function useInView(options = {}) {
+function useInView(options: IntersectionObserverInit = {}) : [MutableRefObject<HTMLDivElement | null>, boolean] {
   const ref = useRef(null);
   const [inView, setInView] = useState(false);
   useEffect(() => {
@@ -19,7 +19,7 @@ function useInView(options = {}) {
   return [ref, inView];
 }
 
-function FadeUp({ children, delay = 0, className = "" }) {
+function FadeUp({ children, delay = 0, className = "" } : {children: React.ReactNode, delay?: number, className?: string}) {
   const [ref, inView] = useInView();
   return (
     <div
@@ -264,134 +264,7 @@ function WhatWeDo() {
     </section>
   );
 }
-// ── MISSION ───────────────────────────────────────────────────────
-function Mission() {
-  const pillars = [
-    {
-      title: "Authentic",
-      desc: "Recipes rooted in Visayan tradition, prepared fresh every day.",
-    },
-    {
-      title: "Community",
-      desc: "A brand built around the Filipino dining culture of sharing.",
-    },
-    {
-      title: "Scalable",
-      desc: "Systems designed for franchise growth without losing soul.",
-    },
-  ];
-  return (
-    <section className="py-24 px-14" style={{ background: "#EDE8E0" }}>
-      <div className="max-w-6xl mx-auto flex gap-12 items-start">
-        {/* Left */}
-        <div style={{ width: "38%" }}>
-          <FadeUp>
-            <p
-              style={{
-                fontSize: 9,
-                letterSpacing: "0.3em",
-                textTransform: "uppercase",
-                color: "#9a7c5c",
-                marginBottom: 14,
-              }}
-            >
-              03 · Our Mission
-            </p>
-            <h2
-              style={{
-                fontFamily: "'Playfair Display', serif",
-                fontSize: "clamp(36px,3.5vw,56px)",
-                fontWeight: 900,
-                lineHeight: 1.0,
-              }}
-            >
-              OUR
-              <br />
-              <span style={{ color: "#8B2E2E" }}>MISSION</span>
-            </h2>
-            <div
-              className="my-8"
-              style={{ height: 1, background: "#D0C4B4" }}
-            />
-            {[
-              "Keep Filipino BBQ culture alive and proud",
-              "Deliver consistent quality at every table",
-              "Grow a brand that families trust",
-            ].map((t) => (
-              <p
-                key={t}
-                style={{ fontSize: 12, color: "#7a6a58", lineHeight: "2.4" }}
-              >
-                ✓ &nbsp;{t}
-              </p>
-            ))}
-          </FadeUp>
-        </div>
 
-        {/* Center tall */}
-        <div
-          style={{
-            width: 240,
-            height: 380,
-            background: "linear-gradient(160deg,#3a2e24,#7a5a3a)",
-            flexShrink: 0,
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
-          <p
-            style={{
-              fontSize: 9,
-              letterSpacing: "0.3em",
-              textTransform: "uppercase",
-              color: "rgba(245,240,235,0.2)",
-            }}
-          >
-            Dining Ambiance
-          </p>
-        </div>
-
-        {/* Right pillars */}
-        <div className="flex-1 flex gap-6">
-          <div className="flex flex-col gap-1">
-            {["#C8A87A,#a08060", "#7a3030,#4a1a1a", "#5a4a36,#8a7050"].map(
-              (g, i) => (
-                <PhotoBlock
-                  key={i}
-                  gradient={`linear-gradient(135deg,${g})`}
-                  style={{ width: 110, height: 113 }}
-                />
-              ),
-            )}
-          </div>
-          <div
-            className="flex flex-col justify-between py-1"
-            style={{ flex: 1 }}
-          >
-            {pillars.map(({ title, desc }) => (
-              <FadeUp key={title} delay={0.1}>
-                <p style={{ fontWeight: 700, fontSize: 13, marginBottom: 5 }}>
-                  {title}
-                </p>
-                <p
-                  style={{
-                    fontSize: 11,
-                    color: "#7a6a58",
-                    lineHeight: 1.8,
-                    maxWidth: 160,
-                  }}
-                >
-                  {desc}
-                </p>
-              </FadeUp>
-            ))}
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
 
 // ── MENU HIGHLIGHTS ───────────────────────────────────────────────
 const menuItems = [
