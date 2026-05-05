@@ -21,7 +21,7 @@ import Home from "./pages/home-page/Home";
 import BusinessPortfolio from "./pages/BusinessPortfolio";
 import Notfound from "./pages/Notfound";
 import CSRPage from "./pages/CSRInitiatives";
-import BrandPage from "./pages/Brand";
+import BrandPage from "./pages/brand-page/Brand";
 
 function App() {
   useEffect(() => {
