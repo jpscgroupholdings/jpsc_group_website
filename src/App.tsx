@@ -23,6 +23,7 @@ import Notfound from "./pages/Notfound";
 import CSRPage from "./pages/CSRInitiatives";
 import BrandPage from "./pages/brand-page/Brand";
 import GalleryPage from "./pages/Gallery";
+import GlobalPresencePage from "./pages/GlobalPresencePage";
 
 function App() {
   useEffect(() => {
@@ -57,6 +58,7 @@ function App() {
             <Route path="/csr-initiatives" element={<CSRPage />}/>
             <Route path="/brands" element={<BrandPage />}/>
             <Route path="/gallery" element={<GalleryPage />}/>
+             <Route path="/global-presence" element={<GlobalPresencePage />}/>
           </Routes>
         </div>
 

@@ -10,6 +10,26 @@ import {
   ChevronRight,
   X,
 } from "lucide-react";
+import outreach1 from "../assets/CSRInitiatives/DSC_0840.png";
+import outreach2 from "../assets/CSRInitiatives/DSC_0844.png";
+import outreach3 from "../assets/CSRInitiatives/DSC_0845.png"
+import outreach4 from "../assets/CSRInitiatives/DSC_0848.png";
+import outreach5 from "../assets/CSRInitiatives/orp_team.png";
+import outreach6 from "../assets/CSRInitiatives/orp_team1.png";
+import outreach7 from "../assets/CSRInitiatives/orphanage.png";
+import outreach8 from "../assets/CSRInitiatives/Buscalan/buscalan.png";
+import outreach9 from "../assets/CSRInitiatives/Buscalan/buscalan1.png";
+
+import people1 from "../assets/workplace/people1.jpg"
+import people2 from "../assets/workplace/people2.jpg"
+import people3 from "../assets/workplace/people3.jpg"
+import people4 from "../assets/workplace/people4.jpg"
+import people5 from "../assets/workplace/people5.jpg"
+import people6 from "../assets/workplace/people6.jpg"
+import people7 from "../assets/workplace/people7.jpg"
+import people8 from "../assets/workplace/people8.jpg"
+import people9 from "../assets/workplace/people9.jpg"
+
 
 // =======================TYPES ======================
 interface EmployeeProgramsType {
@@ -55,7 +75,7 @@ const outreachPrograms = [
     tag: "Orphanage Outreach",
     title: "Heart in Action: JPSC Group's Orphanage Outreach 2025",
     desc: "Our orphanage outreach is one of the ways we extend care beyond business — sharing meals, moments, and meaningful experiences with children through simple acts of kindness. Through every visit, we hope to bring comfort, joy, and a reminder that they are seen, valued, and never alone.",
-    img: "/images/CSRInitiatives/orphanage.png",
+    img: outreach7,
     color: "#e8f4ec",
     accent: "#2e7d54",
   },
@@ -73,7 +93,7 @@ const outreachPrograms = [
     tag: "Community Meals",
     title: "Cooking and Sharing Meals Together",
     desc: "Beyond food distribution, we organize community cooking days where volunteers and residents prepare meals together. These shared spaces create connection, dignity, and a sense of ownership — turning every meal into a collective effort rather than a one-way act of giving.",
-    img: "/images/CSRInitiatives/Buscalan/buscalan1.png",
+    img: outreach9,
     color: "#fdf0e8",
     accent: "#a0522d",
   },
@@ -89,6 +109,15 @@ const employeePrograms: EmployeeProgramsType[] = [
       "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=600&q=80&fit=crop",
       "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=600&q=80&fit=crop",
       "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=600&q=80&fit=crop",
+      people1,
+      people2,
+      people3,
+      people4,
+      people5,
+      people6,
+      people7,
+      people8,
+      people9,
     ],
   },
   {
@@ -100,15 +129,6 @@ const employeePrograms: EmployeeProgramsType[] = [
       "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&q=80&fit=crop",
       "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=600&q=80&fit=crop",
       "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=600&q=80&fit=crop",
-      "/images/workplace/people1.jpg",
-      "/images/workplace/people2.jpg",
-      "/images/workplace/people3.jpg",
-      "/images/workplace/people4.jpg",
-      "/images/workplace/people5.jpg",
-      "/images/workplace/people6.jpg",
-      "/images/workplace/people7.jpg",
-      "/images/workplace/people8.jpg",
-      "/images/workplace/people9.jpg",
     ],
   },
   {
@@ -143,32 +163,32 @@ export const galleryItems: GalleryGroup[] = [
         caption: "Holiday Donations Drive",
       },
       {
-        img: "/images/CSRInitiatives/DSC_0840.png",
+        img: outreach1,
         caption: "Hearts in Action",
       },
       {
-        img: "/images/CSRInitiatives/DSC_0844.png",
+        img: outreach2,
       },
       {
-        img: "/images/CSRInitiatives/DSC_0845.png",
+        img: outreach3,
       },
       {
-        img: "/images/CSRInitiatives/DSC_0848.png",
+        img: outreach4,
       },
       {
-        img: "/images/CSRInitiatives/orp_team.png",
+        img: outreach5,
       },
       {
-        img: "/images/CSRInitiatives/orp_team1.png",
+        img: outreach6
       },
       {
-        img: "/images/CSRInitiatives/orphanage.png",
+        img: outreach7,
       },
       {
-        img: "/images/CSRInitiatives/Buscalan/buscalan.png",
+        img: outreach8,
       },
       {
-        img: "/images/CSRInitiatives/Buscalan/buscalan1.png",
+        img: outreach9,
       },
     ],
   },
@@ -191,15 +211,15 @@ export const galleryItems: GalleryGroup[] = [
         caption: "Team Outing — Batangas 2024",
       },
 
-      { img: "/images/workplace/people1.jpg" },
-      { img: "/images/workplace/people2.jpg" },
-      { img: "/images/workplace/people3.jpg" },
-      { img: "/images/workplace/people4.jpg" },
-      { img: "/images/workplace/people5.jpg" },
-      { img: "/images/workplace/people6.jpg" },
-      { img: "/images/workplace/people7.jpg" },
-      { img: "/images/workplace/people8.jpg" },
-      { img: "/images/workplace/people9.jpg" },
+      { img: people1, },
+      { img: people2, },
+      { img: people3, },
+      { img: people4, },
+      { img: people5, },
+      { img: people6, },
+      { img: people7, },
+      { img: people8 },
+      { img: people9, },
     ],
   },
 
