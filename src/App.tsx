@@ -13,7 +13,7 @@ import { Navbar } from "./components/Navbar";
 
 import { ScrollToTop } from "./components/ScrollToTop"; // Import the new page
 
-import { ContactPage } from "./pages/ContactPage";
+import ContactPage  from "./pages/ContactPage";
 import { About } from "./pages/about-page/About";
 import JPSCSubsidiaries from "./pages/Subsidiaries";
 import ScrollToHash from "./components/ScrollToHash";
@@ -22,6 +22,7 @@ import BusinessPortfolio from "./pages/BusinessPortfolio";
 import Notfound from "./pages/Notfound";
 import CSRPage from "./pages/CSRInitiatives";
 import BrandPage from "./pages/brand-page/Brand";
+import GalleryPage from "./pages/Gallery";
 
 function App() {
   useEffect(() => {
@@ -55,6 +56,7 @@ function App() {
             <Route path="/not-found" element={<Notfound />} />
             <Route path="/csr-initiatives" element={<CSRPage />}/>
             <Route path="/brands" element={<BrandPage />}/>
+            <Route path="/gallery" element={<GalleryPage />}/>
           </Routes>
         </div>
 
