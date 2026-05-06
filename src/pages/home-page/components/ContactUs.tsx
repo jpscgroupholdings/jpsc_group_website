@@ -29,25 +29,27 @@ const contactDetails = [
   },
 ];
 
-const ContactUs = () => {
+const ContactUs = ({ showHeader = true }: { showHeader?: boolean }) => {
   return (
     <section id="contact-section" className="bg-white px-4 py-12">
       <div className="mx-auto max-w-7xl">
-        <div className="mx-auto mb-14 max-w-3xl text-center">
-          <span className="mb-4 inline-flex rounded-full bg-brand-primary-50 px-4 py-2 text-sm font-medium text-brand-primary-500">
-            Contact Us
-          </span>
+        {showHeader && (
+          <div className="mx-auto mb-14 max-w-3xl text-center">
+            <span className="mb-4 inline-flex rounded-full bg-brand-primary-50 px-4 py-2 text-sm font-medium text-brand-primary-500">
+              Contact Us
+            </span>
 
-          <h2 className="text-3xl font-bold tracking-tight text-brand-primary-900 md:text-5xl">
-            Let’s talk about how we can help
-          </h2>
+            <h2 className="text-3xl font-bold tracking-tight text-brand-primary-900 md:text-5xl">
+              Let’s talk about how we can help
+            </h2>
 
-          <p className="mt-5 text-base leading-8 text-slate-600 md:text-lg">
-            Have questions about our services, transactions, or partnerships?
-            Send us a message and our team will get back to you as soon as
-            possible.
-          </p>
-        </div>
+            <p className="mt-5 text-base leading-8 text-slate-600 md:text-lg">
+              Have questions about our services, transactions, or partnerships?
+              Send us a message and our team will get back to you as soon as
+              possible.
+            </p>
+          </div>
+        )}
 
         <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
           <form className="bg-white p-6 md:p-8">
@@ -146,7 +148,9 @@ const ContactUs = () => {
               <p className="text-sm font-medium text-brand-primary-500">
                 Ready to streamline your transactions and expand your reach?
               </p>
-              <a href="/contact" className="underline text-sm">Learn More</a>
+              <a href="/contact" className="underline text-sm">
+                Learn More
+              </a>
             </div>
           </div>
         </div>
