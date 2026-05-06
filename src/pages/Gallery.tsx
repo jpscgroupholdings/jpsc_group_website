@@ -1,29 +1,42 @@
 "use client";
 
 import { useState, useEffect, useRef, useCallback } from "react";
-import { X, ChevronLeft, ChevronRight, ArrowLeft, Search, Grid3X3, Rows3 } from "lucide-react";
-import { flattenedGalleryItems, galleryCategories, GalleryCategory, GalleryFlatItem } from "./CSRInitiatives";
+import {
+  X,
+  ChevronLeft,
+  ChevronRight,
+  Search,
+  Grid3X3,
+  Rows3,
+} from "lucide-react";
+import {
+  flattenedGalleryItems,
+  galleryCategories,
+  GalleryCategory,
+  GalleryFlatItem,
+} from "./CSRInitiatives";
+import SectionHero from "@/components/SectionHero";
+import { InputField } from "@/components/ui/InputField";
 
-// ─── TYPES ────────────────────────────────────────────────────────────────────
-
-
-
-// ─── DATA ─────────────────────────────────────────────────────────────────────
-
-
-// ─── FLAT LIST ────────────────────────────────────────────────────────────────
-
-
-const CATEGORY_META: Record<string, { label: string; count: number; color: string }> = {
-  All: { label: "All Photos", count: flattenedGalleryItems.length, color: "#174674" },
+const CATEGORY_META: Record<
+  string,
+  { label: string; count: number; color: string }
+> = {
+  All: {
+    label: "All Photos",
+    count: flattenedGalleryItems.length,
+    color: "#174674",
+  },
   Outreach: {
     label: "Community Outreach",
-    count: flattenedGalleryItems.filter((i) => i.category === "Outreach").length,
+    count: flattenedGalleryItems.filter((i) => i.category === "Outreach")
+      .length,
     color: "#2e7d54",
   },
   Employee: {
     label: "Employee Engagement",
-    count: flattenedGalleryItems.filter((i) => i.category === "Employee").length,
+    count: flattenedGalleryItems.filter((i) => i.category === "Employee")
+      .length,
     color: "#174674",
   },
   Events: {
@@ -50,7 +63,8 @@ function Lightbox({
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose();
-      if (e.key === "ArrowRight") setCur((c) => Math.min(items.length - 1, c + 1));
+      if (e.key === "ArrowRight")
+        setCur((c) => Math.min(items.length - 1, c + 1));
       if (e.key === "ArrowLeft") setCur((c) => Math.max(0, c - 1));
     };
     window.addEventListener("keydown", onKey);
@@ -63,7 +77,11 @@ function Lightbox({
 
   useEffect(() => {
     const el = thumbRef.current?.children[cur] as HTMLElement;
-    el?.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+    el?.scrollIntoView({
+      behavior: "smooth",
+      block: "nearest",
+      inline: "center",
+    });
   }, [cur]);
 
   const item = items[cur];
@@ -88,10 +106,15 @@ function Lightbox({
             >
               {item.category}
             </span>
-            <p className="text-sm font-medium text-white mt-0.5">{item.caption}</p>
+            <p className="text-sm font-medium text-white mt-0.5">
+              {item.caption}
+            </p>
           </div>
           <div className="flex items-center gap-4">
-            <span className="text-xs" style={{ color: "rgba(255,255,255,0.35)" }}>
+            <span
+              className="text-xs"
+              style={{ color: "rgba(255,255,255,0.35)" }}
+            >
               {cur + 1} / {items.length}
             </span>
             <button
@@ -105,7 +128,10 @@ function Lightbox({
         </div>
 
         {/* Main image */}
-        <div className="relative rounded-2xl overflow-hidden" style={{ aspectRatio: "16/9" }}>
+        <div
+          className="relative rounded-2xl overflow-hidden"
+          style={{ aspectRatio: "16/9" }}
+        >
           <img
             key={cur}
             src={item.img}
@@ -151,7 +177,13 @@ function Lightbox({
                 opacity: i === cur ? 1 : 0.45,
               }}
             >
-              <img src={it.img} alt="" className="w-full h-full object-cover" loading="lazy" decoding="async" />
+              <img
+                src={it.img}
+                alt=""
+                className="w-full h-full object-cover"
+                loading="lazy"
+                decoding="async"
+              />
             </div>
           ))}
         </div>
@@ -190,7 +222,10 @@ function MasonryGrid({
           {/* Hover overlay */}
           <div
             className="absolute inset-0 flex flex-col justify-end transition-opacity duration-250 opacity-0 group-hover:opacity-100"
-            style={{ background: "linear-gradient(to top, rgba(13,45,74,0.85) 0%, rgba(13,45,74,0.2) 60%, transparent 100%)" }}
+            style={{
+              background:
+                "linear-gradient(to top, rgba(13,45,74,0.85) 0%, rgba(13,45,74,0.2) 60%, transparent 100%)",
+            }}
           >
             <div className="px-3 pb-3">
               <span
@@ -199,7 +234,9 @@ function MasonryGrid({
               >
                 {item.category}
               </span>
-              <p className="text-xs font-medium text-white leading-snug">{item.caption}</p>
+              <p className="text-xs font-medium text-white leading-snug">
+                {item.caption}
+              </p>
             </div>
           </div>
         </div>
@@ -234,10 +271,15 @@ function UniformGrid({
           />
           <div
             className="absolute inset-0 flex flex-col justify-end transition-opacity duration-250 opacity-0 group-hover:opacity-100"
-            style={{ background: "linear-gradient(to top, rgba(13,45,74,0.85) 0%, transparent 70%)" }}
+            style={{
+              background:
+                "linear-gradient(to top, rgba(13,45,74,0.85) 0%, transparent 70%)",
+            }}
           >
             <div className="px-2.5 pb-2.5">
-              <p className="text-[11px] font-medium text-white leading-snug line-clamp-2">{item.caption}</p>
+              <p className="text-[11px] font-medium text-white leading-snug line-clamp-2">
+                {item.caption}
+              </p>
             </div>
           </div>
         </div>
@@ -268,14 +310,18 @@ function CategoryStrip({
             style={{
               background: isActive ? "#0d2d4a" : "rgba(13,45,74,0.07)",
               color: isActive ? "#fff" : "#0d2d4a",
-              border: isActive ? "1.5px solid #0d2d4a" : "1.5px solid rgba(13,45,74,0.12)",
+              border: isActive
+                ? "1.5px solid #0d2d4a"
+                : "1.5px solid rgba(13,45,74,0.12)",
             }}
           >
             {meta.label}
             <span
               className="text-[11px] px-1.5 py-0.5 rounded-full font-medium"
               style={{
-                background: isActive ? "rgba(255,255,255,0.15)" : "rgba(13,45,74,0.08)",
+                background: isActive
+                  ? "rgba(255,255,255,0.15)"
+                  : "rgba(13,45,74,0.08)",
                 color: isActive ? "rgba(255,255,255,0.8)" : "#174674",
               }}
             >
@@ -316,86 +362,46 @@ export default function GalleryPage() {
   // Group by category for "All" view heading display
   const categoryGroups =
     filter === "All"
-      ? galleryCategories.slice(1).map((cat) => ({
-          cat,
-          label: CATEGORY_META[cat].label,
-          items: filtered.filter((i) => i.category === cat),
-        })).filter((g) => g.items.length > 0)
+      ? galleryCategories
+          .slice(1)
+          .map((cat) => ({
+            cat,
+            label: CATEGORY_META[cat].label,
+            items: filtered.filter((i) => i.category === cat),
+          }))
+          .filter((g) => g.items.length > 0)
       : null;
 
   return (
     <div className="min-h-screen bg-[#f6f9fd] font-sans">
-      {/* ── HERO HEADER ── */}
-      <div className="bg-[#0d2d4a] pt-12 pb-10 px-6 lg:px-10">
-        <div className="mx-auto max-w-6xl">
-          {/* Back link */}
-          <a
-            href="/csr-initiatives#csr"
-            className="inline-flex items-center gap-2 text-xs font-medium mb-8 transition-opacity hover:opacity-70"
-            style={{ color: "rgba(255,255,255,0.45)" }}
-          >
-            <ArrowLeft className="w-3.5 h-3.5" />
-            Back to CSR
-          </a>
-
-          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
-            <div>
-              <div className="flex items-center gap-3 mb-3">
-                <span className="h-px w-6 bg-white/30" />
-                <span
-                  className="text-[11px] font-medium uppercase tracking-[0.14em]"
-                  style={{ color: "rgba(255,255,255,0.45)" }}
-                >
-                  Corporate Gallery
-                </span>
-              </div>
-              <h1
-                className="font-playfair text-4xl lg:text-5xl font-bold text-white leading-tight mb-2"
-              >
-                Every photo,{" "}
-                <em className="font-normal italic" style={{ color: "rgba(255,255,255,0.55)" }}>
-                  every story.
-                </em>
-              </h1>
-              <p className="text-sm" style={{ color: "rgba(255,255,255,0.45)" }}>
-                {flattenedGalleryItems.length} photos across {galleryCategories.length - 1} categories
-              </p>
-            </div>
-
-            {/* Search */}
-            <div className="relative lg:w-72">
-              <Search
-                className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4"
-                style={{ color: "rgba(255,255,255,0.35)" }}
-              />
-              <input
-                type="text"
-                placeholder="Search photos…"
-                value={search}
-                onChange={(e) => setSearch(e.target.value)}
-                className="w-full pl-9 pr-4 py-2.5 rounded-full text-sm outline-none transition"
-                style={{
-                  background: "rgba(255,255,255,0.09)",
-                  border: "1px solid rgba(255,255,255,0.12)",
-                  color: "#fff",
-                }}
-              />
-            </div>
-          </div>
-        </div>
-      </div>
+      <SectionHero
+        label="Corporate Gallery"
+        title="Every photo, every story."
+        description="A collection of moments that reflect our people, culture, milestones, community initiatives, and the journey behind the company’s growth."
+      />
 
       {/* ── STICKY FILTER BAR ── */}
       <div
-        className="sticky top-0 z-20 border-b px-6 lg:px-10 py-3"
+        className="sticky top-24 z-20 border-b px-6 lg:px-10 py-3"
         style={{
           background: "rgba(246,249,253,0.97)",
           backdropFilter: "blur(8px)",
           borderColor: "rgba(13,45,74,0.08)",
         }}
       >
-        <div className="mx-auto max-w-6xl flex items-center justify-between gap-4">
+        <div className="mx-auto max-w-[90rem] flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
           <CategoryStrip active={filter} onChange={handleFilterChange} />
+
+          <div className="">
+            <InputField
+              type="text"
+              placeholder="Search photos…"
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              leftIcon={<Search />}
+            />
+          </div>
+
           {/* View toggle */}
           <div
             className="flex items-center gap-1 p-1 rounded-lg flex-shrink-0"
@@ -426,14 +432,18 @@ export default function GalleryPage() {
           </div>
         </div>
       </div>
-
       {/* ── CONTENT ── */}
       <div className="mx-auto max-w-6xl px-6 lg:px-10 py-10">
         {filtered.length === 0 ? (
           <div className="text-center py-24">
-            <p className="text-slate-400 text-sm">No photos found for "{search}"</p>
+            <p className="text-slate-400 text-sm">
+              No photos found for "{search}"
+            </p>
             <button
-              onClick={() => { setSearch(""); setFilter("All"); }}
+              onClick={() => {
+                setSearch("");
+                setFilter("All");
+              }}
               className="mt-4 text-xs text-[#174674] underline underline-offset-2"
             >
               Clear filters
@@ -459,7 +469,10 @@ export default function GalleryPage() {
                   </div>
                   <span
                     className="ml-auto text-xs font-medium px-3 py-1 rounded-full"
-                    style={{ background: "rgba(23,70,116,0.08)", color: "#174674" }}
+                    style={{
+                      background: "rgba(23,70,116,0.08)",
+                      color: "#174674",
+                    }}
                   >
                     {items.length} photos
                   </span>
@@ -489,13 +502,20 @@ export default function GalleryPage() {
                   <div>
                     <div className="flex items-center gap-2 mb-0.5">
                       <span className="h-px w-5 bg-[#174674]" />
-                      <span className="text-[10px] font-medium uppercase tracking-[0.12em] text-[#174674]">{cat}</span>
+                      <span className="text-[10px] font-medium uppercase tracking-[0.12em] text-[#174674]">
+                        {cat}
+                      </span>
                     </div>
-                    <h2 className="font-playfair text-2xl font-bold text-[#0d2d4a]">{label}</h2>
+                    <h2 className="font-playfair text-2xl font-bold text-[#0d2d4a]">
+                      {label}
+                    </h2>
                   </div>
                   <span
                     className="ml-auto text-xs font-medium px-3 py-1 rounded-full"
-                    style={{ background: "rgba(23,70,116,0.08)", color: "#174674" }}
+                    style={{
+                      background: "rgba(23,70,116,0.08)",
+                      color: "#174674",
+                    }}
                   >
                     {items.length} photos
                   </span>
@@ -524,12 +544,19 @@ export default function GalleryPage() {
               <p className="text-sm text-slate-500">
                 {filtered.length} photo{filtered.length !== 1 ? "s" : ""}
                 {search && (
-                  <> matching <strong className="text-[#0d2d4a]">"{search}"</strong></>
+                  <>
+                    {" "}
+                    matching{" "}
+                    <strong className="text-[#0d2d4a]">"{search}"</strong>
+                  </>
                 )}
               </p>
               {(filter !== "All" || search) && (
                 <button
-                  onClick={() => { setFilter("All"); setSearch(""); }}
+                  onClick={() => {
+                    setFilter("All");
+                    setSearch("");
+                  }}
                   className="text-xs text-[#174674] underline underline-offset-2 hover:opacity-70 transition"
                 >
                   Clear
