@@ -11,16 +11,6 @@ import {
   X,
 } from "lucide-react";
 
-import people1 from "../assets/workplace/people1.jpg";
-import people2 from "../assets/workplace/people2.jpg";
-import people3 from "../assets/workplace/people3.jpg";
-import people4 from "../assets/workplace/people4.jpg";
-import people5 from "../assets/workplace/people5.jpg";
-import people6 from "../assets/workplace/people6.jpg";
-import people7 from "../assets/workplace/people7.jpg";
-import people8 from "../assets/workplace/people8.jpg";
-import people9 from "../assets/workplace/people9.jpg";
-
 // =======================TYPES ======================
 interface EmployeeProgramsType {
   tag: string;
@@ -30,10 +20,24 @@ interface EmployeeProgramsType {
   images: string[];
 }
 
-interface GalleryItemsType {
+export type GalleryCategory = "All" | "Outreach" | "Employee" | "Events";
+
+interface GalleryImage {
+  img: string;
+  caption?: string; // optional override
+  wide?: boolean;
+}
+
+interface GalleryGroup {
+  category: GalleryCategory;
+  caption: string; // default caption
+  items: GalleryImage[];
+}
+
+export interface GalleryFlatItem {
   img: string;
   caption: string;
-  category: string;
+  category: GalleryCategory;
   wide?: boolean;
 }
 
@@ -47,11 +51,11 @@ const sections = [
 
 const outreachPrograms = [
   {
-    id: "feeding",
-    tag: "Feeding Program",
-    title: "Nourishing Communities Every Day",
-    desc: "Our feeding program partners with local barangays to deliver hot, nutritious meals to children and families facing food insecurity. Employee volunteers join every mission — from cooking to serving — making each session a human connection, not just a handout.",
-    img: "https://images.unsplash.com/photo-1593113598332-cd288d649433?w=900&q=80&fit=crop",
+    id: "orphanage",
+    tag: "Orphanage Outreach",
+    title: "Heart in Action: JPSC Group's Orphanage Outreach 2025",
+    desc: "Our orphanage outreach is one of the ways we extend care beyond business — sharing meals, moments, and meaningful experiences with children through simple acts of kindness. Through every visit, we hope to bring comfort, joy, and a reminder that they are seen, valued, and never alone.",
+    img: "/images/CSRInitiatives/orphanage.png",
     color: "#e8f4ec",
     accent: "#2e7d54",
   },
@@ -66,10 +70,10 @@ const outreachPrograms = [
   },
   {
     id: "community-meals",
-    tag: "Community Kitchen",
+    tag: "Community Meals",
     title: "Cooking and Sharing Meals Together",
     desc: "Beyond food distribution, we organize community cooking days where volunteers and residents prepare meals together. These shared spaces create connection, dignity, and a sense of ownership — turning every meal into a collective effort rather than a one-way act of giving.",
-    img: "https://images.unsplash.com/photo-1606787366850-de6330128bfc?w=900&q=80&fit=crop",
+    img: "/images/CSRInitiatives/Buscalan/buscalan1.png",
     color: "#fdf0e8",
     accent: "#a0522d",
   },
@@ -96,15 +100,15 @@ const employeePrograms: EmployeeProgramsType[] = [
       "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&q=80&fit=crop",
       "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=600&q=80&fit=crop",
       "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=600&q=80&fit=crop",
-      people1,
-      people2,
-      people3,
-      people4,
-      people5,
-      people6,
-      people7,
-      people8,
-      people9,
+      "/images/workplace/people1.jpg",
+      "/images/workplace/people2.jpg",
+      "/images/workplace/people3.jpg",
+      "/images/workplace/people4.jpg",
+      "/images/workplace/people5.jpg",
+      "/images/workplace/people6.jpg",
+      "/images/workplace/people7.jpg",
+      "/images/workplace/people8.jpg",
+      "/images/workplace/people9.jpg",
     ],
   },
   {
@@ -120,103 +124,119 @@ const employeePrograms: EmployeeProgramsType[] = [
   },
 ];
 
-const galleryItems: GalleryItemsType[] = [
+export const galleryItems: GalleryGroup[] = [
   {
-    img: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=800&q=80&fit=crop",
-    caption: "Barangay Outreach Mission — Q1 2024",
     category: "Outreach",
-    wide: true,
+    caption: "Company Outreach Worldwide",
+    items: [
+      {
+        img: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=800&q=80&fit=crop",
+        caption: "Barangay Outreach Mission — Q1 2024",
+        wide: true,
+      },
+      // {
+      //   img: "https://images.unsplash.com/photo-1593113598332-cd288d649433?w=800&q=80&fit=crop",
+      //   caption: "Monthly Feeding Drive — Taguig",
+      // },
+      {
+        img: "https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?w=800&q=80&fit=crop",
+        caption: "Holiday Donations Drive",
+      },
+      {
+        img: "/images/CSRInitiatives/DSC_0840.png",
+        caption: "Hearts in Action",
+      },
+      {
+        img: "/images/CSRInitiatives/DSC_0844.png",
+      },
+      {
+        img: "/images/CSRInitiatives/DSC_0845.png",
+      },
+      {
+        img: "/images/CSRInitiatives/DSC_0848.png",
+      },
+      {
+        img: "/images/CSRInitiatives/orp_team.png",
+      },
+      {
+        img: "/images/CSRInitiatives/orp_team1.png",
+      },
+      {
+        img: "/images/CSRInitiatives/orphanage.png",
+      },
+      {
+        img: "/images/CSRInitiatives/Buscalan/buscalan.png",
+      },
+      {
+        img: "/images/CSRInitiatives/Buscalan/buscalan1.png",
+      },
+    ],
   },
+
   {
-    img: "https://images.unsplash.com/photo-1593113598332-cd288d649433?w=800&q=80&fit=crop",
-    caption: "Monthly Feeding Drive — Taguig",
-    category: "Outreach",
-  },
-  {
-    img: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=800&q=80&fit=crop",
-    caption: "Annual Team Building 2024",
     category: "Employee",
+    caption: "Employee Engagement & Collaboration",
+    items: [
+      {
+        img: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=800&q=80&fit=crop",
+        caption: "Annual Team Building 2024",
+      },
+      {
+        img: "https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?w=800&q=80&fit=crop",
+        caption: "Volunteer Day — Coastal Cleanup",
+        wide: true,
+      },
+      {
+        img: "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=800&q=80&fit=crop",
+        caption: "Team Outing — Batangas 2024",
+      },
+
+      { img: "/images/workplace/people1.jpg" },
+      { img: "/images/workplace/people2.jpg" },
+      { img: "/images/workplace/people3.jpg" },
+      { img: "/images/workplace/people4.jpg" },
+      { img: "/images/workplace/people5.jpg" },
+      { img: "/images/workplace/people6.jpg" },
+      { img: "/images/workplace/people7.jpg" },
+      { img: "/images/workplace/people8.jpg" },
+      { img: "/images/workplace/people9.jpg" },
+    ],
   },
+
   {
-    img: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&q=80&fit=crop",
-    caption: "10th Anniversary Gala",
     category: "Events",
-    wide: true,
-  },
-  {
-    img: "https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?w=800&q=80&fit=crop",
-    caption: "Holiday Donations Drive",
-    category: "Outreach",
-  },
-  {
-    img: "https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?w=800&q=80&fit=crop",
-    caption: "Volunteer Day — Coastal Cleanup",
-    category: "Employee",
-    wide: true,
-  },
-  {
-    img: "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=800&q=80&fit=crop",
-    caption: "Q4 Company Townhall",
-    category: "Events",
-  },
-  {
-    img: "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=800&q=80&fit=crop",
-    caption: "Team Outing — Batangas 2024",
-    category: "Employee",
-  },
-  {
-    img: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800&q=80&fit=crop",
-    caption: "Mid-Year Celebration",
-    category: "Events",
-  },
-  {
-    img: people1,
-    caption: "Alibaba Cloud Collaboration",
-    category: "Employee",
-  },
-  {
-    img: people2,
-    caption: "Alibaba Cloud Collaboration",
-    category: "Employee",
-  },
-  {
-    img: people3,
-    caption: "Alibaba Cloud Collaboration",
-    category: "Employee",
-  },
-  {
-    img: people4,
-    caption: "Alibaba Cloud Collaboration",
-    category: "Employee",
-  },
-  {
-    img: people5,
-    caption: "Alibaba Cloud Collaboration",
-    category: "Employee",
-  },
-  {
-    img: people6,
-    caption: "Alibaba Cloud Collaboration",
-    category: "Employee",
-  },
-  {
-    img: people7,
-    caption: "Alibaba Cloud Collaboration",
-    category: "Employee",
-  },
-  {
-    img: people8,
-    caption: "Alibaba Cloud Collaboration",
-    category: "Employee",
-  },
-  {
-    img: people9,
-    caption: "Alibaba Cloud Collaboration",
-    category: "Employee",
+    caption: "Corporate Events & Celebrations",
+    items: [
+      {
+        img: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&q=80&fit=crop",
+        caption: "10th Anniversary Gala",
+        wide: true,
+      },
+      {
+        img: "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=800&q=80&fit=crop",
+        caption: "Q4 Company Townhall",
+      },
+      {
+        img: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800&q=80&fit=crop",
+        caption: "Mid-Year Celebration",
+      },
+    ],
   },
 ];
 
-const galleryCategories = ["All", "Outreach", "Employee", "Events"];
+
+export const flattenedGalleryItems: GalleryFlatItem[] = galleryItems.flatMap((group) =>
+  group.items.map((item) => ({
+    ...item,
+    category: group.category,
+    caption: item.caption ?? group.caption,
+  }))
+);
+
+ export const galleryCategories: GalleryCategory[] = [
+    "All",
+    ...new Set(flattenedGalleryItems.map((i) => i.category)),
+  ];
 
 // ─── SCROLL STRIP ─────────────────────────────────────────────────────────────
 
@@ -304,7 +324,7 @@ function Lightbox({
   startIdx,
   onClose,
 }: {
-  items: GalleryItemsType[];
+  items: GalleryFlatItem[];
   startIdx: number;
   onClose: () => void;
 }) {
@@ -605,12 +625,20 @@ function EmployeeSection() {
 // ─── GALLERY SECTION ──────────────────────────────────────────────────────────
 
 function GallerySection() {
-  const [filter, setFilter] = useState("All");
+  const LIMIT = 9;
+  const [filter, setFilter] = useState<GalleryCategory>("All");
+  const [showAll, setShowAll] = useState(false);
   const [lightboxIdx, setLightboxIdx] = useState<number | null>(null);
 
-  const filtered = galleryItems.filter(
-    (g) => filter === "All" || g.category === filter,
+  const filtered = flattenedGalleryItems.filter(
+    (item) => filter === "All" || item.category === filter,
   );
+
+  // Reset showAll whenever filter changes
+  useEffect(() => setShowAll(false), [filter]);
+
+  const visible = showAll ? filtered : filtered.slice(0, LIMIT);
+
 
   return (
     <section id="gallery" className="py-20 bg-[#0d2d4a] scroll-mt-32">
@@ -650,21 +678,23 @@ function GallerySection() {
           ))}
         </div>
 
-        {/* Masonry-style grid */}
+        {/* Masonry grid — visible items only */}
         <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 space-y-4">
-          {filtered.map((item, i) => (
+          {visible.map((item, i) => (
             <div
               key={`${filter}-${i}`}
               className="break-inside-avoid rounded-xl overflow-hidden cursor-pointer relative group"
               onClick={() => setLightboxIdx(i)}
-              style={{ animation: "fadeIn 0.3s ease" }}
             >
               <img
                 src={item.img}
                 alt={item.caption}
-                className={`w-full object-cover group-hover:scale-105 transition-transform duration-500 ${item.wide ? "h-56" : "h-44"}`}
+                loading="lazy"
+                decoding="async"
+                className={`w-full object-cover ${item.wide ? "h-56" : "h-44"}`}
               />
-              <div className="absolute inset-0 bg-[#0d2d4a]/0 group-hover:bg-[#0d2d4a]/50 transition-all duration-300 flex items-center justify-center">
+              {/* Hover overlay — opacity only, no scale (avoids scroll repaint) */}
+              <div className="absolute inset-0 bg-[#0d2d4a]/0 group-hover:bg-[#0d2d4a]/50 transition-opacity duration-300 flex items-center justify-center">
                 <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-center px-4">
                   <p className="text-[10px] font-medium uppercase tracking-[0.1em] text-white/70 mb-1">
                     {item.category}
@@ -674,7 +704,6 @@ function GallerySection() {
                   </p>
                 </div>
               </div>
-              {/* Bottom gradient always visible */}
               <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#0d2d4a]/70 to-transparent px-3 py-2 pointer-events-none">
                 <p className="text-[10px] text-white/60">{item.caption}</p>
               </div>
@@ -682,9 +711,22 @@ function GallerySection() {
           ))}
         </div>
 
+        {/* View all button */}
+        {!showAll && filtered.length > LIMIT && (
+          <div className="mt-8 text-center">
+            <a
+              href="/gallery"
+              onClick={() => setShowAll(true)}
+              className="px-6 py-2.5 rounded-full bg-white/10 text-white/70 text-sm font-medium hover:bg-white/20 hover:text-white transition-all"
+            >
+              View all {filtered.length} photos
+            </a>
+          </div>
+        )}
+
         {lightboxIdx !== null && (
           <Lightbox
-            items={filtered}
+            items={visible}
             startIdx={lightboxIdx}
             onClose={() => setLightboxIdx(null)}
           />
@@ -693,7 +735,6 @@ function GallerySection() {
     </section>
   );
 }
-
 // ─── NAV ──────────────────────────────────────────────────────────────────────
 
 function StickyNav({ active }: { active: string }) {
@@ -730,7 +771,10 @@ function StickyNav({ active }: { active: string }) {
 
 function PageHero() {
   return (
-    <div id="main" className="relative h-[420px] lg:h-[500px] overflow-hidden scroll-mt-32">
+    <div
+      id="csr"
+      className="relative h-[420px] lg:h-[500px] overflow-hidden scroll-mt-32"
+    >
       <img
         src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1800&q=80&fit=crop"
         alt="CSR Hero"
@@ -761,7 +805,7 @@ function PageHero() {
 // ─── MAIN ─────────────────────────────────────────────────────────────────────
 
 export default function CSRPage() {
-   // 1. Initialize from URL hash, fallback to first section
+  // 1. Initialize from URL hash, fallback to first section
   const getInitialSection = () => {
     const hash = window.location.hash.replace("#", "");
     return sections.some((s) => s.id === hash) ? hash : sections[0].id;
@@ -780,7 +824,7 @@ export default function CSRPage() {
   }, []);
 
   // 3. Observer updates both state AND the URL hash
-  useEffect(() => {
+   useEffect(() => {
     const ids = sections.map((s) => s.id);
     const observers = ids.map((id) => {
       const el = document.getElementById(id);
