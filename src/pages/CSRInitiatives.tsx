@@ -735,7 +735,7 @@ function GallerySection() {
         {!showAll && filtered.length > LIMIT && (
           <div className="mt-8 text-center">
             <a
-              href="/gallery"
+              href="/csr-gallery"
               onClick={() => setShowAll(true)}
               className="px-6 py-2.5 rounded-full bg-white/10 text-white/70 text-sm font-medium hover:bg-white/20 hover:text-white transition-all"
             >

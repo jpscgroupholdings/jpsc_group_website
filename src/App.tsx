@@ -57,7 +57,7 @@ function App() {
             <Route path="/not-found" element={<Notfound />} />
             <Route path="/csr-initiatives" element={<CSRPage />}/>
             <Route path="/brands" element={<BrandPage />}/>
-            <Route path="/gallery" element={<GalleryPage />}/>
+            <Route path="/csr-gallery" element={<GalleryPage />}/>
              <Route path="/global-presence" element={<GlobalPresencePage />}/>
           </Routes>
         </div>
