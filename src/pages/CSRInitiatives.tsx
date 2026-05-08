@@ -29,6 +29,7 @@ import people6 from "../assets/workplace/people6.jpg"
 import people7 from "../assets/workplace/people7.jpg"
 import people8 from "../assets/workplace/people8.jpg"
 import people9 from "../assets/workplace/people9.jpg"
+import { Link } from "react-router-dom";
 
 
 // =======================TYPES ======================
@@ -647,17 +648,14 @@ function EmployeeSection() {
 function GallerySection() {
   const LIMIT = 9;
   const [filter, setFilter] = useState<GalleryCategory>("All");
-  const [showAll, setShowAll] = useState(false);
   const [lightboxIdx, setLightboxIdx] = useState<number | null>(null);
 
   const filtered = flattenedGalleryItems.filter(
     (item) => filter === "All" || item.category === filter,
   );
 
-  // Reset showAll whenever filter changes
-  useEffect(() => setShowAll(false), [filter]);
 
-  const visible = showAll ? filtered : filtered.slice(0, LIMIT);
+  const visible = filtered.slice(0, LIMIT);
 
 
   return (
@@ -732,15 +730,14 @@ function GallerySection() {
         </div>
 
         {/* View all button */}
-        {!showAll && filtered.length > LIMIT && (
+        {filtered.length > LIMIT && (
           <div className="mt-8 text-center">
-            <a
-              href="/csr-gallery"
-              onClick={() => setShowAll(true)}
+            <Link
+              to="/csr-gallery"
               className="px-6 py-2.5 rounded-full bg-white/10 text-white/70 text-sm font-medium hover:bg-white/20 hover:text-white transition-all"
             >
               View all {filtered.length} photos
-            </a>
+            </Link>
           </div>
         )}
 

@@ -31,3 +31,4 @@ dist.zip
 .vscode
 
 .env
+.vercel
