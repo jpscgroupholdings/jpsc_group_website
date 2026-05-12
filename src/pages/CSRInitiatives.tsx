@@ -20,26 +20,26 @@ import outreach7 from "../assets/CSRInitiatives/orphanage.png";
 import outreach8 from "../assets/CSRInitiatives/Buscalan/buscalan.png";
 import outreach9 from "../assets/CSRInitiatives/Buscalan/buscalan1.png";
 
-import people1 from "../assets/workplace/people1.jpg"
-import people2 from "../assets/workplace/people2.jpg"
-import people3 from "../assets/workplace/people3.jpg"
-import people4 from "../assets/workplace/people4.jpg"
-import people5 from "../assets/workplace/people5.jpg"
-import people6 from "../assets/workplace/people6.jpg"
-import people7 from "../assets/workplace/people7.jpg"
-import people8 from "../assets/workplace/people8.jpg"
-import people9 from "../assets/workplace/people9.jpg"
+// import people1 from "../assets/workplace/people1.jpg"
+// import people2 from "../assets/workplace/people2.jpg"
+// import people3 from "../assets/workplace/people3.jpg"
+// import people4 from "../assets/workplace/people4.jpg"
+// import people5 from "../assets/workplace/people5.jpg"
+// import people6 from "../assets/workplace/people6.jpg"
+// import people7 from "../assets/workplace/people7.jpg"
+// import people8 from "../assets/workplace/people8.jpg"
+// import people9 from "../assets/workplace/people9.jpg"
 import { Link } from "react-router-dom";
 
 
 // =======================TYPES ======================
-interface EmployeeProgramsType {
-  tag: string;
-  title: string;
-  desc: string;
-  img: string;
-  images: string[];
-}
+// interface EmployeeProgramsType {
+//   tag: string;
+//   title: string;
+//   desc: string;
+//   img: string;
+//   images: string[];
+// }
 
 export type GalleryCategory = "All" | "Outreach" | "Employee" | "Events";
 
@@ -66,7 +66,7 @@ export interface GalleryFlatItem {
 
 const sections = [
   { id: "outreach", label: "Community Outreach", icon: Heart },
-  { id: "employee", label: "Employee Engagement", icon: Users },
+  // { id: "employee", label: "Employee Engagement", icon: Users },
   { id: "gallery", label: "Corporate Gallery", icon: Camera },
 ];
 
@@ -100,50 +100,50 @@ const outreachPrograms = [
   },
 ];
 
-const employeePrograms: EmployeeProgramsType[] = [
-  {
-    tag: "Team Building",
-    title: "Bonds Built Beyond the Office",
-    desc: "Our annual team-building retreats take employees out of their desks and into experiences designed to spark collaboration, trust, and laughter. From outdoor challenges to creative workshops, we invest in the people behind the work.",
-    img: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=900&q=80&fit=crop",
-    images: [
-      "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=600&q=80&fit=crop",
-      "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=600&q=80&fit=crop",
-      "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=600&q=80&fit=crop",
-      people1,
-      people2,
-      people3,
-      people4,
-      people5,
-      people6,
-      people7,
-      people8,
-      people9,
-    ],
-  },
-  {
-    tag: "Corporate Events",
-    title: "Celebrating Milestones Together",
-    desc: "From anniversary galas to quarterly townhalls, our corporate events honor our journey and align our people around a shared vision. These gatherings are where stories are shared, achievements are recognized, and culture is lived.",
-    img: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=900&q=80&fit=crop",
-    images: [
-      "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&q=80&fit=crop",
-      "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=600&q=80&fit=crop",
-      "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=600&q=80&fit=crop",
-    ],
-  },
-  {
-    tag: "Volunteer Days",
-    title: "Every Employee, a Community Hero",
-    desc: "We give each employee four paid volunteer days per year to participate in CSR activities of their choosing. Whether they join a feeding mission, a coastal cleanup, or a school mentorship — the choice is theirs.",
-    img: "https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?w=900&q=80&fit=crop",
-    images: [
-      "https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?w=600&q=80&fit=crop",
-      "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=600&q=80&fit=crop",
-      "https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?w=600&q=80&fit=crop",
-    ],
-  },
-];
+// const employeePrograms: EmployeeProgramsType[] = [
+//   {
+//     tag: "Team Building",
+//     title: "Bonds Built Beyond the Office",
+//     desc: "Our annual team-building retreats take employees out of their desks and into experiences designed to spark collaboration, trust, and laughter. From outdoor challenges to creative workshops, we invest in the people behind the work.",
+//     img: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=900&q=80&fit=crop",
+//     images: [
+//       "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=600&q=80&fit=crop",
+//       "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=600&q=80&fit=crop",
+//       "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=600&q=80&fit=crop",
+//       people1,
+//       people2,
+//       people3,
+//       people4,
+//       people5,
+//       people6,
+//       people7,
+//       people8,
+//       people9,
+//     ],
+//   },
+//   {
+//     tag: "Corporate Events",
+//     title: "Celebrating Milestones Together",
+//     desc: "From anniversary galas to quarterly townhalls, our corporate events honor our journey and align our people around a shared vision. These gatherings are where stories are shared, achievements are recognized, and culture is lived.",
+//     img: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=900&q=80&fit=crop",
+//     images: [
+//       "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&q=80&fit=crop",
+//       "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=600&q=80&fit=crop",
+//       "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=600&q=80&fit=crop",
+//     ],
+//   },
+//   {
+//     tag: "Volunteer Days",
+//     title: "Every Employee, a Community Hero",
+//     desc: "We give each employee four paid volunteer days per year to participate in CSR activities of their choosing. Whether they join a feeding mission, a coastal cleanup, or a school mentorship — the choice is theirs.",
+//     img: "https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?w=900&q=80&fit=crop",
+//     images: [
+//       "https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?w=600&q=80&fit=crop",
+//       "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=600&q=80&fit=crop",
+//       "https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?w=600&q=80&fit=crop",
+//     ],
+//   },
+// ];
 
 export const galleryItems: GalleryGroup[] = [
   {
@@ -194,35 +194,35 @@ export const galleryItems: GalleryGroup[] = [
     ],
   },
 
-  {
-    category: "Employee",
-    caption: "Employee Engagement & Collaboration",
-    items: [
-      {
-        img: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=800&q=80&fit=crop",
-        caption: "Annual Team Building 2024",
-      },
-      {
-        img: "https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?w=800&q=80&fit=crop",
-        caption: "Volunteer Day — Coastal Cleanup",
-        wide: true,
-      },
-      {
-        img: "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=800&q=80&fit=crop",
-        caption: "Team Outing — Batangas 2024",
-      },
+  // {
+  //   category: "Employee",
+  //   caption: "Employee Engagement & Collaboration",
+  //   items: [
+  //     {
+  //       img: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=800&q=80&fit=crop",
+  //       caption: "Annual Team Building 2024",
+  //     },
+  //     {
+  //       img: "https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?w=800&q=80&fit=crop",
+  //       caption: "Volunteer Day — Coastal Cleanup",
+  //       wide: true,
+  //     },
+  //     {
+  //       img: "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=800&q=80&fit=crop",
+  //       caption: "Team Outing — Batangas 2024",
+  //     },
 
-      { img: people1, },
-      { img: people2, },
-      { img: people3, },
-      { img: people4, },
-      { img: people5, },
-      { img: people6, },
-      { img: people7, },
-      { img: people8 },
-      { img: people9, },
-    ],
-  },
+  //     { img: people1, },
+  //     { img: people2, },
+  //     { img: people3, },
+  //     { img: people4, },
+  //     { img: people5, },
+  //     { img: people6, },
+  //     { img: people7, },
+  //     { img: people8 },
+  //     { img: people9, },
+  //   ],
+  // },
 
   {
     category: "Events",
@@ -261,83 +261,83 @@ export const flattenedGalleryItems: GalleryFlatItem[] = galleryItems.flatMap((gr
 
 // ─── SCROLL STRIP ─────────────────────────────────────────────────────────────
 
-function ScrollStrip({
-  images,
-  label,
-  idx,
-  onSelect,
-}: {
-  images: string[];
-  label: string;
-  idx: number;
-  onSelect: (i: number) => void;
-}) {
-  const itemRefs = useRef<(HTMLDivElement | null)[]>([]);
+// function ScrollStrip({
+//   images,
+//   label,
+//   idx,
+//   onSelect,
+// }: {
+//   images: string[];
+//   label: string;
+//   idx: number;
+//   onSelect: (i: number) => void;
+// }) {
+//   const itemRefs = useRef<(HTMLDivElement | null)[]>([]);
 
-  useEffect(() => {
-    itemRefs.current[idx]?.scrollIntoView({
-      behavior: "smooth",
-      block: "nearest",
-      inline: "center",
-    });
-  }, [idx]);
+//   useEffect(() => {
+//     itemRefs.current[idx]?.scrollIntoView({
+//       behavior: "smooth",
+//       block: "nearest",
+//       inline: "center",
+//     });
+//   }, [idx]);
 
-  const go = (dir: 1 | -1) =>
-    onSelect(Math.max(0, Math.min(images.length - 1, idx + dir)));
+//   const go = (dir: 1 | -1) =>
+//     onSelect(Math.max(0, Math.min(images.length - 1, idx + dir)));
 
-  return (
-    <div className="relative mt-3">
-      <div
-        className="flex gap-2 overflow-x-auto pb-1"
-        style={{
-          scrollbarWidth: "none",
-          msOverflowStyle: "none",
-          scrollBehavior: "smooth",
-        }}
-      >
-        {images.map((src, i) => (
-          <div
-            key={src}
-            ref={(el) => {
-              itemRefs.current[i] = el;
-            }}
-            onClick={() => onSelect(i)}
-            className={`flex-none h-28 rounded-xl overflow-hidden border-2 cursor-pointer transition-all duration-200 ${
-              i === idx
-                ? "border-[#174674] opacity-100"
-                : "border-slate-100 opacity-75 hover:opacity-95"
-            }`}
-          >
-            <img
-              src={src}
-              alt={`${label} ${i + 1}`}
-              className="w-full h-full object-cover"
-            />
-          </div>
-        ))}
-      </div>
+//   return (
+//     <div className="relative mt-3">
+//       <div
+//         className="flex gap-2 overflow-x-auto pb-1"
+//         style={{
+//           scrollbarWidth: "none",
+//           msOverflowStyle: "none",
+//           scrollBehavior: "smooth",
+//         }}
+//       >
+//         {images.map((src, i) => (
+//           <div
+//             key={src}
+//             ref={(el) => {
+//               itemRefs.current[i] = el;
+//             }}
+//             onClick={() => onSelect(i)}
+//             className={`flex-none h-28 rounded-xl overflow-hidden border-2 cursor-pointer transition-all duration-200 ${
+//               i === idx
+//                 ? "border-[#174674] opacity-100"
+//                 : "border-slate-100 opacity-75 hover:opacity-95"
+//             }`}
+//           >
+//             <img
+//               src={src}
+//               alt={`${label} ${i + 1}`}
+//               className="w-full h-full object-cover"
+//             />
+//           </div>
+//         ))}
+//       </div>
 
-      {images.length > 2 && (
-        <div className="flex gap-2 mt-2 justify-end">
-          <button
-            onClick={() => go(-1)}
-            disabled={idx === 0}
-            className="w-7 h-7 rounded-full border border-slate-200 flex items-center justify-center disabled:opacity-30 hover:bg-slate-100 transition"
-          >
-            <ChevronLeft className="w-3.5 h-3.5 text-[#0d2d4a]" />
-          </button>
-          <button
-            onClick={() => go(1)}
-            disabled={idx === images.length - 1}
-            className="w-7 h-7 rounded-full border border-slate-200 flex items-center justify-center disabled:opacity-30 hover:bg-slate-100 transition"
-          >
-            <ChevronRight className="w-3.5 h-3.5 text-[#0d2d4a]" />
-          </button>
-        </div>
-      )}
-    </div>
-  );
-}
+//       {images.length > 2 && (
+//         <div className="flex gap-2 mt-2 justify-end">
+//           <button
+//             onClick={() => go(-1)}
+//             disabled={idx === 0}
+//             className="w-7 h-7 rounded-full border border-slate-200 flex items-center justify-center disabled:opacity-30 hover:bg-slate-100 transition"
+//           >
+//             <ChevronLeft className="w-3.5 h-3.5 text-[#0d2d4a]" />
+//           </button>
+//           <button
+//             onClick={() => go(1)}
+//             disabled={idx === images.length - 1}
+//             className="w-7 h-7 rounded-full border border-slate-200 flex items-center justify-center disabled:opacity-30 hover:bg-slate-100 transition"
+//           >
+//             <ChevronRight className="w-3.5 h-3.5 text-[#0d2d4a]" />
+//           </button>
+//         </div>
+//       )}
+//     </div>
+//   );
+// }
 // ─── LIGHTBOX ─────────────────────────────────────────────────────────────────
 
 function Lightbox({
@@ -561,87 +561,87 @@ function OutreachSection() {
 
 // ─── EMPLOYEE ENGAGEMENT SECTION ──────────────────────────────────────────────
 
-function EmployeeCard({ p, i }: { p: EmployeeProgramsType; i: number }) {
-  const [idx, setIdx] = useState(0);
-  const isEven = i % 2 === 0;
+// function EmployeeCard({ p, i }: { p: EmployeeProgramsType; i: number }) {
+//   const [idx, setIdx] = useState(0);
+//   const isEven = i % 2 === 0;
 
-  const imagePanel = (
-    <div className="relative h-52 lg:h-auto overflow-hidden">
-      <img
-        key={p.images[idx]} // key swap triggers fade if you add CSS transition
-        src={p.images[idx]} // ← active image drives this panel
-        alt={p.tag}
-        className="w-full h-full object-cover hover:scale-105 transition-all duration-500"
-      />
-    </div>
-  );
+//   const imagePanel = (
+//     <div className="relative h-52 lg:h-auto overflow-hidden">
+//       <img
+//         key={p.images[idx]} // key swap triggers fade if you add CSS transition
+//         src={p.images[idx]} // ← active image drives this panel
+//         alt={p.tag}
+//         className="w-full h-full object-cover hover:scale-105 transition-all duration-500"
+//       />
+//     </div>
+//   );
 
-  const textPanel = (
-    <div className="p-7 lg:p-9 flex flex-col justify-between">
-      <div>
-        <span className="text-[10px] font-medium uppercase tracking-[0.12em] text-[#174674] mb-2 block">
-          {p.tag}
-        </span>
-        <h3 className="font-playfair text-2xl font-bold text-[#0d2d4a] mb-3 leading-snug">
-          {p.title}
-        </h3>
-        <p className="text-sm leading-relaxed text-slate-500 mb-4">{p.desc}</p>
-      </div>
-      <ScrollStrip
-        images={p.images}
-        label={p.tag}
-        idx={idx}
-        onSelect={setIdx}
-      />
-    </div>
-  );
+//   const textPanel = (
+//     <div className="p-7 lg:p-9 flex flex-col justify-between">
+//       <div>
+//         <span className="text-[10px] font-medium uppercase tracking-[0.12em] text-[#174674] mb-2 block">
+//           {p.tag}
+//         </span>
+//         <h3 className="font-playfair text-2xl font-bold text-[#0d2d4a] mb-3 leading-snug">
+//           {p.title}
+//         </h3>
+//         <p className="text-sm leading-relaxed text-slate-500 mb-4">{p.desc}</p>
+//       </div>
+//       <ScrollStrip
+//         images={p.images}
+//         label={p.tag}
+//         idx={idx}
+//         onSelect={setIdx}
+//       />
+//     </div>
+//   );
 
-  return (
-    <div
-      className={`grid overflow-hidden rounded-2xl border border-slate-100 bg-white ${
-        isEven ? "lg:grid-cols-[1fr_340px]" : "lg:grid-cols-[340px_1fr]"
-      }`}
-    >
-      {isEven ? (
-        <>
-          {textPanel}
-          {imagePanel}
-        </>
-      ) : (
-        <>
-          {imagePanel}
-          {textPanel}
-        </>
-      )}
-    </div>
-  );
-}
+//   return (
+//     <div
+//       className={`grid overflow-hidden rounded-2xl border border-slate-100 bg-white ${
+//         isEven ? "lg:grid-cols-[1fr_340px]" : "lg:grid-cols-[340px_1fr]"
+//       }`}
+//     >
+//       {isEven ? (
+//         <>
+//           {textPanel}
+//           {imagePanel}
+//         </>
+//       ) : (
+//         <>
+//           {imagePanel}
+//           {textPanel}
+//         </>
+//       )}
+//     </div>
+//   );
+// }
 
-function EmployeeSection() {
-  return (
-    <section id="employee" className="py-20 bg-[#f6f9fd] scroll-mt-32">
-      <div className="mx-auto max-w-6xl px-6 lg:px-10">
-        <SectionHeader
-          tag="Employee Engagement"
-          title={
-            <>
-              Our people are our{" "}
-              <em className="font-normal italic text-[#174674]">
-                greatest program.
-              </em>
-            </>
-          }
-          subtitle="We invest in the wellbeing, bonds, and purpose of every team member — because a company's culture is its most visible CSR act."
-        />
-        <div className="space-y-5">
-          {employeePrograms.map((p, i) => (
-            <EmployeeCard key={p.tag} p={p} i={i} />
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
+// function EmployeeSection() {
+//   return (
+//     <section id="employee" className="py-20 bg-[#f6f9fd] scroll-mt-32">
+//       <div className="mx-auto max-w-6xl px-6 lg:px-10">
+//         <SectionHeader
+//           tag="Employee Engagement"
+//           title={
+//             <>
+//               Our people are our{" "}
+//               <em className="font-normal italic text-[#174674]">
+//                 greatest program.
+//               </em>
+//             </>
+//           }
+//           subtitle="We invest in the wellbeing, bonds, and purpose of every team member — because a company's culture is its most visible CSR act."
+//         />
+//         <div className="space-y-5">
+//           {employeePrograms.map((p, i) => (
+//             <EmployeeCard key={p.tag} p={p} i={i} />
+//           ))}
+//         </div>
+//       </div>
+//     </section>
+//   );
+// }
 
 // ─── GALLERY SECTION ──────────────────────────────────────────────────────────
 
@@ -869,7 +869,7 @@ export default function CSRPage() {
       <PageHero />
       <StickyNav active={activeSection} />
       <OutreachSection />
-      <EmployeeSection />
+      {/* <EmployeeSection /> */}
       <GallerySection />
 
       {/* Footer Section (Soft CTA / Brand Close) */}
