@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import JPSC from "../../../assets/company_logo/JPSC.jpg";
 import JPPRO from "../../../assets/company_logo/JPPRO.jpg";
 import Harrison from "../../../assets/company_logo/Harrison.jpg";
-import DigitalOne from "../../../assets/company_logo/DigitalOne.jpg";
+import JPTech from "../../../assets/company_logo/jptech.jpeg";
 import MainLogo from "../../../assets/logo.png";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
@@ -11,7 +11,7 @@ export const Subsidaries = () => {
     { name: "JPSC Consulting Services", path: JPSC },
     { name: "JPPRO", path: JPPRO },
     { name: "Harrison House of Inasal & BBQ", path: Harrison },
-    { name: "JP Tech Solutions Inc", path: DigitalOne },
+    { name: "JP Tech Solutions Inc", path: JPTech },
     { name: "JP FoodLab", path: MainLogo },
     { name: "JPSC Group Ltd (Hongkong)", path: MainLogo },
     { name: "JPSC Group Ltd (Philippines)", path: MainLogo },
