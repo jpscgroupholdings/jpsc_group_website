@@ -45,7 +45,7 @@ const navItems: NavItem[] = [
     children: [
       {href: "/csr-initiatives#main", label: "CSR Overview"},
       {href: "/csr-initiatives#outreach", label: "Community Outreach"},
-      {href: "/csr-initiatives#employee", label: "Employee Engagement"},
+      // {href: "/csr-initiatives#employee", label: "Employee Engagement"},
       {href: "/csr-initiatives#gallery", label: "Corporate Events Gallery"},
     ]
   },
