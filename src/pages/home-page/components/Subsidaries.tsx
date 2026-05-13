@@ -76,10 +76,10 @@ export const Subsidaries = () => {
                   alt={item.name}
                   className="h-40 max-w-full object-contain transition-transform duration-300 scale-95 group-hover:scale-100"
                 />
-                <p className="text-lg text-brand-primary-600 font-semibold text-center">
-                  {item.name}
+                <p className="text-sm text-brand-primary-600 font-semibold text-center">
+                  <span className="text-nowrap">{item.name}</span>
                   {item.index === "4" && (
-                    <p className="text-[#ef4501] text-sm">
+                    <p className="text-[#ef4501]">
                       <span className="italic font-thin text-brand-primary-500">
                         doing business under -{" "}
                       </span>{" "}
