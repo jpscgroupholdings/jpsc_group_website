@@ -1,5 +1,10 @@
 import SectionHero from "@/components/SectionHero";
 import { useState } from "react";
+import JPSC from "../assets/company_logo/JPSC.jpg";
+import JPPRO from "../assets/company_logo/JPPRO.jpg";
+import Harrison from "../assets/company_logo/Harrison.jpg";
+import JPTech from "../assets/company_logo/jptech.jpeg";
+import MainLogo from "../assets/logo.png";
 
 interface Subsidiary {
   index: string;
@@ -14,72 +19,72 @@ const subsidiaries: Subsidiary[] = [
   {
     index: "01",
     location: "Hong Kong",
-    name: "JPSC Group Ltd",
+    name: "JPSC Group Holdings Inc. (Hongkong)",
     tags: ["Holding Company", "International Investment"],
     description:
       "The parent holding entity of the JPSC Group, incorporated in Hong Kong. It anchors the group's international investment strategy and provides the overarching governance framework across all subsidiaries, enabling cross-border capital deployment and global growth.",
     image:
-      "https://images.unsplash.com/photo-1563245372-f21724e3856d?w=600&q=80&fit=crop",
+     MainLogo,
   },
   {
     index: "02",
     location: "Philippines",
-    name: "JPSC Group Ltd (Philippines)",
+    name: "JPSC Group Holdings Inc. (Philippines)",
     tags: ["Operational HQ", "Corporate Management"],
     description:
       "Serving as the group's operational headquarters, this entity oversees day-to-day corporate management across all Philippine-based ventures. It coordinates strategy, human resources, and operations to ensure cohesive execution of the group's regional vision.",
     image:
-      "https://images.unsplash.com/photo-1555990793-da11153b2473?w=600&q=80&fit=crop",
+     MainLogo,
   },
   {
     index: "03",
     location: "Consulting",
-    name: "JP & Son Group Consulting Services",
+    name: "JP & Son Group Consulting Services Inc.",
     tags: ["Advisory", "Consulting Services"],
     description:
       "Our dedicated consulting arm, providing strategic advisory services to both internal entities and external clients. From business transformation to operational efficiency, JP & Son brings structured methodologies and deep industry expertise to every engagement.",
     image:
-      "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&q=80&fit=crop",
+      JPSC,
   },
   {
     index: "04",
     location: "Technology",
-    name: "JPTech Solutions Philippines Inc",
+    name: "JP Tech Solutions Philippines Inc.",
     tags: ["Technology Services", "Software Development"],
     description:
       "The group's technology powerhouse, delivering end-to-end software development and IT solutions. JPTech builds scalable digital products for internal operations and external clients, driving the group's commitment to innovation-led growth across every vertical.",
     image:
-      "https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&q=80&fit=crop",
+      JPTech,
   },
   {
     index: "05",
     location: "Media",
-    name: "JPPro Marketing & Media",
+    name: "JP Pro Solutions Corp.",
     tags: ["Branding", "Campaign Portfolio", "Media"],
     description:
       "JPPro is the creative force behind the group's brand presence. Specializing in integrated marketing, media production, and brand storytelling, it crafts compelling campaigns that amplify identity and drive engagement across all JPSC Group companies.",
     image:
-      "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=600&q=80&fit=crop",
+      JPPRO,
   },
   {
     index: "06",
     location: "Food Innovation",
-    name: "JPFood Lab",
+    name: "JP FoodLab Group Corp.",
     tags: ["Food Innovation", "Restaurant Development"],
     description:
       "JPFood Lab is the group's culinary research and development division. It explores new flavors, formats, and food concepts — incubating restaurant ideas from concept to market-ready brand, fueling the group's expanding footprint in the food and beverage industry.",
     image:
-      "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=80&fit=crop",
+      MainLogo,
   },
   {
     index: "07",
     location: "Restaurant Brand",
-    name: "Harrison House of Inasal and BBQ",
+    name: "Harrison - House of Inasal & BBQ",
     tags: ["Restaurant Brand", "Brand Expansion"],
     description:
       "A homegrown Filipino dining brand bringing the authentic taste of inasal and charcoal-grilled barbecue to the table. Harrison House stands as a flagship consumer brand under the group, with a clear roadmap for multi-location expansion and franchise development.",
     image:
-      "https://images.unsplash.com/photo-1544025162-d76694265947?w=600&q=80&fit=crop",
+      Harrison,
   },
   {
     index: "08",
@@ -89,7 +94,7 @@ const subsidiaries: Subsidiary[] = [
     description:
       "Based in Taiwan, Qihua Technology focuses on advanced technology development and industrial innovation. It extends the group's technical capabilities into hardware and industrial solutions, forming a key bridge between the group's regional tech ecosystem and global markets.",
     image:
-      "https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?w=600&q=80&fit=crop",
+      MainLogo,
   },
 ];
 
@@ -137,7 +142,7 @@ export default function SubsidiariesPage() {
               <img
                 src={sub.image}
                 alt={sub.name}
-                className="w-full h-full object-cover min-h-44 transition-transform duration-500"
+                className="w-full h-full object-contain min-h-44 transition-transform duration-500"
                 style={{
                   transform: hovered === sub.index ? "scale(1.05)" : "scale(1)",
                 }}
