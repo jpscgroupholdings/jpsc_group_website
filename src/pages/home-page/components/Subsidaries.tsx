@@ -74,7 +74,7 @@ export const Subsidaries = () => {
                 <img
                   src={item.path}
                   alt={item.name}
-                  className="max-h-60 max-w-full object-contain transition-transform duration-300 scale-95 group-hover:scale-100"
+                  className="h-40 max-w-full object-contain transition-transform duration-300 scale-95 group-hover:scale-100"
                 />
                 <p className="text-lg text-brand-primary-600 font-semibold text-center">
                   {item.name}
