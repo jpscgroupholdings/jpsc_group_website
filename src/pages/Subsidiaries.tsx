@@ -171,7 +171,10 @@ export default function SubsidiariesPage() {
                 style={{ fontFamily: "'Playfair Display', serif" }}
               >
                 {sub.name}
+                  {sub.index === "06" && (<p className="text-[#ef4501] text-lg"><span className="italic font-thin text-brand-primary-500">doing business under - </span> Harrison House of Inasal & BBQ</p>)}
               </h2>
+
+            
 
               <div className="flex flex-wrap gap-2 mb-4">
                 {sub.tags.map((tag) => (

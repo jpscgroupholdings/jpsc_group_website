@@ -8,13 +8,13 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 export const Subsidaries = () => {
   const subsidiariesLogos = [
-    { name: "JPSC Consulting Services", path: JPSC },
-    { name: "JPPRO", path: JPPRO },
+    { name: "JP & Son Group Consulting Services Inc.", path: JPSC },
+    { name: "JP Pro Solutions Corp.", path: JPPRO },
     { name: "Harrison House of Inasal & BBQ", path: Harrison },
-    { name: "JP Tech Solutions Inc", path: JPTech },
-    { name: "JP FoodLab", path: MainLogo },
-    { name: "JPSC Group Ltd (Hongkong)", path: MainLogo },
-    { name: "JPSC Group Ltd (Philippines)", path: MainLogo },
+    { name: "JP Tech Solutions Philippines Inc.", path: JPTech },
+    { name: "JP FoodLab Group Corp.", path: MainLogo },
+    { name: "JPSC Group Holdings Inc. (Hongkong)", path: MainLogo },
+    { name: "JPSC Group Holdings Inc. (Philippines)", path: MainLogo },
     { name: "Qihua Technology (Taiwan)", path: MainLogo },
   ];
 
