@@ -8,14 +8,15 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 export const Subsidaries = () => {
   const subsidiariesLogos = [
-    { name: "JP & Son Group Consulting Services Inc.", path: JPSC },
-    { name: "JP Pro Solutions Corp.", path: JPPRO },
-    { name: "Harrison House of Inasal & BBQ", path: Harrison },
-    { name: "JP Tech Solutions Philippines Inc.", path: JPTech },
-    { name: "JP FoodLab Group Corp.", path: MainLogo },
-    { name: "JPSC Group Holdings Inc. (Hongkong)", path: MainLogo },
-    { name: "JPSC Group Holdings Inc. (Philippines)", path: MainLogo },
-    { name: "Qihua Technology (Taiwan)", path: MainLogo },
+    { index: "1", name: "JPSC Group Holdings Inc.", path: MainLogo },
+    { index: "2", name: "JP & Son Group Consulting Services Inc.", path: JPSC },
+    { index: "3", name: "JP Pro Solutions Corp.", path: JPPRO },
+    { index: "4", name: "JP FoodLab Group Corp.", path: Harrison },
+    {
+      index: "5",
+      name: "JP Technology Solutions Philippines Inc.",
+      path: JPTech,
+    },
   ];
 
   const total = subsidiariesLogos.length;
@@ -75,8 +76,16 @@ export const Subsidaries = () => {
                   alt={item.name}
                   className="max-h-60 max-w-full object-contain transition-transform duration-300 scale-95 group-hover:scale-100"
                 />
-                <p className="text-sm text-brand-primary-500 italic">
+                <p className="text-lg text-brand-primary-600 font-semibold text-center">
                   {item.name}
+                  {item.index === "4" && (
+                    <p className="text-[#ef4501] text-sm">
+                      <span className="italic font-thin text-brand-primary-500">
+                        doing business under -{" "}
+                      </span>{" "}
+                      <a href="https://harrisoninasalbbq.com.ph" target="_blank">Harrison House of Inasal & BBQ</a>
+                    </p>
+                  )}
                 </p>
               </div>
             ))}

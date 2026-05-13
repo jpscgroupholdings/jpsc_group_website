@@ -18,26 +18,16 @@ interface Subsidiary {
 const subsidiaries: Subsidiary[] = [
   {
     index: "01",
-    location: "Hong Kong",
-    name: "JPSC Group Holdings Inc. (Hongkong)",
+    location: "Hong Kong & Philippines",
+    name: "JPSC Group Holdings Inc",
     tags: ["Holding Company", "International Investment"],
     description:
-      "The parent holding entity of the JPSC Group, incorporated in Hong Kong. It anchors the group's international investment strategy and provides the overarching governance framework across all subsidiaries, enabling cross-border capital deployment and global growth.",
+      "The parent holding entity of the JPSC Group, incorporated in Hong Kong. It anchors the group's international investment strategy and provides the overarching governance framework across all subsidiaries, enabling cross-border capital deployment and global growth. Serving as the group's operational headquarters, this entity oversees day-to-day corporate management across all Philippine-based ventures. It coordinates strategy, human resources, and operations to ensure cohesive execution of the group's regional vision.",
     image:
      MainLogo,
   },
   {
     index: "02",
-    location: "Philippines",
-    name: "JPSC Group Holdings Inc. (Philippines)",
-    tags: ["Operational HQ", "Corporate Management"],
-    description:
-      "Serving as the group's operational headquarters, this entity oversees day-to-day corporate management across all Philippine-based ventures. It coordinates strategy, human resources, and operations to ensure cohesive execution of the group's regional vision.",
-    image:
-     MainLogo,
-  },
-  {
-    index: "03",
     location: "Consulting",
     name: "JP & Son Group Consulting Services Inc.",
     tags: ["Advisory", "Consulting Services"],
@@ -47,9 +37,9 @@ const subsidiaries: Subsidiary[] = [
       JPSC,
   },
   {
-    index: "04",
+    index: "03",
     location: "Technology",
-    name: "JP Tech Solutions Philippines Inc.",
+    name: "JP Technology Solutions Philippines Inc.",
     tags: ["Technology Services", "Software Development"],
     description:
       "The group's technology powerhouse, delivering end-to-end software development and IT solutions. JPTech builds scalable digital products for internal operations and external clients, driving the group's commitment to innovation-led growth across every vertical.",
@@ -57,7 +47,7 @@ const subsidiaries: Subsidiary[] = [
       JPTech,
   },
   {
-    index: "05",
+    index: "04",
     location: "Media",
     name: "JP Pro Solutions Corp.",
     tags: ["Branding", "Campaign Portfolio", "Media"],
@@ -67,19 +57,9 @@ const subsidiaries: Subsidiary[] = [
       JPPRO,
   },
   {
-    index: "06",
-    location: "Food Innovation",
-    name: "JP FoodLab Group Corp.",
-    tags: ["Food Innovation", "Restaurant Development"],
-    description:
-      "JPFood Lab is the group's culinary research and development division. It explores new flavors, formats, and food concepts — incubating restaurant ideas from concept to market-ready brand, fueling the group's expanding footprint in the food and beverage industry.",
-    image:
-      MainLogo,
-  },
-  {
-    index: "07",
+    index: "05",
     location: "Restaurant Brand",
-    name: "Harrison - House of Inasal & BBQ",
+    name: "JP FoodLab Group Corp.",
     tags: ["Restaurant Brand", "Brand Expansion"],
     description:
       "A homegrown Filipino dining brand bringing the authentic taste of inasal and charcoal-grilled barbecue to the table. Harrison House stands as a flagship consumer brand under the group, with a clear roadmap for multi-location expansion and franchise development.",
@@ -87,7 +67,7 @@ const subsidiaries: Subsidiary[] = [
       Harrison,
   },
   {
-    index: "08",
+    index: "06",
     location: "Taiwan",
     name: "Qihua Technology",
     tags: ["Technology Development", "Industrial Innovation"],
@@ -171,10 +151,8 @@ export default function SubsidiariesPage() {
                 style={{ fontFamily: "'Playfair Display', serif" }}
               >
                 {sub.name}
-                  {sub.index === "06" && (<p className="text-[#ef4501] text-lg"><span className="italic font-thin text-brand-primary-500">doing business under - </span> Harrison House of Inasal & BBQ</p>)}
+                  {sub.index === "05" && (<p className="text-[#ef4501] text-lg"><span className="italic font-thin text-brand-primary-500">doing business under - </span> Harrison House of Inasal & BBQ</p>)}
               </h2>
-
-            
 
               <div className="flex flex-wrap gap-2 mb-4">
                 {sub.tags.map((tag) => (
