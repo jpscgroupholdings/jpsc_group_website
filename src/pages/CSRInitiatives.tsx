@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import {
   ArrowRight,
   Heart,
@@ -8,16 +8,20 @@ import {
   ChevronLeft,
   ChevronRight,
   X,
+  Play,
+  Pause,
 } from "lucide-react";
 import outreach1 from "../assets/CSRInitiatives/DSC_0840.png";
 import outreach2 from "../assets/CSRInitiatives/DSC_0844.png";
-import outreach3 from "../assets/CSRInitiatives/DSC_0845.png"
+import outreach3 from "../assets/CSRInitiatives/DSC_0845.png";
 import outreach4 from "../assets/CSRInitiatives/DSC_0848.png";
 import outreach5 from "../assets/CSRInitiatives/orp_team.png";
 import outreach6 from "../assets/CSRInitiatives/orp_team1.png";
 import outreach7 from "../assets/CSRInitiatives/orphanage.png";
 import outreach8 from "../assets/CSRInitiatives/Buscalan/buscalan.png";
 import outreach9 from "../assets/CSRInitiatives/Buscalan/buscalan1.png";
+
+import video from "../assets/video/RenderedVideo.mp4";
 
 // import people1 from "../assets/workplace/people1.jpg"
 // import people2 from "../assets/workplace/people2.jpg"
@@ -29,7 +33,6 @@ import outreach9 from "../assets/CSRInitiatives/Buscalan/buscalan1.png";
 // import people8 from "../assets/workplace/people8.jpg"
 // import people9 from "../assets/workplace/people9.jpg"
 import { Link } from "react-router-dom";
-
 
 // =======================TYPES ======================
 // interface EmployeeProgramsType {
@@ -179,7 +182,7 @@ export const galleryItems: GalleryGroup[] = [
         img: outreach5,
       },
       {
-        img: outreach6
+        img: outreach6,
       },
       {
         img: outreach7,
@@ -244,19 +247,19 @@ export const galleryItems: GalleryGroup[] = [
   },
 ];
 
-
-export const flattenedGalleryItems: GalleryFlatItem[] = galleryItems.flatMap((group) =>
-  group.items.map((item) => ({
-    ...item,
-    category: group.category,
-    caption: item.caption ?? group.caption,
-  }))
+export const flattenedGalleryItems: GalleryFlatItem[] = galleryItems.flatMap(
+  (group) =>
+    group.items.map((item) => ({
+      ...item,
+      category: group.category,
+      caption: item.caption ?? group.caption,
+    })),
 );
 
- export const galleryCategories: GalleryCategory[] = [
-    "All",
-    ...new Set(flattenedGalleryItems.map((i) => i.category)),
-  ];
+export const galleryCategories: GalleryCategory[] = [
+  "All",
+  ...new Set(flattenedGalleryItems.map((i) => i.category)),
+];
 
 // ─── SCROLL STRIP ─────────────────────────────────────────────────────────────
 
@@ -653,9 +656,7 @@ function GallerySection() {
     (item) => filter === "All" || item.category === filter,
   );
 
-
   const visible = filtered.slice(0, LIMIT);
-
 
   return (
     <section id="gallery" className="py-20 bg-[#0d2d4a] scroll-mt-32">
@@ -818,6 +819,86 @@ function PageHero() {
   );
 }
 
+const HighlightVideoSection = () => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [showPauseIcon, setShowPauseIcon] = useState(false);
+
+  const handlePlay = async () => {
+    if (!videoRef.current) return;
+
+    await videoRef.current.play();
+  };
+
+  const handleVideoPlay = () => {
+    setIsPlaying(true);
+    setShowPauseIcon(true);
+
+    setTimeout(() => {
+      setShowPauseIcon(false);
+    }, 700);
+  };
+
+  return (
+    <section className="bg-gray-100 py-20">
+      <div className="mx-auto max-w-5xl">
+        <div className="mb-8 max-w-2xl">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-brand-accent-500">
+            Featured Highlight
+          </p>
+
+          <h2 className="font-playfair text-3xl font-semibold text-brand-primary-500 md:text-4xl">
+            Community Outreach in Action
+          </h2>
+
+          <p className="mt-4 text-sm leading-relaxed text-slate-600 md:text-base">
+            A look into our outreach initiatives, highlighting meaningful
+            moments with the communities we serve.
+          </p>
+        </div>
+
+        <div className="overflow-hidden bg-black relative rounded-3xl">
+          {!isPlaying && (
+            <div className="absolute inset-0 z-10 bg-black/40 flex items-center justify-center">
+              <button
+                onClick={handlePlay}
+                className="flex h-20 w-20 items-center justify-center rounded-full bg-white/90 transition hover:scale-110"
+              >
+                <Play className="h-8 w-8 fill-black text-black" />
+              </button>
+            </div>
+          )}
+
+          {/* Temporary pause animation when playing */}
+          {showPauseIcon && (
+            <div className="pointer-events-none absolute inset-0 z-10 flex items-center justify-center">
+              <div className="animate-ping rounded-full bg-white/30 p-8" />
+              <div className="absolute flex h-20 w-20 items-center justify-center rounded-full bg-black/50">
+                <Pause className="h-8 w-8 fill-white text-white" />
+              </div>
+            </div>
+          )}
+
+          <video
+            ref={videoRef}
+            controls={isPlaying}
+            preload="metadata"
+            poster={outreach1}
+            className="aspect-video w-full object-cover"
+            onPlay={handleVideoPlay}
+            onPause={() => setIsPlaying(false)}
+            onEnded={() => setIsPlaying(false)}
+            
+          >
+            <source src={video} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+    </section>
+  );
+};
+
 // ─── MAIN ─────────────────────────────────────────────────────────────────────
 
 export default function CSRPage() {
@@ -840,7 +921,7 @@ export default function CSRPage() {
   }, []);
 
   // 3. Observer updates both state AND the URL hash
-   useEffect(() => {
+  useEffect(() => {
     const ids = sections.map((s) => s.id);
     const observers = ids.map((id) => {
       const el = document.getElementById(id);
@@ -867,6 +948,8 @@ export default function CSRPage() {
     <div className="min-h-screen bg-white font-sans scroll-mt-32">
       <PageHero />
       <StickyNav active={activeSection} />
+
+      <HighlightVideoSection />
       <OutreachSection />
       {/* <EmployeeSection /> */}
       <GallerySection />
