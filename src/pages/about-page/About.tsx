@@ -1,5 +1,5 @@
 import Whoarewe from "@/pages/about-page/components/Whoarewe";
-import Ourhistory from "@/pages/about-page/components/Ourhistory";
+// import Ourhistory from "@/pages/about-page/components/Ourhistory";
 import StrategicDirection from "@/pages/about-page/components/StrategicDirection";
 import CompanyStructure from "@/pages/about-page/components/CompanyStructure";
 import BusinessModel from "@/pages/about-page/components/BusinessModel";
@@ -13,7 +13,7 @@ export const About = () => {
         {/** Who are we section */}
         <Whoarewe />
         {/** History */}
-        <Ourhistory />
+        {/* <Ourhistory /> */}
 
         {/** Strategic Direction */}
         <StrategicDirection />
