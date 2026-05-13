@@ -9,7 +9,7 @@ const contactDetails = [
     links: [
       {
         label: "Shoot us an email",
-        href: "mailto:hello@company.com",
+        href: "mailto:corporate@jpscgroup.com",
         icon: Mail,
       },
       { label: "Message us on Viber", href: "#", icon: MessageCircle },

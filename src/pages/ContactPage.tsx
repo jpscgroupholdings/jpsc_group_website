@@ -31,8 +31,8 @@ const generalContacts = [
   {
     icon: Mail,
     label: "Email us",
-    value: "hello@company.com",
-    href: "mailto:hello@company.com",
+    value: "corporate@jpscgroup.com",
+    href: "mailto:corporate@jpscgroup.com",
   },
   {
     icon: MessageCircle,
@@ -52,8 +52,8 @@ const investorContacts = [
   {
     icon: Mail,
     label: "IR email",
-    value: "ir@company.com",
-    href: "mailto:ir@company.com",
+    value: "corporate@jpscgroup.com",
+    href: "mailto:corporate@jpscgroup.com",
   },
   {
     icon: FileText,
