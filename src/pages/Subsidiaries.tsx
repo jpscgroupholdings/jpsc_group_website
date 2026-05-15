@@ -39,7 +39,7 @@ const subsidiaries: Subsidiary[] = [
   {
     index: "03",
     location: "Technology",
-    name: "JP Technology Solutions Philippines Inc.",
+    name: "JP Technology Solutions Inc.",
     tags: ["Technology Services", "Software Development"],
     description:
       "The group's technology powerhouse, delivering end-to-end software development and IT solutions. JPTech builds scalable digital products for internal operations and external clients, driving the group's commitment to innovation-led growth across every vertical.",

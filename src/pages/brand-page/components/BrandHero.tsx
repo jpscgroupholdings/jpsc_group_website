@@ -6,7 +6,13 @@ export function Hero() {
   return (
     <section className="min-h-screen flex flex-col lg:flex-row bg-brand-primary-900">
       {/* Left */}
-      <div className="flex flex-col justify-end w-full lg:w-[45%] px-6 py-16 sm:px-10 md:px-14 lg:pb-20">
+      <div className="relative flex flex-col justify-end w-full lg:w-[45%] px-6 py-16 sm:px-10 md:px-14 lg:pb-20">
+        <div className="absolute top-24">
+          <a href="https://food.harrisoninasalbbq.com.ph/" target="_blank" className="text-white animate-pulse bg-[#ef4501] py-2 px-4 shadow-sm">
+            Visit Now!
+          </a>
+        </div>
+
         <FadeUp>
           <p className="mb-4 text-[10px] sm:text-xs tracking-[0.24rem] sm:tracking-[0.3rem] uppercase text-brand-accent-500">
             01 · Brand Story

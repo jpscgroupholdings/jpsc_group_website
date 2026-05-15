@@ -14,7 +14,7 @@ export const Subsidaries = () => {
     { index: "4", name: "JP FoodLab Group Corp.", path: Harrison },
     {
       index: "5",
-      name: "JP Technology Solutions Philippines Inc.",
+      name: "JP Technology Solutions Inc.",
       path: JPTech,
     },
   ];
