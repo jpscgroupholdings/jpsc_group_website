@@ -3,7 +3,6 @@
 interface Subsidiary {
   tag: string;
   industry: string;
-  name: string;
   description: string;
   image: string;
   alt: string;
@@ -15,7 +14,6 @@ const subsidiaries: Subsidiary[] = [
   {
     tag: "Banking",
     industry: "Financial Services",
-    name: "JPSC Bank & Financial Services",
     description:
       "Providing secure deposits, lending, and payment solutions to individuals and businesses — built on trust and regulatory compliance.",
     image:
@@ -27,7 +25,6 @@ const subsidiaries: Subsidiary[] = [
   {
     tag: "Technology",
     industry: "Information Technology",
-    name: "JPSC IT Solutions",
     description:
       "End-to-end technology services — from custom software development to infrastructure management — empowering businesses to grow digitally.",
     image:
@@ -39,7 +36,6 @@ const subsidiaries: Subsidiary[] = [
   {
     tag: "Consulting",
     industry: "Management Consulting",
-    name: "JPSC Consulting Group",
     description:
       "Strategic advisory services helping organizations navigate change, improve operations, and unlock sustainable growth through expert guidance.",
     image:
@@ -51,7 +47,6 @@ const subsidiaries: Subsidiary[] = [
   {
     tag: "Restaurant",
     industry: "Food & Hospitality",
-    name: "JPSC Restaurant Group",
     description:
       "A growing chain of dining concepts rooted in Filipino flavors, local sourcing, and warm hospitality — serving communities one plate at a time.",
     image:
@@ -103,7 +98,7 @@ export default function GroupOverview() {
         <div className="grid gap-5 sm:grid-cols-4">
           {subsidiaries.map((sub) => (
             <a
-              key={sub.name}
+              key={sub.tag}
               href={sub.href}
               className="group flex flex-col overflow-hidden rounded-[22px] border border-slate-100 transition duration-300 hover:-translate-y-1 hover:shadow-[0_10px_32px_rgba(23,70,116,0.12)]"
             >
@@ -132,12 +127,9 @@ export default function GroupOverview() {
 
               {/* Body */}
               <div className="flex flex-1 flex-col gap-2 p-6">
-                <p className="text-[9.5px] font-medium uppercase tracking-[0.12em] text-[#174674]">
+                <p className="text-sm font-medium uppercase tracking-[0.12em] text-[#174674]">
                   {sub.industry}
                 </p>
-                <h3 className="font-playfair text-[1.15rem] font-bold leading-snug text-[#0d2d4a]">
-                  {sub.name}
-                </h3>
                 <p className="flex-1 text-[12.5px] leading-[1.75] text-slate-500">
                   {sub.description}
                 </p>
