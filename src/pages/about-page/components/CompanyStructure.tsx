@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import companystructure from "../../../assets/jpsc_structure.jpg";
+import companystructure from "../../../assets/company_structure.jpeg";
 
 const CompanyStructure = () => {
   const ref = useRef<HTMLDivElement>(null);
@@ -13,7 +13,7 @@ const CompanyStructure = () => {
     const rect = el.getBoundingClientRect();
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
- 
+
     const centerX = rect.width / 2;
     const centerY = rect.height / 2;
 
@@ -47,25 +47,8 @@ const CompanyStructure = () => {
     if (glare) glare.style.opacity = "0";
   };
 
-  return (
-    <section id="group-structure" className="scroll-mt-32 space-y-10 mb-24">
-      {/* Header */}
-      <div className="space-y-3 max-w-2xl">
-        <p className="text-sm font-bold uppercase tracking-[0.25em] text-brand-primary-600">
-          Group Structure
-        </p>
-        <h2 className="text-3xl md:text-5xl font-bold leading-tight text-gray-950">
-          Organizational Structure of the Group
-        </h2>
-        <div className="h-[3px] w-12 rounded-full bg-brand-primary-500" />
-        <p className="text-base md:text-lg text-gray-600 leading-relaxed">
-          The Group operates through a structured network of subsidiaries across
-          key sectors, enabling focused operations while maintaining centralized
-          strategic direction and governance.
-        </p>
-      </div>
-
-      {/* Image */}
+  const ImageComponent = () => {
+    return (
       <div
         className="w-full flex justify-center"
         style={{ perspective: "1200px" }}
@@ -76,8 +59,7 @@ const CompanyStructure = () => {
           onMouseLeave={handleLeave}
           className="relative rounded-xl overflow-hidden cursor-pointer"
           style={{
-            transition:
-              "transform 0.15s ease-out, box-shadow 0.15s ease-out",
+            transition: "transform 0.15s ease-out, box-shadow 0.15s ease-out",
             willChange: "transform",
             boxShadow: "0 4px 16px rgba(0,0,0,0.1)",
             transformStyle: "preserve-3d",
@@ -99,6 +81,32 @@ const CompanyStructure = () => {
             }}
           />
         </div>
+      </div>
+    );
+  };
+
+  return (
+    <section id="group-structure" className="scroll-mt-32 space-y-10 mb-24">
+      {/* Header */}
+      <div className="space-y-3 max-w-2xl">
+        <p className="text-sm font-bold uppercase tracking-[0.25em] text-brand-primary-600">
+          Group Structure
+        </p>
+        <h2 className="text-3xl md:text-5xl font-bold leading-tight text-gray-950">
+          Organizational Structure of the Group
+        </h2>
+        <div className="h-[3px] w-12 rounded-full bg-brand-primary-500" />
+        <p className="text-base md:text-lg text-gray-600 leading-relaxed">
+          The Group operates through a structured network of subsidiaries across
+          key sectors, enabling focused operations while maintaining centralized
+          strategic direction and governance.
+        </p>
+      </div>
+
+      {/* Image */}
+      {/* <ImageComponent /> */}
+      <div>
+        <img src={companystructure} alt="Company Structure" className="object-cover" />
       </div>
     </section>
   );
